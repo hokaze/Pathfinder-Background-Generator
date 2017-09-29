@@ -2123,7 +2123,7 @@ public class MainActivity extends AppCompatActivity {
         String sexStr, heightStr, weightStr; // helper vars for string manipulation
         tvResults.append(getResources().getTextArray(R.array.physicalDescription)[0]+"\n"); // Print header
 
-        // Gender & Age
+        // Sex & Age
         sexStr = getResources().getTextArray(R.array.physicalDescription)[1].toString(); // Need to insert variables into string resource to replace "%1$d" and other variable placeholder tokens
         tvResults.append(String.format(sexStr, apparentSex, characterAge)+"\n");
         // Height
