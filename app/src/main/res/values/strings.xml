@@ -1,0 +1,1008 @@
+<resources>
+    <string name="app_name">Pathfinder Background Generator</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3891762784020205/8368849977</string>
+    <string name="generate_background">Generate Background</string>
+
+    <!-- Prompt text for drop down menu spinners -->
+    <string name="selectRace">Select a Race</string>
+    <string name="selectClass">Select a Class</string>
+    <string name="selectAlignment">Allowed Alignments</string>
+    <string-array name="raceArray">
+        <item>Dwarf</item>
+        <item>Elf</item>
+        <item>Gnome</item>
+        <item>Half-Elf</item>
+        <item>Half-Orc</item>
+        <item>Halfling</item>
+        <item>Human</item>
+    </string-array>
+    <string-array name="classArray">
+        <item>Alchemist</item>
+        <item>Barbarian</item>
+        <item>Bard</item>
+        <item>Cavalier</item>
+        <item>Cleric</item>
+        <item>Druid</item>
+        <item>Fighter</item>
+        <item>Gunslinger</item>
+        <item>Inquisitor</item>
+        <item>Magus</item>
+        <item>Monk</item>
+        <item>Oracle</item>
+        <item>Paladin</item>
+        <item>Ranger</item>
+        <item>Rogue</item>
+        <item>Sorcerer</item>
+        <item>Summoner</item>
+        <item>Witch</item>
+        <item>Wizard</item>
+    </string-array>
+    <string-array name="alignmentArray">
+        <item>Any Alignment</item>
+        <item>Non-Evil Only</item>
+        <item>Good Only</item>
+    </string-array>
+
+    <!-- UI Elements used by menu/dialogs-->
+    <string name="menuHelp">Help</string>
+    <string name="menuLegal">Legal Information</string>
+    <string name="closeDialog">Close</string>
+
+    <!-- The text shown by default in the text view, explaining the background generation rules -->
+    <!-- It's also used with the menu item "Help", as this text is removed upon generating a background -->
+    <string name="helpText"><u>"Introduction"</u>
+        \n"The background generator is intended to remove the creative pressure that can sometimes frustrate players as they try to flesh out the murky details of their characters’ backgrounds."
+        \n"This app automates the Open Game License rules and random tables found in the Pathfinder Reference Document and Pathfinder Ultimate Campaign for creating backstories."
+        \n
+        \n<u>"Rules"</u>
+        \n"Depending on your rolls on the generator's tables you are sometimes granted access to a trait, story feat, or drawback. These are typically marked in "<b>"bold"</b>"."
+        \n"At the end of background generation, you can choose up to two of the traits you've gained access to."
+        \n"If you gained access to at least one drawback, you can take one of those drawbacks to gain an additional trait you have access to (following the normal rules for trait selection)."
+        \n"When you gain access to a story feat, it means you've met the prerequisite for the feat and can take it at any time, not just at character creation."
+    </string>
+
+    <!-- Section headers -->
+    <string-array name="sectionHeaders">
+        <item><big><u>Homeland, Family, and Childhood</u></big></item>
+        <item><big><u>Adolescence and Training</u></big></item>
+        <item><big><u>Moral Conflicts, Relationships, And Drawbacks</u></big></item>
+    </string-array>
+
+    <!-- Racial information, kept seperate from other tables as a Half-Elf could have a Human homeland and Elven parents, and that result wouldn't display Half-Elf info -->
+    <string-array name="racialInfo">
+        <item><u>Dwarves</u>\nMany dwarves come from industrious and tight-knit communities of like-minded individuals who work together to accomplish a common goal.</item>
+        <item><u>Elves</u>\nElves are often raised in insular elven communities, and the longevity of these people means that elven children often grow up with the help of a large social network.</item>
+        <item><u>Gnomes</u>\nThe capricious and carefree gnomes of the world are widespread and varied. They typically either form their own gnome communities or integrate themselves into other humanoid societies.</item>
+        <item><u>Half-Elves</u>\nBorn of two very different worlds, half-elves rarely have easy childhoods. Torn as half-elves are between disparate peoples, the presence of their families helps ensure they do not grow up totally alone, though orphaned half-elves have to create families of their own.</item>
+        <item><u>Half-Orcs</u>\nOnly rarely the result of a happy union between the humans and orcs that bring them into the world, half-orcs are often regarded as monsters. This bleak reality makes those rare half-orcs, cherished as much as the young of any other race, even more extraordinary.</item>
+        <item><u>Halflings</u>\nSocial and amicable by nature, halflings fit equally well in both communities of humans and those of their wily kinsfolk. Prone to wanderlust, halflings can be found anywhere civilized humanoids settle.</item>
+        <item><u>Humans</u>\nAs diverse as they are widespread, humans tend to grow up in small or large societies of people with similar origins and histories, though individuals’ paths may run the gamut from idealized to tragic.</item>
+    </string-array>
+
+    <!-- Dwarven Homeland results: 1-49, 41-80, 81-87, 88-95, 96-100 -->
+    <string-array name="dwarfHomeland">
+        <item><u>Dwarven Homeland</u></item>
+        <item>Hills or Mountains\nYou gain access to the <b>Goldsniffer</b> race trait and the <b>Highlander</b> regional trait.</item>
+        <item>Underground\nYou gain access to the <b>Surface Stranger</b> regional trait and the <b>Tunnel Fighter</b> race trait.</item>
+        <item>Non-Dwarven Town or Village\nYou gain access to the <b>Brewmaster</b> race trait and the <b>Militia Veteran</b> regional trait.</item>
+        <item>Non-Dwarven City or Metropolis\nYou gain access to the <b>Brewmaster</b> race trait and the <b>Vagabond Child</b> regional trait.</item>
+        <item>Unusual Homeland</item>
+    </string-array>
+
+    <!-- Dwarven Parents results: 1-60, 61-73, 74-86, 87-100 -->
+    <string-array name="dwarfParents">
+        <item><u>Dwarven Parents</u></item>
+        <item>Both of your parents are still alive.</item>
+        <item>Only your father is alive.</item>
+        <item>Only your mother is alive.</item>
+        <item>Both of your parents are dead.\nYou gain access to the <b>Orphaned</b> social trait.</item>
+    </string-array>
+
+    <!-- Dwarven Siblings results: 1-80, 81-90, 91-95, 96-100 -->
+    <string-array name="dwarfSiblings">
+        <item><u>Dwarven Siblings</u></item>
+        <!-- 1d4 bio siblings -->
+        <item>biological siblings.</item>
+            <item>\nWith two or more siblings, you gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <!-- 1d4+1 bio siblings -->
+        <item>biological siblings.\nYou gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <!-- 1d3-1 bio siblings, 1d3-1 adopt siblings -->
+        <item>biological siblings and </item>
+            <item> adopted siblings.</item>
+            <item>\nWith two or more siblings, you gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <item>No siblings.</item>
+    </string-array>
+
+    <!-- Elven Homeland results: 1-60, 61-80, 81-95, 96-100 -->
+    <!-- Additional complexity as it must handle Elves and Half-Elves -->
+    <string-array name="elfHomeland">
+        <item><u>Elven Homeland</u></item>
+        <item>Forest\nYou gain access to the <b>Log Roller</b> regional trait.</item>
+        <item>Non-Elven City or Metropolis</item>
+            <item>\nIf you’re an Elf, you gain access to the <b>Civilized</b> social trait and the <b>Forlorn</b> race trait.</item>
+            <item>\nIf you’re a Half-Elf, you gain access to the <b>Civilized</b> social trait and the <b>Failed Apprentice</b> race trait.</item>
+        <item>Non-Elven Town or Village</item>
+            <item>\nIf you’re an Elf, you gain access to the <b>Forlorn</b> race trait.</item>
+            <item>\nIf you’re a Half-Elf, you gain access to the <b>Failed Apprentice</b> race trait.</item>
+        <item>Unusual Homeland</item>
+            <item>\nIf you’re an Elf, you gain access to the <b>Forlorn</b> trait.</item>
+            <item>\nIf you’re a Half-Elf, you gain access to the <b>Elven Reflexes</b> race trait.</item>
+    </string-array>
+
+    <!-- Elven Parents results: 1-79, 80-87, 88-95, 96-100 -->
+    <string-array name="elfParents">
+        <item><u>Elven Parents</u></item>
+        <item>Both of your parents are still alive.</item>
+        <item>Only your father is alive.</item>
+        <item>Only your mother is alive.</item>
+        <item>Both of your parents are dead.\nYou gain access to the <b>Orphaned</b> social trait.</item>
+    </string-array>
+
+    <!-- Elven Siblings results: 1-80, 81-85, 86-90, 91-100 -->
+    <string-array name="elfSiblings">
+        <item><u>Elven Siblings</u></item>
+        <!-- 1d2 bio siblings -->
+        <item>biological siblings.</item>
+            <item>\nWith two siblings, you gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <!-- 1d4+1 bio siblings -->
+        <item>[1d4+1] biological siblings.\nYou gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <!-- 1d4+1 bio siblings, 1d3-1 of which are half-elves. Also, 1d3-1 adopted siblings -->
+        <item>biological siblings, of these</item>
+            <item>are half-elves. You also have</item>
+            <item>adopted siblings.\nYou gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <item>No siblings.</item>
+    </string-array>
+
+    <!-- Gnomish Homeland results: 1-30, 31-65, 66-95, 96-100 -->
+    <string-array name="gnomeHomeland">
+        <item><u>Gnomish Homeland</u></item>
+        <item>Forest\nYou gain access to the <b>Log Roller</b> regional trait and the <b>Animal Friend</b> race trait.</item>
+        <item>Non-Gnome Town or Village\nYou gain access to the <b>Animal Friend</b> race trait.</item>
+        <item>Non-Gnome City or Metropolis\nYou gain access to the <b>Rapscallion</b> race trait.</item>
+        <item>Unusual Homeland</item>
+    </string-array>
+
+    <!-- Gnomish Parents results: 1-90, 91-93, 94-96, 97-100 -->
+    <string-array name="gnomeParents">
+        <item><u>Gnomish Parents</u></item>
+        <item>Both of your parents are still alive.</item>
+        <item>Only your father is alive.</item>
+        <item>Only your mother is alive.</item>
+        <item>Both of your parents are dead.\nYou gain access to the <b>Orphaned</b> social trait.</item>
+    </string-array>
+
+    <!-- Gnomish Siblings results: 1-50, 51-60, 61-100 -->
+    <string-array name="gnomeSiblings">
+        <item><u>Gnomish Siblings</u></item>
+        <!-- 1d4 siblings -->
+        <item>biological siblings.</item>
+            <item>\nWith two or more siblings, you gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <!-- 1d4-1 bio siblings, 1 adopted sibling -->
+        <item>biological siblings and 1 adopted sibling.\nYou gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <item>No siblings.</item>
+    </string-array>
+
+    <!-- Half-Elven Homeland results: 1-25, 26-75, 76-95, 96-100 -->
+    <string-array name="halfElfHomeland">
+        <item><u>Half-Elven Homeland</u></item>
+        <item>Raised in an Elven Homeland</item>
+        <item>Raised in a Human Homeland</item>
+        <item>Forest\nYou gain access to the <b>Log Roller</b> regional trait.</item>
+        <item>Unusual Homeland</item>
+    </string-array>
+
+    <!-- Half-Elven Parents results: 1-20, 21-55, 56-90, 91-100 -->
+    <string-array name="halfElfParents">
+        <item><u>Half-Elven Parents</u></item>
+        <item>Both of your parents are still alive.</item>
+        <item>Only your father is alive.</item>
+        <item>Only your mother is alive.</item>
+        <item>Both of your parents are dead.\nYou gain access to the <b>Orphaned</b> social trait.</item>
+    </string-array>
+
+    <!-- Half-Elven Siblings results: 1-20, 21-30, 31-100 -->
+    <string-array name="halfElfSiblings">
+        <item><u>Half-Elven Siblings</u></item>
+        <!-- 1d2 bio siblings-->
+        <item>biological siblings (either Elf or Human, your choice).</item>
+            <item>\nWith two or more siblings, you gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <item>One Half-Elf sibling\nYou gain access to the <b>Kin Bond</b> magic trait.</item>
+        <item>No siblings.</item>
+    </string-array>
+
+    <!-- Half-Orcish Homeland results: 1-25, 26-60, 61-75, 76-90, 91-100 -->
+    <string-array name="halfOrcHomeland">
+        <item><u>Half-Orcish Homeland</u></item>
+        <item>Subterranean\nYou gain access to either the <b>Scrapper</b> race trait or the <b>Surface Stranger</b> regional trait.</item>
+        <item>Orc Settlement\nYou gain access to the <b>Scrapper</b> race trait.</item>
+        <item>Raised in a Human Homeland.</item>
+        <item>No True Homeland\nYou have lived a life on the run and gain access to the <b>Outcast</b> race trait.</item>
+        <item>Unusual Homeland</item>
+    </string-array>
+
+    <!-- Half-Orcish Parents results: 1-10, 11-35, 36-60, 61-100 -->
+    <string-array name="halfOrcParents">
+        <item><u>Half-Orcish Parents</u></item>
+        <item>Both of your parents are still alive.</item>
+        <item>Only your father is alive.</item>
+        <item>Only your mother is alive.</item>
+        <item>Both of your parents are dead.\nYou gain access to the <b>Orphaned</b> social trait.</item>
+    </string-array>
+
+    <!-- Half-Orcish Siblings results: 1-60, 61-70, 71-80, 81-100 -->
+    <string-array name="halfOrcSiblings">
+        <item><u>Half-Orcish Siblings</u></item>
+        <!-- 1d6+1 Orcs -->
+        <item>Orc siblings.\nYou gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <!-- 1d4 Humans -->
+        <item>Human siblings.</item>
+            <item>\nWith two or more siblings, you gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <item>One Half-Orc sibling.</item>
+        <item>No siblings.</item>
+    </string-array>
+
+    <!-- Halfling Homeland results -->
+    <string-array name="halflingHomeland">
+        <item><u>Halfling Homeland</u></item>
+        <item>Halfling Settlement\nYou gain access to the <b>Civilized</b> social trait and the <b>Well-Informed</b> race trait.</item>
+        <item>Human Settlement\nYou gain access to the <b>Child of the Streets</b> social trait and the <b>Well-Informed</b> race trait.</item>
+        <item>Traveling Band or Caravan\nYou gain access to the <b>Friend in Every Town</b> social trait.</item>
+        <item>Unusual Homeland</item>
+    </string-array>
+
+    <!-- Halfling Parents results -->
+    <string-array name="halflingParents">
+        <item><u>Halfling Parents</u></item>
+        <item>Both of your parents are still alive.</item>
+        <item>Only your father is alive.</item>
+        <item>Only your mother is alive.</item>
+        <item>Both of your parents are dead.\nYou gain access to the <b>Orphaned</b> social trait.</item>
+    </string-array>
+
+    <!-- Halfling Siblings results -->
+    <string-array name="halflingSiblings">
+        <item><u>Halfling Siblings</u></item>
+        <!-- 1d2 Halflings -->
+        <item>siblings.</item>
+            <item>\nWith two siblings, you gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <!-- 1d4+1 Halflings-->
+        <item>siblings.\nYou gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <item>No siblings.</item>
+    </string-array>
+
+    <!-- Human Homeland results -->
+    <!-- Additional complexity as it must handle Humans, Half-Elves and Half-Orcs -->
+    <string-array name="humanHomeland">
+        <item><u>Human Homeland</u></item>
+        <item>Town or Village\nYou gain access to the <b>Militia Veteran</b> regional trait.</item>
+        <item>City or Metropolis</item>
+            <item>\nIf you’re a Human, you gain access to the <b>Civilized</b> social trait and the <b>Vagabond Child</b> regional trait.</item>
+            <item>\nIf you’re a Half-Elf, you gain access to the Civilized social trait and the <b>Failed Apprentice</b> race trait.</item>
+            <item>\nIf you’re a Half-Orc, you gain access to the <b>Brute</b> race trait and the <b>Vagabond Child</b> regional trait.</item>
+        <item>Frontier\nYou gain access to the <b>Frontier-Forged</b> regional trait.</item>
+        <item>Unusual Homeland.</item>
+    </string-array>
+
+    <!-- Human Parents results -->
+    <string-array name="humanParents">
+        <item><u>Human Parents</u></item>
+        <item>Both of your parents are still alive.</item>
+        <item>Only your father is alive.</item>
+        <item>Only your mother is alive.</item>
+        <item>Both of your parents are dead.\nYou gain access to the <b>Orphaned</b> social trait.</item>
+    </string-array>
+
+    <!-- Human Siblings results -->
+    <string-array name="humanSiblings">
+        <item><u>Human Siblings</u></item>
+        <!-- 1d2 Humans -->
+        <item>siblings.</item>
+            <item>\nWith two siblings, you gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <!-- 1d2 Humans, 1d2 Half-Elf/Half-Orcs -->
+        <item>siblings and</item>
+            <item>half-siblings.\nYou gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <!-- 2d4 Humans -->
+        <item>siblings.\nYou gain access to the <b>Kin Guardian</b> combat trait.</item>
+        <item>No siblings.</item>
+    </string-array>
+
+    <!-- Sibling Relative Ages -->
+    <string-array name="siblingAges">
+        <item>One sibling is older than you.</item>
+        <item>One sibling is younger than you.</item>
+        <item>One sibling is the same age as you (twin/triplet/quadruplet/etc)</item>
+    </string-array>
+
+    <!-- Adopted Sibling Races -->
+    <string-array name="siblingRaces">
+        <item>Aasimar</item>
+        <item>Catfolk</item>
+        <item>Changeling</item>
+        <item>Dhampir</item>
+        <item>Duergar</item>
+        <item>Dwarf</item>
+        <item>Elf</item>
+        <item>Fetchling</item>
+        <item>Gillman</item>
+        <item>Gnome</item>
+        <item>Goblin</item>
+        <item>Grippli</item>
+        <item>Half-Elf</item>
+        <item>Half-orc</item>
+        <item>Halfling</item>
+        <item>Hobgoblin</item>
+        <item>Human</item>
+        <item>Ifrit</item>
+        <item>Kitsune</item>
+        <item>Kobold</item>
+        <item>Merfolk</item>
+        <item>Nagaji</item>
+        <item>Orc</item>
+        <item>Oread</item>
+        <item>Ratfolk</item>
+        <item>Samsaran</item>
+        <item>Strix</item>
+        <item>Suli</item>
+        <item>Svirfneblin</item>
+        <item>Sylph</item>
+        <item>Tengu</item>
+        <item>Tiefling</item>
+        <item>Undine</item>
+        <item>Vanara</item>
+        <item>Vishkanya</item>
+        <item>Wayang</item>
+    </string-array>
+
+    <!-- Unusual Homelands for any Race -->
+    <string-array name="unusualHomeland">
+        <item><u>Unusual Homeland</u>\n<i>You grew up in a region not typically associated with the lands that your people call home. If the result is one that is typical for your race, this region is one where there are few other members of your race, outside of your family.</i>\n</item>
+        <item>Subterranean\nYou gain access to the <b>Surface Stranger</b> regional trait.</item>
+        <item>Mountains\nYou gain access to the <b>Highlander regional</b> trait.</item>
+        <item>Plains\nYou gain access to the <b>Savanna Child regional</b> trait.</item>
+        <item>Town or Village\nYou gain access to the <b>Militia Veteran</b> regional trait.</item>
+        <item>City or Metropolis\nYou gain access to the <b>Civilized</b> social trait and the <b>Vagabond Child</b> regional trait.</item>
+        <item>Forest\nYou gain access to the <b>Log Roller</b> regional trait.</item>
+        <item>River, Swamp, or Wetlands\nYou gain access to the <b>River Rat</b> regional trait.</item>
+        <item>Desert\nYou gain access to the <b>Desert Child</b> regional trait.</item>
+        <item>Sea\nYou gain access to the <b>Sea-Souled</b> regional trait.</item>
+        <item>Tundra\nYou gain access to the <b>Tundra Child</b> regional trait.</item>
+        <item>Another Plane\nYour GM chooses the plane.\nYou gain access to the <b>Scholar of the Great Beyond</b> faith trait.</item>
+    </string-array>
+
+    <!-- Circumstances of Birth -->
+    <string-array name="birthCircumstances">
+        <item><u>Circumstance of Birth</u>\n<i>Whether you were brought into a life of poverty or reincarnated from a legendary hero, we all come from somewhere. The start of our story doesn\'t define us, but it does influence our future to come.</i>\n</item>
+        <!-- Need to roll 2d20 on Parent Profession table instead of d100 if lower-Class -->
+        <item>Lower-Class Birth\nYou were born among peasants or slum denizens. You grew up working the land around a village or manor, practicing a rudimentary trade, or begging in a settlement.\nYou gain access to the <b>Poverty-Stricken</b> social trait.</item>
+        <item>Middle-Class Birth\nYou were born to the middle class, which includes merchants, artisans, and tradespeople. You likely grew up in a good-sized settlement, and one of your parents is likely associated with a guild or other trade organization. As a free person, you don’t experience the bondage of serfdom or peasantry, but you also lack the privilege of the nobility.\nYou gain access to the <b>Artisan</b> social trait and the <b>Merchant</b> social trait.</item>
+        <!-- Need to roll on Nobility Table to determine family's noble rank -->
+        <item>Noble Birth\nYou were born to privilege among the nobility. Unless one of your parents is the regent, your family serves a higher-ranked noble but lesser nobles serve your family in turn.\nYou gain access to the <b>Influence</b> social trait and the <b>Rich Parents</b> social trait.</item>
+        <!-- Need to roll on Adopted Outside Your Race Table -->
+        <item>Adopted Outside Your Race\nYou were not raised by your birth family and grew up in a family of a different race than your own.</item>
+        <!-- Need to roll on Parent Profession table twice -->
+        <item>Adopted\nYou were not raised by your birth family, but taken in by another family within your race or culture.\nYou gain access to traits granted by both sets of parents for their professions.</item>
+        <item>Bastard Born\nYour parents had a tryst that resulted in your birth out of wedlock. You know one of your parents, but the other remains unknown or a distant presence at best.\nYou gain access to the <b>Bastard</b> social trait and the <b>Shamed</b> story feat.</item>
+        <item>Blessed Birth\nWhen you were born, you were blessed by a being of great power such as an Angel, Azata, or Genie. This blessing has protected you from certain peril or marked you as special to some deity.\nYou gain access to the <b>Blessed</b> faith trait and the <b>Birthmark</b> faith trait.</item>
+        <item>Born of Violence\nYour birth was caused by violent, unwilling means. You have one parent, and the other likely remains unknown.\nYou gain access to the <b>Axe to Grind</b> combat trait and the <b>Bastard</b> social trait.</item>
+        <item>Born out of Time\nYou were born in a different era, either the distant past or the far future. Some event has displaced you from your time, and the ways and customs of the present seem strange and alien to you.\nYou gain access to the <b>Scholar of the Great Beyond</b> faith trait.</item>
+        <item>Born into Bondage\nYou were born into slavery or servitude. Your parents are likely slaves or servants, or you were sold into slavery as an infant.\nYou gain access to the <b>Life of Toil</b> social trait.</item>
+        <item>Cursed Birth\nWhen you were born, a powerful fiendish entity tainted your blood in some way and cursed you as an agent of dark prophecy.\nYou gain access to the <b>Fiend Blood</b> bloodline race trait and the <b>Accursed</b> story feat.</item>
+        <item>Dishonored Family\nYou were born into a family that once was honored among your society but has since fallen into disgrace. Now your family name is loathed and maligned by those who know it, putting you on your guard.\nYou gain access to the <b>Reactionary</b> combat trait, the <b>Lost Legacy</b> story feat, and the <b>Redemption</b> story feat.</item>
+        <item>Heir to a Legacy\nYou are the heir to a family with an old name and a distinguished past. Your family might be wealthy or middle class, but your name itself is worth twice your fortunes.\nYou gain access to the <b>Influence</b> social trait and the <b>Rich Parents</b> social trait.</item>
+        <item>Left to Die\nWhen you were born you were left to die, but by some twist of circumstance you survived.\nYou gain access to the <b>Courageous</b> combat trait, the <b>Savage</b> social trait, and the <b>Arisen</b> story feat.</item>
+        <item>Marked by the Gods\nA deity has marked you. That mark can be on your body or your soul.\nYou gain access to the <b>Birthmark</b> faith trait, the <b>Sacred Touch</b> faith trait, and the <b>Prophet</b> story feat.</item>
+        <item>Energy Infused\nDuring your birth you were exposed to potent source of divine energy.\nYou gain access to the <b>Sacred Conduit</b> faith trait and the <b>Sacred Touch</b> faith trait.</item>
+        <item>Progeny of Power\nYou were born during a particularly powerful conjunction or in some other time of power.\nYou gain access to the <b>Magical Talent</b> magic trait, the <b>Charming</b> social trait, and the <b>Sacred Touch</b> faith trait.</item>
+        <item>Prophesied\nYour birth was foretold, as recently as during the last generation to as far back as thousands of years ago.\nYou gain access to the <b>Prophesied</b> faith trait.</item>
+        <item>Reincarnated\nYou have been reborn in many cycles, and may be reborn in many more until you accomplish the ultimate task for which you are destined.\nYou gain access to the <b>Reincarnated</b> faith trait, the <b>Arisen</b> story feat, and the <b>Forgotten Past</b> story feat.</item>
+        <item>The Omen\nThe sages, priests, or wizards of your society decreed your birth an omen of a coming age or event - perhaps you are an omen of promise, perhaps one of dark times ahead.\nYou gain access to the <b>Omen</b> faith trait.</item>
+    </string-array>
+
+    <!-- Parents' Profession -->
+    <string-array name="parentsProfession">
+        <item><u>Parents\' Profession</u>\n<i>Most of the time, your parents both come from the same social stratum. It’s uncommon, but not unheard of, for people to marry outside their caste.</i>\n</item>
+        <item>Slaves\nYou gain access to the <b>Life of Toil</b> social trait.</item>
+        <item>Serfs/Peasants\nYou gain access to the <b>Poverty-Stricken</b> social trait.</item>
+        <item>Entertainers\nYou gain access to the <b>Talented</b> social trait.</item>
+        <item>Soldiers\nYou gain access to the <b>Tactician</b> combat trait.</item>
+        <item>Sailors\nYou gain access to the <b>Worldly</b> social trait.</item>
+        <item>Thieves\nYou gain access to the <b>Child of the Streets</b> social trait.</item>
+        <item>Yeomen\nYou gain access to the <b>Savanna Child</b> regional trait.</item>
+        <item>Tradespeople\nYou gain access to the <b>Artisan</b> social trait and the <b>Life of Toil</b> social trait.</item>
+        <item>Artisans\nYou gain access to the <b>Artisan</b> social trait.</item>
+        <item>Merchants\nYou gain access to the <b>Merchant</b> social trait.</item>
+        <item>Clergy or Cultists\nYou gain access to the <b>Child of the Temple</b> faith trait.</item>
+    </string-array>
+
+    <!-- Adopted Outside Your Race -->
+    <string-array name="adoptedParentsRace">
+        <item><u>Adoptive Parents\' Race</u>\n<i>For whatever reason, you were adopted by a species different to your own. You may find yourself an outsider amongst your own kind or confused by cultural differences as a result of your unusual upbringing.</i>\n</item>
+        <item>Adopted by Dragons\nFor its own purposes, a dragon raised you as its own. You have learned the language and history, wisdom, power, and might of dragonkind.\nYou gain access to the <b>Blood of Dragons</b> bloodline race trait and the <b>Magical Knack</b> magic trait.</item>
+        <item>Adopted by the Fey\nYour adoptive parents were fey creatures such as korreds, pixies, or a dryad.\nYou gain access to the <b>Charming</b> social trait and the <b>Magical Knack</b> magic trait.</item>
+        <item>Raised Among the Dead\nYour adoptive parent is a nonliving creature, such as a spectre, ghost, lich, or vampire. You were likely raised in empty ruined halls, among tombs and crypts, by a creature that feeds on life. What its purpose was for raising you, none can say.\nYou gain access to the <b>Deathtouched</b> bloodline race trait, the <b>Magical Knack</b> magic trait, and the <b>Glimpse Beyond</b> story feat.</item>
+        <item>Raised by Angels\nAngels attended your birth and took you to live with them in the heavens. These cosmic beings expanded your view to encompass not just the world but the larger universe. You know that wherever you go, your angelic parents watch over you.\nYou gain access to the <b>Blessed</b> faith trait.</item>
+        <item>Raised by Beasts\nWhen you were separated from your biological parents, you were found and raised by wild beasts. Your ways are the ways of the wild, and along with your advanced survival instincts you’ve adopted the natural habits of a specific beast.\nYou gain access to the <b>Resilient</b> combat trait and the <b>Feral Heart</b> story feat.</item>
+        <item>Raised by Civilized Humanoids\nYou were raised by a community of civilized humanoids of a race different from your own (chosen by your GM). Your attitudes, beliefs, and values reflect that race, although characteristics of your true nature frequently emerge.\nYou gain access to a <b>race trait</b> from the race that raised you.</item>
+        <item>Raised by Savage Humanoids\nYou were raised by savage humanoids such as orcs, kobolds, gnolls, troglodytes, or lizardfolk. As a result, your values, customs, and traditions are those of your adoptive parents, though characteristics of your true nature frequently emerge.\nYou gain access to the <b>Savage</b> social trait.</item>
+        <item>Fiend Raised\nYou were separated from your natural parents and raised by a fiend who taught you the cruelty and malice of the gods and worked to fashion you into its own mortal instrument to corrupt innocent souls.\nYou gain access to the <b>Fiend Blood</b> bloodline race trait and the <b>Damned</b> story feat.</item>
+    </string-array>
+
+    <!-- Nobility -->
+    <string-array name="nobility">
+        <item><u>Noble Rank</u>\n<i>As a person of noble rank, you have access to a degree of wealth, privilege, or influence beyond that of the common people.</i>\n</item>
+        <item>Gentry\nYou are the child of a minor lord, lady, or noble with an income, hereditary land such as a manor, and titles. You likely grew up in a manor and your parents were paid tribute by peasants. Your parents serve a higher baron, count, or duke.</item>
+        <item>Knight\nYou are the child of a knight, a noble with estates, titles, and lands who serves a lord. Your family has sworn an oath of fealty to a liege—such as a baron, count, or duke—and commits to military service in his or her name. As the child of a knight, you may serve as a squire to another knight while pursuing your own path to knighthood.</item>
+        <item>Baron\nYou are the child of a baron or baroness, a noble responsible for a land encompassing several smaller manors that pay tribute. Your parents receive orders directly from the monarch, and you’re expected to attend the royal court. You are entitled to hereditary estates, titles, and land.</item>
+        <item>Count\nYou are the noble child of a count or countess. Your family members receive hereditary titles, land, and estates, and are among the most wealthy nobles in your domain. Knights and minor lords pay tribute to your family, and your parents attend directly to the monarch. You’re expected to attend the royal court.</item>
+        <item>Duke\nYou are the child of a duke or duchess, the most powerful noble in the realm apart from the royal family. Your parents attend directly to the monarch and have the highest place at court. Your lands, titles, and estates are significant, and many lords and knights serve under your parents’ command.</item>
+        <item>Minor Prince\nYou are the child of a prince or princess, and part of the royal family. You aren’t the next in succession, but your power and wealth are grand indeed.</item>
+        <item>Regent\nYou are a prince or princess, the son or daughter of the monarch. You owe fealty directly to your parents, and to no one else. Few command the power and wealth you do, and your presence inspires great respect, if not total awe, among those who kneel before the crown.</item>
+    </string-array>
+
+    <!-- Major Childhood Event -->
+    <string-array name="majorChildhoodEvent">
+        <item><u>Major Childhood Event</u>\n<i>During your childhood, you were influenced by a significant event that helped to shape the person you became.</i>\n</item>
+        <item>Academy Training\nYou attended a private academy where you studied a number of skills and gained training in your current profession. Whether you were a brilliant student or a dropout, the university environment was your home for a good portion of your formative years.\nYou gain access to the <b>Focused Mind</b> magic trait.</item>
+        <item>Betrayal\nA friend or family member whom you trusted more than anyone else betrayed you. You have never fully trusted anyone since and prefer to rely on your own abilities rather than place your trust in others.\nYou gain access to the <b>Suspicious</b> social trait.</item>
+        <item>Bullied\nIn your early life, you were a victim - easy prey for those stronger or cleverer than yourself. They beat you when they could, using you for their sport. This abuse nursed a powerful flame of vengeance.\nYou gain access to the <b>Bullied</b> combat trait.</item>
+        <item>Competition Champion\nYou distinguished yourself at an early age when you won a competition. This might have been a martial contest of arms, a showing of apprentice magicians, high stakes gambling, or something mundane like an eating championship.\nYou gain access to the <b>Influence</b> social trait and the <b>Champion</b> story feat.</item>
+        <item>Death in the Family\nYou were profoundly affected by the death of the relative closest to you—a parent, grandparent, favorite sibling, aunt, uncle, or cousin. This death affected you profoundly, and you’ve never been able to let go of it.\nYou gain access to the <b>Reactionary</b> combat trait and the <b>Deny the Reaper</b> story feat.</item>
+        <item>Died\nYou died, or came so close to death that you walked the boundary between the realms of the living and the dead. Having passed from life’s domain once, you have a unique perspective on life, perhaps even a greater appreciation for it - or maybe your experience caused you to reject all trivial things, focusing only on matters of true import.\nYou gain access to the <b>Fearless Defiance</b> faith trait and the <b>Arisen</b> story feat.</item>
+        <item>Fall of a Major Power\nIn your early years, an old power with far-reaching influence fell into decline. This could have been an empire, a major organization or gang, or a person such as a benevolent king or evil dictator. Your early memories were founded in a world where this great power affected your region for good or ill.\nYou gain access to the <b>Worldly</b> social trait.</item>
+        <item>Fell in with a Bad Crowd\nIn your youth, you ran with a brutal, evil, or sadistic crowd. You might have belonged to a gang, a thieves’ guild, or some other nefarious organization. It was easy to cave in to pressure and do whatever they told you to do, and your outlook is colored by moral ambiguity.\nYou gain access to the <b>Child of the Streets</b> social trait.</item>
+        <item>First Kill\nYou’ve had blood on your hands since your youth, when you first took the life of another creature. Whether this act repulsed you or gave you pleasure, it was a formative experience.\nYou gain access to the <b>Killer</b> combat trait and the <b>Innocent Blood</b> story feat.</item>
+        <!-- Troubled First Love: roll a d12 instead of a d20 on the Romantic Relationships table -->
+        <item>Troubled First Love\nYour first love was everything you imagined it would be. That is, until you were separated from your beloved. This may have been the result of distance, changing perspectives, death, or differences in class or family. Some have said this made you jaded - you think it has granted you insight on how the world really works.\nYou gain access to the <b>Worldly</b> social trait.</item>
+        <!-- Imprisoned: roll on the Crime and Punishment table -->
+        <item>Imprisoned\nYour criminal record began when you were young. You were imprisoned, punished, and possibly displayed in public as a criminal. Whether or not you committed the crime, the experience has stayed with you.\nYou gain access to the <b>Criminal</b> social trait. You also gain access to the <b>Liberator</b> story feat.</item>
+        <item>Inheritance\nA great sum of wealth or property was bequeathed to you at an early age, providing you with extraordinary means. Daily costs of living have ceased to concern you, and you’ve learned that there is little that money cannot buy.\nYou gain access to the <b>Rich Parents</b> social trait.</item>
+        <item>Kidnapped\nYou were kidnapped at some point in your childhood. The kidnappers might have been pirates, slavers, thieves looking for ransom, a powerful guild seeking to blackmail your parents, a cult, and so on else. Before you were released, were ransomed, or escaped, you picked up on various aspects of the criminal underworld.\nYou gain access to the <b>Canter</b> social trait and the <b>Liberator</b> story feat.</item>
+        <item>Magical Gift\nWhen you were a child, you found, stole, or were given a magic item that gave you an extraordinary ability. You may have used this item for mischief, crime, or good. Since that time, magic items have always held a special fascination for you.\nYou gain access to the <b>Magical Talent</b> magic trait.</item>
+        <item>Major Disaster\nYou witnessed—and survived—a major disaster in your childhood years, such as a great fire, flood, earthquake, volcano, or storm. It obliterated the settlement where you lived, whether a small village, large city, or entire island.\nYou gain access to the <b>Resilient</b> combat trait and the <b>Unforgotten</b> story feat.</item>
+        <item>Mentorship/Patronage\nA mentor or patron took an interest in your development and volunteered to train or sponsor you. This creature’s motives might not be entirely clear, but without its influence you would not be who you are.\nYou gain access to the <b>Mentored</b> social trait.</item>
+        <item>Met a Fantastic Creature\nWhen you were only a child, you made contact with a magical creature, such as a dragon, unicorn, genie, pixie, or similar creature. You learned a powerful lesson or a magic trick from that creature. This meeting changed your life and made you different from the other children.\nYou gain access to the <b>Gifted Adept</b> magic trait.</item>
+        <item>Ordinary Childhood\nYour childhood was fairly ordinary, with no major blessing or catastrophe—a stark contrast to an adventuring life. You lived your life in anticipation of growing up so you could affect the dull backdrop upon which your mundane life was painted. Now that you’ve grown, it’s easy to miss those tranquil days where nothing ever seemed to happen.\nYou gain access to the <b>Ordinary</b> social trait.</item>
+        <item>Raiders\nA horde of raiders attacked your settlement and killed several of your people. This could have been a tribe of brutal humanoids or the conquering army of a civilized nation. As a result, you harbor deep resentment toward a particular faction, race, or country.\nYou gain access to the <b>Axe to Grind</b> combat trait, the <b>Foeslayer</b> story feat, and the <b>Vengeance</b> story feat.</item>
+        <item>The War\nYou grew up against the backdrop of a major military conflict that affected much of your childhood world. You became accustomed to a short food supply, living in occupied territory, and moving from place to place. Several of the people you knew in your childhood were lost in the war, including members of your family.\nYou gain access to the <b>Vagabond Child</b> regional trait and the <b>Deny the Reaper</b> story feat.</item>
+    </string-array>
+
+    <!-- Crime Table -->
+    <string-array name="crimes">
+        <item><u>Crime and Punishment</u>\n<i>You have at some point acquired the Criminal social trait. You may have been falsely accused, already done your time or you could still be evading justice. Regardless...</i>\n</item>
+        <item>Adultery</item>
+        <item>Arson</item>
+        <item>Burglary</item>
+        <item>Heresy</item>
+        <item>Minor offense (sumptuary law)</item>
+        <item>Murder</item>
+        <item>Rebellion/treason</item>
+        <item>Robbery</item>
+        <item>Smuggling</item>
+        <item>Unlawful use of magic</item>
+    </string-array>
+
+    <!-- Punishment Table -->
+    <string-array name="punishments">
+        <item><u>Crime and Punishment</u></item>
+        <item>Beating</item>
+        <item>Branding</item>
+        <item>Exile</item>
+        <item>Fine</item>
+        <item>Imprisonment</item>
+        <item>Stocks</item>
+        <item>Torture</item>
+        <item>Trial by combat</item>
+        <item>Trial by fire</item>
+        <item>Trial by water</item>
+    </string-array>
+
+
+    <!-- Class Training Tables -->
+    <string-array name="trainingAlchemist">
+        <item><u>Training: Alchemist</u>\n<i>Whether secreted away in a smoky basement laboratory or gleefully experimenting in a well-respected school of magic, the alchemist is often regarded as being just as unstable, unpredictable, and dangerous as the concoctions he brews. Rather than cast magic like a spellcaster, the alchemist captures his own magic potential within liquids and extracts he creates, infusing his chemicals with virulent power to grant him impressive skill with poisons, explosives, and all manner of self-transformative magic.\nWhat was the catalyst in the grand reaction that transfigured you into an Alchemist?</i>\n</item>
+        <item>Accidental Discovery\nYour keen intellect has always been an asset in your studies of the alchemical arts, but along with your logic and rationale, you have a “sense” for alchemy. This intuition sometimes leads to discoveries through methods most of your peers would never have thought possible, but that you somehow know will work.\nYou gain access to the <b>Alchemical Intuition</b> magic trait.</item>
+        <item>Firebug\nAlthough you’ve studied all aspects of the alchemist’s craft, your have a talent for fire. Fire has always been a seductive and powerful force that you have either embraced with glee or focused care. You are adept at exploiting a weakness to fire when you recognize it.\nYou gain access to the <b>Focused Burn</b> magic trait.</item>
+        <item>Wasn’t Strong Enough\nYou suffered something at an early age that made you feel powerless. Maybe a relative died from plague, a friend was crushed beneath rubble you were too weak to move, or some other horrible tragedy occurred. You turned to alchemy to transcend the limitations of your physical form. Your relentless dedication has made your bolstering abilities more persistent.\nYou gain access to the <b>Enduring Mutagen</b> magic trait.</item>
+        <item>Magic for the Uninclined\nYou were always interested in the arcane, but lacked the innate magic of sorcerers or the single-minded dedication possessed by wizards. As a disciple of science, the magic of faith was also closed to you. You dedicated yourself to alchemy, focusing on extracts that mimic the magic you once hoped to wield. That original interest in magic still grants you occasional rare insight into the workings of your formulae.\nYou gain access to the <b>Cross-Knowledge</b> magic trait.</item>
+        <item>Master Craftsman\nThe first time you saw air mix with the shapeless goo of a tanglefoot bag or shielded your eyes at the heatless light of a sunrod, you became ensnared by the wonders of alchemy. You’ve since labored to learn the secrets to crafting such items.\nYou gain access to the <b>Alchemical Adept</b> magic trait.</item>
+        <item>Physician\nAlchemy was the natural outgrowth of your time spent learning the healer’s craft. Your first extracts were the accidental byproduct of making poultices and elixirs. Continuing your studies, you found the natural compassion you had as a healer mixing with an alchemist’s cold logic, forging you into a clinician unlike most others.\nYou gain access to the <b>Precise Treatment</b> magic trait.</item>
+        <item>Formulae Stickler\nTo you, alchemy is a delicate and complex symphony requiring multiple different elements to work together to produce the perfect result. Though others in your craft come up with ways to substitute certain ingredients when making bombs or mutagens, you disdain such practices, deeming them pollutions. To you, there is always a perfect ingredient and its addition makes your alchemy more potent.\nYou gain access to the <b>Meticulous Concoction</b> magic trait.</item>
+        <item>Nature’s Foe\nYou lost something or someone important to you through the cruel indifference of nature. Perhaps you watched someone get swallowed by a storm-tossed sea or witnessed a summer forest fire destroy your home and all of your possessions. No matter the impetus, the unpredictability of nature made you feel small and helpless. Your subsequent devotion to alchemy has been in no small part due to a desire to exert control over nature itself, a domineering intent palpable to all creatures of nature.\nYou gain access to the <b>Unnatural Revenge</b> social trait.</item>
+        <item>To Recreate a Miracle\nYour life or the life of someone you loved was saved by a magical elixir. Witnessing this instilled a sense of awe for the art of alchemy. Although your research has not yet been able to recreate the sheer potency of that draught long ago, your years questing to duplicate it have made you adept at brewing potions.\nYou gain access to the <b>Perfectionist’s Brew</b> magic trait.</item>
+        <item>Mad Alchemist\nRampant curiosity and a near fearlessness of the unknown drove you to experiment with the rudiments of alchemy. That curiosity has uncovered interesting alchemical secrets, at the cost of alchemical instability. Some consider your experiments mad.\nYou gain access to the <b>Unstable Mutagen</b> magic trait.</item>
+    </string-array>
+    <string-array name="trainingBarbarian">
+        <item><u>Training: Barbarian</u>\n<i>Barbarians are fueled by an almost supernatural rage that helps them loose the volatile stores of adrenaline within their bodies. This rage stays with the barbarian throughout her life as an adventurer, and she learns to refine her fits of passionate anger only over time. Yet each barbarian’s rage is different and personal. It comes from the primal depths of her soul, and cannot be manufactured. Only a select few can channel that purest, deepest rage into overpowering combat prowess.\nWhat event lit the spark for the fires of your first mighty rage?</i>\n</item>
+        <item>Vengeance\nWhen you were young, a great wrong was done to you, a loved one, your family, or your people. This experience tore you apart and reduced you to a being of primal emotions. Dreams of vengeance became your only promise of comfort.\nYou gain access to the <b>Axe to Grind</b> combat trait, the <b>Foeslayer</b> story feat, and the <b>Vengeance</b> story feat.</item>
+        <item>Champion of a God\nAt your coming-of-age ritual, your deity, totem, or patron spirit sparked your soul with a religious zeal. This entity might be a beast spirit, a warmongering god, a demon lord, or some other supernatural entity. In the name of this otherworldly force you become an unstoppable warrior—the bane of all your tribe’s foes.\nYou gain access to the <b>Inspired</b> faith trait and the Champion story feat.</item>
+        <item>Conquest\nUpon coming of age, you went on your first raid, where you learned the thrill of violence and chaos and the satisfaction that came with the spoils of your victory. When your enemies dare to stand against you, your rage rekindles until you have conquered and subdued them.\nYou gain access to the <b>Killer</b> combat trait.</item>
+        <item>Hated Foe\nIn your formative years, you learned to despise a certain individual, tribe, kingdom, empire, race, or monster due to some slight it inflicted upon you or your people. This foe lurks ever close to your thoughts. So intense is your hatred that the mere thought of this foe can incite your rage.\nYou gain access to the <b>Reckless</b> combat trait and the <b>Foeslayer</b> story feat.</item>
+        <item>Personal Flaw\nThere is a part of yourself that you hate more than anything else. In your adolescence, you first realized this imperfection—to your lasting shame. This might be a gentle part of yourself you wish to eliminate or a brutal, prideful, greedy, or monstrous side you can’t control. Your rage is fueled by self-loathing, or by projecting this part of yourself onto a foe you wish to destroy.\nYou gain access to the <b>Axe to Grind</b> combat trait.</item>
+        <item>Hatred of Civilization\nWhen you first encountered civilization in your youth, its weak and decadent people revolted you. Once, such people were free and strong, but rules and laws made them feeble. Your rage is the wild part—the pure part—of yourself that separates you from the craven ways of “civilized” people.\nYou gain access to the <b>Savage</b> social trait.</item>
+        <item>Persecution\nYou grew up under the persecution of another power—perhaps a rival tribe, an expansionistic empire, or a tribe of violent monsters. Beaten and bloodied, your people barely survived the onslaught. But the beatings made you strong and taught you how to channel the pain into something useful. Since that time, the flame of rage has burned inside you, waiting to be released against your oppressors.\nYou gain access to the <b>Bullied</b> combat trait.</item>
+        <item>One of a Dying Breed\nYou grew up knowing that your people were slowly dying out—that your extinction was inevitable in the face of the changing world. In youthful vigor, you declared that your fire would not be snuffed without a fight. Your rage stems from the desperate desire to be remembered, to make a mark upon the world before the sun sets on your dwindling kind. When you rage, a single thought permeates your burning mind: If you’re going down, you’re taking everyone with you.\nYou gain access to the <b>Reactionary</b> combat trait.</item>
+        <item>Chaos Embraced\nYou grew up in wild lands where there were no laws except for those of nature—the laws of the predator and the prey. You searched for meaning in the world, in the gods, in the prayers of priests, in the patterns of the stars, but you found nothing. There is no true order to the natural universe except for that of raw and unbridled power. Chaos is the natural state of all things, and that’s how you like it.\nYou gain access to the <b>Unpredictable</b> social trait.</item>
+        <item>Bloodthirsty\nThe first time you spilled a deserving foe’s blood and watched the thing’s life ebb out onto the hard ground, you found yourself filled with a mad, euphoric ecstasy like none other. The memory of this visceral experience returns to you in every battle, like an insatiable addiction that can only be abated with further bloodshed.\nYou gain access to the <b>Bloodthirsty</b> combat trait and the <b>Innocent Blood</b> story feat.</item>
+    </string-array>
+    <string-array name="trainingBard">
+        <item><u>Training: Bard</u>\n<i>Untold wonders and secrets exist for those skillful enough to discover them. Through cleverness, talent, and magic, these cunning few unravel the wiles of the world, becoming adept in the arts of persuasion, manipulation, and inspiration. Typically masters of one or many forms of artistry, bards possess an uncanny ability to know more than they should and use what they learn to keep themselves and their allies ever one step ahead of danger. For bards, every day brings its own opportunities, adventures, and challenges, and only by bucking the odds, knowing the most, and being the best might they claim the treasures of each.\nWhich siren song led you to developing your own story of the ages?</i>\n</item>
+        <item>Celebrity\nIn your formative years, you saw a player or troupe of players perform before an enthralled audience. That’s when you decided that you wanted to be up on that stage performing for the adulation of the crowd.\nAs a minor celebrity, you gain access to either the <b>Charming</b> social trait or the <b>Influence</b> social trait.</item>
+        <item>Cultural Mandate\nThere has always been a revered storyteller in your culture. This could be an official skald, a royal minstrel, the washerman who spins parables and folk wisdom, or the old farmer who tells tall tales at the pub. Ever since you were young, your community has groomed you to fulfill this role.\nAs a silver-tongued storyteller, you gain access to the <b>Fast Talker</b> social trait.</item>
+        <item>Dabbler\nWhether you grew up rich or poor, you refused to accept the limits imposed by your social class or means. In your youth, you determined to learn a little bit of all there was to know. You may not be the master of any one career, but the breadth of your experience is wide, textured, and diverse.\nYou gain access to the <b>Worldly</b> social trait.</item>
+        <item>For Love\nWhen you were young, you tried to express yourself to your beloved using song or poetry. Driven by desire, you refined your skill and learned to articulate raw emotion in story and song.\nYou gain access to the Ear for <b>Music religion</b> trait and the <b>True Love</b> story feat.</item>
+        <item>Gift\nSomeone gave you a special instrument or a collection of songs and stories at a time in your life when you needed them most. You have treasured this object above all other possessions, and it started you on a path to new songs and stories.\nYou gain access to the <b>Seeker</b> social trait.</item>
+        <item>Ongoing Patron\nWhen you were young, a person with money or power took an interest in your art and sponsored you. Most of what you created was dictated by the patron’s tastes, and you probably still work for this patron, who maintains a strong influence over your life.\nYou gain access to the <b>Oathbound</b> faith trait.</item>
+        <item>Spy\nSomeone once asked you to employ your artistic talents as an excuse to observe a person, steal an object, or retrieve a piece of information. Infiltrating various houses and estates in the guise of an actor, minstrel, or storyteller, you honed your art while being paid better than most other performers.\nYou gain access to the <b>Criminal</b> social trait.</item>
+        <item>Troupe of Players\nYou were born into, helped found, or fell in with a troupe of traveling players. You spent your early years rambling from one place to another—from tavern to tavern, town to town, or even between countries. Long hours traveling gave you plenty of time to practice and hone your skill.\nYou gain access to the <b>World Traveler</b> human race trait (which you may take regardless of your race).</item>
+        <item>Virtuoso\nOne day, you picked up an instrument or told a tale, and your raw natural ability captivated everyone who saw you perform. Words and music have always come to you effortlessly, as naturally as breathing.\nYou gain access to the <b>Talented</b> social trait and the <b>Magnum Opus</b> story feat.</item>
+        <item>Worldshaker\nSince childhood, you’ve observed the world around you and translated those observations into story and song. Your unique, unabashed vision resonated with the audience, revealing new perspectives as well as simple truths. You’re used to people quoting your words and looking up to you, though some authority figures deem you a rabble-rouser and troublemaker.\nYou gain access to the <b>Natural-Born Leader</b> social trait.</item>
+    </string-array>
+    <string-array name="trainingCavalier">
+        <item><u>Training: Cavalier</u>\n<i>While many warriors strive to perfect their art, spending all of their time honing their skill at martial arms, others spend as much effort dedicating themselves to a cause. These warriors, known as cavaliers, swear themselves to a purpose, serving it above all else. Cavaliers are skilled at fighting from horseback, and are often found charging across a battlefield, with the symbol of their order trailing on a long, fluttering banner. The cavalier’s true power comes from the conviction of his ideals, the oaths that he swears, and the challenges he makes.\nHow did you obtain the code that defines you as a Cavalier?</i>\n</item>
+        <item>Tragedy and Loss\nIn your formative years, you experienced a significant tragedy that forged you into the person you’ve become.\nYou gain access to the <b>Grief-Filled</b> social trait.</item>
+        <item>Faith\nYou embraced a religious faith at an early age and devoted your life to its ideals. You soon learned that it was not enough to follow and worship. Faiths need champions—people capable of defending the virtues, tenets, and precepts of the faith from those who would seek to corrupt, alter, or destroy it.\nYou gain access to the <b>Indomitable Faith</b> faith trait.</item>
+        <item>Champion of the People\nYou grew up among common people. You were close to these people and you witnessed their oppression, their suffering, and their helplessness. Someone needed to stand up and protect them, and that someone would be you.\nYou gain access to the <b>Militia Veteran</b> regional trait, the <b>Champion</b> story feat, and the <b>Town Tamer</b> story feat.</item>
+        <item>Squired\nYou were a young squire who served a very different kind of knight. This knight taught you more than the art of battle she taught you to live by a strict code to guide your actions and your sword.\nYou gain access to the <b>Influence</b> social trait and the <b>Oathbound</b> faith trait.</item>
+        <item>Military Order\nAt the beginning of your career, you served with a company of mercenaries, rogues, and professional soldiers. The experience taught you how to work strategically with diverse groups.\nYou gain access to the <b>Tactician</b> combat trait and the <b>Worldly</b> social trait.</item>
+        <item>Personal Code\nIn your early years, you made sense of the chaotic, disorderly world you grew up in by formulating your own code of ethics and behavior. Though you are the ultimate arbiter and authority over this code, you do not break it, for without it your existence loses all meaning.\nYou gain access to the <b>Principled</b> faith trait.</item>
+        <item>Equestrian\nThe first time you rode a horse, you discovered a kinship with it and knew you were born to ride, and the superior horsemanship you gained through your bond with the animal propelled you into the ranks of the cavaliers.\nYou gain access to the <b>Beast Bond</b> social trait.</item>
+        <item>Entitlement\nYou became a cavalier early in your career, not by personal action or effort but by family favor, connections, or promotion. You were given fine weapons, tactical training, a mount, and the edicts of your order. Now you must learn how to follow them.\nYou gain access to the <b>Rich Parents</b> social trait.</item>
+        <item>Honor Bound\nLong ago, a promise was made that you are bound to fulfill. This could be a vow you made in your youth, or one made by an ancient forebear. Regardless, you must follow a cavalier’s code despite any personal doubts or misgivings until you have fulfilled the terms of the oath.\nYou gain access to the <b>Oathbound</b> faith trait.</item>
+        <item>Old Soldier\nWhen you were young, you discovered an ancient chivalric oath sworn by knights of yore. Though the beautiful edicts of this oath seem to have been forgotten by the world, this old way fulfills you and gives you purpose.\nYou gain access to the <b>Inspired</b> faith trait.</item>
+    </string-array>
+    <string-array name="trainingCleric">
+        <item><u>Training: Cleric</u>\n<i>In faith and the miracles of the divine, many find a greater purpose. Called to serve powers beyond most mortal understanding, all priests preach wonders and provide for the spiritual needs of their people. Clerics are more than mere priests, though; these emissaries of the divine work the will of their deities through strength of arms and the magic of their gods. The particular path that steers a cleric toward her faith can mean the difference between a demon-worshiping cultist and a lawful harbinger of her deity’s blessed faith.\nMerciful healer, keeper of order, devotee of knowledge, scion of the abyss...what drove you to your faith?</i>\n</item>
+        <item>Angelic Encounter\nA supernatural being, such as an angel or demon, appeared to you and proclaimed that you were destined to perform a great task in service to your god. You might have tried to deny it—and you even might still have doubts—but eventually you took up the mantle of a holy warrior and chose to meet this destiny head on, either to prove to yourself that you’re worthy of such a destiny or to show your supernatural messenger that you cannot be pigeon-holed so easily.\nYou gain access to the <b>Prophesied</b> faith trait.\n</item>
+        <item>Atonement\nIn your youth, you committed actions you are not proud of. Your deeds left dark stains upon your soul, ones so deep they might take a lifetime to wash away. When you hit rock-bottom—whether through greed, addiction, hedonism, or simply lack of good sense—you turned to faith, vowing to atone for all of the horrible acts you’ve committed.\nYou gain access to the <b>Oathbound</b> faith trait.</item>
+        <item>Converted\nIn your early life, you followed a different faith, a different god or powerful entity, or perhaps no faith at all. a representative of your current faith showed you the error of your ways and converted you, and you couldn’t be happier. You can only hope to do for others what this individual did for you.\nYou gain access to the <b>Inspired</b> faith trait.</item>
+        <item>Devoted\nFrom your earliest memory, you’ve had a close relationship with your deity. This entity has been a constant presence in your life: your greatest comfort, best companion, truest love, or some combination of the three. You’ve never had to see or speak with your deity to know that he watches over you, and the beliefs and criticisms of others do not faze you—your faith is enough.\nYou gain access to the <b>Blessed</b> faith trait and the <b>Fearless Zeal</b> story feat.</item>
+        <item>Healed\nAs a child, you were afflicted with a terrible physical or mental illness or a debilitating wound that prevented you from functioning in society. a miracle worker touched your body and commanded you to be well, and—for perhaps the first time in your life—you were whole. Now you live your life in tribute to the deity whose divine healer restored you, and perhaps hope to bestow similar gifts unto deserving nonbelievers.\nYou gain access to the <b>Sacred Touch</b> faith trait and the <b>Battlefield Healer</b> story feat.</item>
+        <item>Reborn\nYou died or nearly died. In the midst of this experience, your mind came to a place of quiet where you witnessed your deity or its agents pulling your body and spirit back from the brink of death. Every day since has been a gift, and you strive to understand the reason you have been saved while countless others perish.\nYou gain access to the <b>Deathtouched</b> bloodline race trait and the <b>Arisen</b> story feat.</item>
+        <item>Religious Colony\nYou grew up in a religious colony or settlement. This may have been a small village in the hinterlands or a kingdom-sized theocracy devoted to a single religion. When you came of age, you decided to serve your god and country as a cleric, a choice that garnered respect, dignity, and honor among your people.\nYou gain access to the <b>Natural-Born Leader</b> social trait.</item>
+        <item>Revelation\nIn your youth, a deity granted you visions or dreams that revealed startling truths. These visions might have been prophetic, deeply insightful, or filled with extraordinary solutions to problems that plagued you, your family, or your community. So powerful and compelling were the visions that you devoted your life to the deity.\nYou gain access to the <b>Worldly</b> social trait.</item>
+        <item>Sanctuary\nWhen you were young, you did a very wicked deed—or were accused of one—and fled to the only place that could shelter you from the law. You found sanctuary among the worshipers of a deity, and they took you in and protected you. In time, you joined the faithful to serve their cause in the world, though the shadow of your past sin still lurks beyond the church’s walls.\nYou gain access to the <b>Criminal</b> social trait.</item>
+        <item>Taken in by the Church\nYou spent your youth in a church or monastery serving as an acolyte or doing menial work on the grounds, either taken in as an orphan, sent there by your equally devout parents, or by taking on the faith of your own volition. The traditions and rituals of the religion served as your way of life throughout your adolescence, and you left that pious community with the skills to champion your faith in the world.\nYou gain access to the <b>Child of the Temple</b> faith trait.</item>
+    </string-array>
+    <string-array name="trainingDruid">
+        <item><u>Training: Druid</u>\n<i>Within the purity of the elements and the order of the wilds lingers a power beyond the marvels of civilization. Furtive yet undeniable, these primal magics are guarded over by servants of philosophical balance known as druids. Allies to beasts and manipulators of nature, these often misunderstood protectors of the wild strive to shield their lands from all who would threaten them and prove the might of the wilds to those who lock themselves behind city walls.\nWhat led you to the wise path of the primals and the power such devotion can wield?</i>\n</item>
+        <item>Lost in the Wild\nYou got lost in the wilderness and were forced to survive on your own. You may have wandered desert dunes, thick forest, or high mountains—or perhaps you were shipwrecked on a desert island. Young and vulnerable, you feared the natural dangers of the world at first, but acclimated to the natural way of life as you learned to tap into the primal power of the world.\nYou gain access to the <b>Resilient</b> combat trait.</item>
+        <item>Fey Meeting\nWalking in the woods, you met a fey creature, such as a brownie, elf, nymph, gnome, sprite, or treant. This magical being taught you how to tend the natural world in the gentle manner of the fey.\nYou gain access to the <b>Magical Knack</b> magic trait.</item>
+        <item>Spirit of Nature\nThrough a ritual, vision, or dream, you communed with a primordial spirit of nature. In the form of a majestic beast, this spirit charged you with preserving the natural world from those who would destroy it. You are instilled with the spirit of this creature—a small fragment of its power grows in you as you mature.\nYou gain access to the <b>Sacred Touch</b> faith trait.</item>
+        <item>Tree Tender\nYou learned to care for plants in your youth by tending a small garden, orchard, grove, or field. These plants flourished like no others. You’ve always understood plants better than people.\nYou gain access to the <b>Devotee of the Green</b> faith trait.</item>
+        <item>Druid Circle\nYou discovered, or were initiated into, a circle of druids that protects an expanse of wilderness. The druids taught you of their duty to nature and the powers that the natural world granted them. Soon you learned enough to join the circle as an initiate.\nYou gain access to the <b>Mentored</b> social trait.</item>
+        <item>Civilized Outcast\nFor a time, you lived in an urban environment. But you soon discovered that social communities, bureaucracies, and laws made you feel constrained and unnatural. You left civilization and retreated into the wild at the first opportunity. You still retain the lessons, habits, and refinements of civilized behavior, but your heart belongs to nature.\nYou gain access to the <b>Civilized</b> social trait.</item>
+        <item>Savage\nYou spent your formative years among a tribe or village far from civilization. The elders chose you as successor and taught you the lore of the elements and the animals.\nYou gain access to the <b>Savage</b> social trait.</item>
+        <item>Raised by Beasts\nYou were reared in part by wild animals. Most of what you know you learned by observing these beasts, their natural instincts being unburdened by artifice or manipulation. Even though you possess a humanoid body, the beasts recognize you as one of their own.\nYou gain access to the <b>Animal Friend</b> gnome race trait (which you may take regardless of your race) and the <b>Feral Heart</b> story feat.</item>
+        <item>Avatar\nOnce you were an ordinary youth. But when the natural world needed saving, the land chose you as its champion, lending you as much power as you were able to control. You might not understand the reasons for your power, but you are one with nature and your will is the will of the world.\nYou gain access to the <b>Child of Nature</b> religion trait.</item>
+        <item>Beastlord\nNatural birds and beasts have always obeyed you. From your earliest years, you’ve possessed a gentleness or a power that allows you to communicate with animals as though you shared a common language. Perhaps you have fey blood or traces of lycanthrope ancestry.\nYou gain access to the <b>Beast Bond</b> social trait.</item>
+    </string-array>
+    <string-array name="trainingFighter">
+        <item><u>Training: Fighter</u>\n<i>Some take up arms for glory, wealth, or revenge. Others do battle to prove themselves, to protect others, or because they know nothing else. Still others learn the ways of weaponcraft to hone their bodies in battle and prove their mettle in the forge of war. Soldiers, knights, hunters, and artists of war, fighters are unparalleled champions, and woe to those who dare stand against them.\nSo why did you draw your blade and take on the fierce mantle of a warrior?</i>\n</item>
+        <item>Adventure\nSince you can remember, you sought to become a great warrior. Inspired by legends of the past or personal heroes of your civilization, you longed to wield steel and carve your way in the world.\nYou gain access to the <b>Seeker</b> social trait.</item>
+        <item>Conscripted\nYou didn’t choose the military life so much as you were drafted into it. You have a non-military background and skill set. Who knows what course your life might have taken had you not been forced to take up arms? You gain access to the <b>Worldly</b> social trait.</item>
+        <item>Duty\nYou took up the sword because no one else would. When a great danger threatened your home, you stepped forth to meet the challenge, though you were only a youth with just the strength of your arm and steadfastness of your courage to see you through.\nYou gain access to the <b>Courageous</b> combat trait.</item>
+        <item>Gladiator\nAs an adolescent, you learned to fight and kill because your master made you, and if you had not learned, you would be dead. Killing was a way of life—a means of survival. At first you did it because you had to, but that soon changed when you heard the chorus of the crowd.\nYou gain access to the <b>Killer</b> combat trait, the <b>Life of Toil</b> social trait, and the <b>Champion</b> story feat.</item>
+        <item>Joined the Watch\nYour village, town, city, or tribe needed new recruits for the volunteer watch patrol, and you joined up—whether for money, duty, peace, or power. This rudimentary training gave you an understanding of civilized justice and showed you how to wield a weapon with skill.\nYou gain access to the <b>Militia Veteran</b> regional trait.</item>
+        <item>Knighted\nYour military path began when you were knighted or made a squire to a knight. Your family’s status could have influenced this event, or you might be a simple commoner rewarded with a title for a rare feat of courage.\nAs a member of the nobility, you gain access to the <b>Influence</b> social trait.</item>
+        <item>Mercenary\nEveryone needs to earn a living, and in your youth you were fast, strong, or tough enough to fight for pay. There are good causes and bad causes, but at the end of the day, it all comes down to money. Sometimes you got easy jobs, like guarding merchant caravans; other times the jobs are rough, like fighting in a rebel lord’s private army.\nYou gain access to the <b>Mercenary</b> social trait.</item>
+        <item>On the Street\nYou spent adolescence in a seedy part of town. You learned to fight dirty and fight mean. Turns out you were good at it. Your skills drew the interest of gang and guild leaders, tavern keepers, and anyone else who needed hired muscle.\nYou gain access to the <b>Child of the Streets</b> social trait.</item>
+        <item>Schooled\nYou learned to fight in a structured environment where you were exposed to a variety of weapons, armor, strategies, and tactics. You learned to fight as part of a unit, how to follow orders and how to command a squad.\nYou gain access to the <b>Tactician</b> combat trait.</item>
+        <item>Survival\nYou spent some part of your life in the wild—in places that abide by the laws of nature rather than those of civilization. You survived by being stronger, faster, and more cunning than the predators. That meant you fought not for coin, honor, or principle, but for your very life.\nYou gain access to the <b>Resilient</b> combat trait.</item>
+    </string-array>
+    <string-array name="trainingGunslinger">
+        <item><u>Training: Gunslinger</u>\n<i>Armed with dangerous, emergent technology and blessed with death-defying luck and skill, gunslingers are practically born to be legends. But for every gunslinger who rises to epic fame as a hero or villain, another has been left lifeless at the hands of the weapon she sought to master. Regardless of this destiny, however, no other class is so wedded and intrinsically linked to a single kind of weapon as the gunslinger. How she came to possess, learn, and master the unique power of firearms forms the backbone of every gunslinger‘s current motivations.\nHow did the smell of gunpowder and the deafening roar of the boomstick leave its mark on you?</i>\n</item>
+        <item>Any Fool Can Swing a Sword\nSometime during your youth, you came to the conclusion that most melee and ranged weapons are crude and primitive compared to firearms. It puzzles you that anyone with martial aptitude deigns to devote their skill to anything other than firearms. You disregard such “lesser” weapons and prefer the feel of your trusty firearm over any other tool of war.\nYou gain access to the <b>Reckless Contempt</b> combat trait.</item>
+        <item>Bucking Tradition\nYou come from a proud tradition of ancient arms and august codes of conduct like those followed by paladins, cavaliers, and samurai. Instead of following in the vaunted steps of your predecessors, though, you chose to learn the art of firearms to the shock and perhaps even anger of your family and peers. Your break with tradition fostered in you a nearly insurmountable will that fuels your identity as a gunslinger.\nYou gain access to the <b>Resolve of the Rejected</b> combat trait.</item>
+        <item>Custodian of the Future\nFirearms are not just an effective implement for killing or a curious mechanical trinket; they are the next step in the technological development of your people. Your passion for the workings of your weapons has you constantly assembling and dismantling firearms to truly understand their mechanics. This ongoing dedication improves your ability to repair firearms and make them deadlier while in your skilled hands.\nYou gain access to the <b>Unblemished Barrel</b> combat trait.</item>
+        <item>Defining Moment\nGuns are inexorably linked to a moment where your life dramatically changed. Perhaps you were so sickly as a child that you couldn’t turn a crossbow’s winch or bend a bow, but firearms showed you that you could still hunt and fight. Perhaps you picked up a firearm in a desperate moment to help a wounded gunslinger and knew that you had just taken your first step along the same path. A firearm at your side instills in you a sense of purpose and destiny that no one can take away.\nYou gain access to the <b>Black Powder Fortune</b> combat trait.</item>
+        <item>Look at What I Can Do\nThe lure of something new and showy drove you to first pick up a gun. Although several near mishaps taught you to respect the volatile weapon and the powder that powers it, you still enjoy doing trick shots and getting the oohs and aahs of a crowd.\nYou gain access to the <b>Black Powder Bravado</b> combat trait.</item>
+        <item>Mechanical Savant\nFor you, the lure of firearms is not the effect they produce, but the science and mechanical process behind the effect. Your endless tinkering and perfectionism have made your own gun easier to upgrade.\nYou gain access to the <b>Just Like New</b> combat trait.</item>
+        <item>Black Powder Presence\nYou grew up belittled and even beaten for not being the biggest or the strongest of your compatriots, family, or race. With no burgeoning aptitude for magic, you looked for some other way to exceed those who found superiority in brute strength—and you found it in gunslinging.\nYou gain access to the <b>Larger Than Life</b> combat trait.</item>
+        <item>Sacred Charge\nYour gunslinger training is more than just martial skill—it’s a calling. Perhaps you are part of an elite group of guards serving and defending a temple or faith. Conversely, you might come from a land where firearms represent the pinnacle of your society’s advancement or are the last vestige of those who came before. Your sense of higher purpose allows you to fight on and keep firing when winning seems impossible.\nYou gain access to the <b>Never Stop Shooting</b> combat trait.</item>
+        <item>Shock and Awe\nThe sound and fury of gunfire is as potent a weapon as the pellets and bullets your weapon discharges. You live for the reflexive wince that others make when they jump at the sound of a firearm, and laugh heartily at the amazement you inspire in others with your cacophonous black-powder weapons.\nYou gain access to the <b>Startling Report</b> combat trait.</item>
+        <item>Some Things Are Stronger Than Magic\nYou grew up either oppressed by magic cruelly wielded or loathing the elitism of those who possessed such arcane or divine power. Searching for something non-magical that relies on skill and practice led you to the study and wielding of firearms. You relish trumping pompous spellcasters with a quick draw and a keen eye.\nYou gain access to the <b>Black Powder Interjection</b> combat trait.</item>
+    </string-array>
+    <string-array name="trainingInquisitor">
+        <item><u>Training: Inquisitor</u>\n<i>Grim and determined, the inquisitor roots out enemies of the faith, using trickery and guile when righteousness and purity is not enough. Although inquisitors are dedicated to a deity, they are above many of the normal rules and conventions of the church. They answer to their deity and their own sense of justice alone, less concerned the theological and metaphysical aspects of faith and belief than what they consider to be the harsh realities of defending that faith.\nWhat event made you temper your faith with stern judgement?</i>\n</item>
+        <item>Bureaucracy’s Bane\nYou chose the inquisitor‘s path because you have no taste for the petty rules and regulations that mire the leaders of your faith in inaction and inefficacy. You know that you are an instrument of your deity and that your directives do not require intercession by the less motivated. \nYou gain access to the <b>Focused Disciple</b> faith trait.</item>
+        <item>Chaplain\nYou learned long ago that in the heat of battle and under the pall of war, even the most devout can waiver in faith. You subsequently dedicated yourself to stewarding the faith of soldiers and allies in times of great conflict. \nYou gain access to the <b>Battlefield Disciple</b> combat trait and the <b>Battlefield Healer</b> story feat.</item>
+        <item>Exemplar\nYou found early on that you lacked the logic or the vocabulary to communicate the virtues of faith—more precisely, your faith—to others. You decided that the best way to foster respect and appreciation for your god was not with words, but with action. \nYou gain access to the <b>Beacon of Faith</b> faith trait.</item>
+        <item>Failed Cleric\nYour original training in divine magic was as a cleric, but your faith eventually distilled into you the ability to hear lies and see weaknesses in the “unfaithful.” \nYou gain access to the <b>Schooled Inquisitor</b> faith trait.</item>
+        <item>Faith-Bringer\nYou know that in order to bring the light of your deity to others, you must traverse hostile territories and face even more hostile inhabitants. \nYou gain access to the <b>Weathered Emissary</b> social trait and the <b>Fearless Zeal</b> story feat.</item>
+        <item>False Witness\nYou’ve seen innocent people suffer due to another’s lies. While these injustices made you feel powerless, they’ve also kindled a desire in you to punish those who regard truth so cheaply. \nYou gain access to the <b>Vigilant Battler</b> combat trait.</item>
+        <item>Few Left to Safeguard the Faith\nYou are the vanguard of your faith. Perhaps you are a pilgrim for a good deity in an unholy land, or the secret enforcer of a sect that operates in the shadows of the world. You are accustomed to working alone and with little guidance from the superiors of your church, trusting your own moral judgement to act on behalf of your god. This certainty acts as a defense against the magic of other, “lesser” deities. \nYou gain access to the <b>Disdainful Defender</b> faith trait.</item>
+        <item>Temple Detective\nYour ability to sniff out falsehood and see weakness in others made you uniquely suited to guard the religious houses of your order. \nYou gain access to the <b>Truth’s Agent</b> social trait.</item>
+        <item>The Path of Righteous Rage\nYour faith does not manifest in calm prayer or serene meditation. You achieve the transcendent feeling of the divine when you are in the throes of battle for your deity. \nYou gain access to the <b>Indelible Ire</b> combat trait.</item>
+        <item>Zealot\nYour devotion is fanatical and your powers are clearly proof of your connection with the divine. Although you know that other gods bestow similar powers upon their own disciples, you either revile or pity those of “lesser” faiths. \nYou gain access to the <b>Zealous Striker</b> faith trait.</item>
+    </string-array>
+    <string-array name="trainingMagus">
+        <item><u>Training: Magus</u>\n<i>There are those who spend their lives poring over ancient tomes and texts, unlocking the power of magic, and there are those who spend their time perfecting the use of individual weapons, becoming masters without equal. The magus is at once a student of both philosophies, blending magical ability and martial prowess into something entirely unique, a discipline in which both spell and steel are used to devastating effect.\nWhat drove you to blur the lines between the martial and the arcane?</i>\n</item>
+        <item>A Mage without Magic\nEarly in your arcane training, you were exposed to antimagic. The powerlessness you felt from all of your magic being stripped away left you feeling desperate and helpless. You vowed to never be that helpless child again, to be strong in such moments, putting you on the path of the magus. \nYou gain access to the <b>Dispelled Battler</b> combat trait.</item>
+        <item>Conflicting Legacy\nYou were born to a family or clan with two great pedigrees: one of magic and one of battle. Unable to choose either path for fear of alienating a mentor or parent, you sought to master both. Your dedication to the blending of martial and magical has been so intense that your martial prowess feeds your arcane power. \nYou gain access to the <b>Arcane Revitalization</b> magic trait.</item>
+        <item>Ready for Anything\nFor you, the path of the magus is not about the fluid blend of disparate fields of study or conquering an insurmountable challenge, but the art of preparation for any obstacle that comes your way. a dedicated and logical person, you hone the magus affinity for operating all manner of magical devices from blind luck to a refined procedure. \nYou gain access to the <b>Pragmatic Activator</b> magic trait.</item>
+        <item>Lost Teacher\nYour magus training was interrupted when you lost your teacher through the displacement of your family, lack of funds to continue schooling, or the teacher’s unexpected death. Despite this hardship, the time you spent with your mentor had already sown the seeds of your training and you’ve been able to continue on your own in the time since—ceaselessly seeking, reading, and learning from any magical text you can find. \nYou gain access to the <b>Self-Taught Scholar</b> magic trait.</item>
+        <item>Promise Keeper\nYour dreams of becoming a wizard were cut short by unfortunate circumstances, such as the death of your family or clan’s matriarch or patriarch, hostile invading forces, conscription in the army, and so on. This forced you to become a protector and stunted the growth of your studies. Though you have successfully blended the two disciplines, you still long for the unfulfilled potential of your career as a wizard. \nYou gain access to the <b>Cross-Disciplined</b> magic trait.</item>
+        <item>Shameful Secret\nYou come from either a proud military and martial background or a legacy of skilled wizards. When you developed an aptitude for two different powers viewed as incompatible by your family or teachers, it drove you to hide half of your abilities and to pretend full-blown competency with the other. Some of the tricks you used to perpetrate this deception have stayed with you to this day. \nYou gain access to the <b>Partial Protege</b> magic trait.</item>
+        <item>Spell Backfire\nAt some point during your magical training, you attempted to cast a spell and failed. But rather than being wasted, the arcane energy reabsorbed itself into your body, waiting to be reused in some other way. When the arcane energy exploded outward through your staff or some other instrument you wielded, you received your first glimpse of the ways that magic could be repurposed—a versatility you retain today. \nYou gain access to the <b>Malleable Magic</b> magic trait.</item>
+        <item>Spell’s Edge\nThe first time you held a magic weapon and felt the thrum of arcane energy within, you knew that magic and melee were meant to be joined. Since that moment, magic weaponry has become symbolic of the most potent syntheses of your magus training, and your ability to create magical weapons and imbue mundane arms with magic still resonates with this focus. \nYou gain access to the <b>Bladed Magic</b> magic trait.</item>
+        <item>Vindication\nYou spent your formative years trying to convince combat instructors of the virtues of magic and arcane mentors of the importance of strength in arms, only to be mocked and exiled from both disciplines. Since then, you’ve wandered from master to master, honing your knowledge of both fields of study to show them all that not only have you achieved power, but you’ve also eclipsed all those who shunned you. \nYou gain access to the <b>Arcane Temper</b> magic trait.</item>
+        <item>What If\nYou don’t know the meaning of impossible. Everyone around you thinks you have your head stuck in the clouds, but you continually strive to achieve things that have never been accomplished before—perhaps things that have never even been dreamed of. Bucking convention has brought numerous failures, but you’ve learned from your mistakes and are able to snatch victory over seemingly impossible odds. \nYou gain access to the <b>Inspired</b> faith trait.</item>
+    </string-array>
+    <string-array name="trainingMonk">
+        <item><u>Training: Monk</u>\n<i>Masters of the martial arts, monks are the pinnacle of discipline and perfection. Wielding strange arms and stranger fighting arts, monks are defined by their training. Whether brought up as the protege of a grand master or self-taught through stolen glimpses into the windows of a secret school, a monk’s story is emblazoned in every step, cut, and strike they make.\nHow did your training transform your very body into a lethal weapon?</i>\n</item>
+        <item>Bellicose Historian\nWhat started as a scholar’s curiosity in exotic fighting styles bloomed into a fanatical desire not just to learn about martial arts, but to master them. \nYou gain access to the <b>Style Sage</b> social trait.</item>
+        <item>Classically Schooled\nTraining from dawn to dusk to hone every inch of your body into a fighting instrument, you studied with scores of other students in an academy or school dedicated to one specific martial art. \nYou gain access to the <b>Simple Disciple</b> social trait.</item>
+        <item>Elite Fighting Force\nYou learned your fighting skills as one of a highly trained group dedicated to a special purpose, such as guarding a temple or protecting a noble. Your training emphasized unobtrusive teamwork and unquestioned dedication to some higher purpose. \nYou gain access to the <b>Veiled Disciple</b> social trait.</item>
+        <item>Tournament Champion\na shining example of your style or order, you’ve honed martial prowess through spirited and exciting competition. \nYou gain access to the <b>Martial Performer</b> combat trait.</item>
+        <item>Lineage Holder\nYou are the senior or sole student of a great master. You rose to prominence early and received secret training in an art that is rare and exotic. Having achieved a strong foundation in the physical and metaphysical elements of this martial art, you’ve been designated the lore keeper for its history and traditions, and must now find new student or students to train. \nYou gain access to the <b>Martial Manuscript</b> faith trait.</item>
+        <item>Nature’s Disciple\nJust as many great masters learned and crafted styles from the beauty and majesty of nature, your fighting style comes from time spent in the wild rather than from formal training. You have seen firsthand how the mantis hunts, how the tiger swipes, and how the crane beats its wings. Your observance of the natural world gave you the ability to extrapolate combat forms without traditional training. \nYou gain access to the <b>Nature’s Mimic</b> combat trait.</item>
+        <item>Secret Student\nYour teacher and fellow students grew up as part of a conquered people, forbidden to train at war and forced to conceal the fighting style as seemingly harmless dances and your weapons as mundane tools… until the day you all you could rise up against tyranny. \nYou gain access to the <b>Hidden Hand</b> combat trait.</item>
+        <item>Spirit Teacher\nYour martial training is both physical and metaphysical in nature, allowing you to unlock a higher state of consciousness that allows you to draw on the wisdom and power of long-dead masters. \nYou gain access to the <b>Spirit Sense</b> faith trait.</item>
+        <item>Unsuspecting Master\nYou were trained in martial arts through unorthodox methods such as seemingly menial tasks or training through conditioning exercises that promised the smallest scrap of food as a reward. Your nontraditional training makes you resourceful and clever. \nYou gain access to the <b>Surprise Weapon</b> combat trait.</item>
+        <item>Wandering Savant\nAlthough you’ve received some formal training in exotic combat, you decided to put your skills to the test and further your learning by wandering the wide world. \nYou gain access to the <b>Wanderer’s Shroud</b> faith trait.</item>
+    </string-array>
+    <string-array name="trainingOracle">
+        <item><u>Training: Oracle</u>\n<i>Although the gods work through many agents, perhaps none is more mysterious than the oracle. These divine vessels are granted power without their choice, selected by providence to wield powers that even they do not fully understand. Mysteries of the divine mark them forever, but such markings are a double-edged sword. While some see the powers of the oracle as a gift, others view them as a curse, changing the life of the chosen in unforeseen ways.\nWhat relevation did you see and how do you endure your curse?</i>\n</item>
+        <item>Battle Mystery\nIn your early years, a battle broke out near your home and you were embroiled in the fighting. At the end of the battle, you were the only one left standing, with scores of slain foes strewn at your feet. \nYou gain access to the Veteran of Battle religion trait and the <b>Battlefield Healer</b> story feat.</item>
+        <item>Bones Mystery\nIn your formative years, you were entombed or buried alive in a graveyard. For days, you lay within the grave until your terror strangely turned to comfort. Since your return, you’ve been a different person: part mortal and part ghost, in possession of the powers of the dead. \nYou gain access to the <b>Fearless Defiance</b> faith trait.</item>
+        <item>Flame Mystery\nA great fire consumed you and laid waste to the environment around you. It might have devoured your family, friends, or an entire settlement, but you survived unburned as if the fire did not dare to touch you. Since that day, you’ve tamed fire as though it were a savage animal bent to your will. \nYou gain access to the <b>Flame–Touched</b> magic trait.</item>
+        <item>Heavens Mystery The night sky’s mysteries have always enthralled you. But one night, while you gazed upon the stars, the perfect order of the universe revealed itself and you nearly went mad from the revelation. Since that night, you’ve possessed strange powers over the heavens. \nYou gain access to the Starchild religion trait.</item>
+        <item>Life Mystery\nA terrible plague afflicted your homeland, killing thousands. You caught the disease, but instead of dying from it, you flourished. As you grew healthier, so did everyone you came into contact with. \nYou gain access to the <b>Sacred Touch</b> faith trait.</item>
+        <item>Lore Mystery\nYou were able to speak before any other child your age. Rather than stumble through the rudimentary syllables of language, you spoke in full sentences, reciting the greatest literature of many languages in story, song, and poem. Sometimes you spoke of events that had not yet come to pass, and the wise came to seek your counsel. Your gift came at a cost, however—though your knowledge is vast, your body and mind carry a curse. \nYou gain access to the <b>Scholar of the Great Beyond</b> faith trait.</item>
+        <item>Nature Mystery\nYou became separated from your family and lost in the untamed wilderness for many days, months, or years. The wilderness took its toll, but when you finally emerged from the wild, you were its master. \nYou gain access to the Child of Nature religion trait.</item>
+        <item>Stone Mystery\nYou were buried beneath the earth, possibly after an avalanche or earthquake. For 3 days the earth covered you, until at the end of the third day you emerged from the mountain unharmed but not unchanged. \nYou gain access to the <b>Earth-Touched</b> magic trait.</item>
+        <item>Waves Mystery\nYou were swept beneath the surface of the water once. You should have drowned, but instead you washed up on shore after a long interval. You emerged from the depths afflicted with a strange condition but otherwise unharmed. \nYou gain access to the <b>Water-Touched</b> magic trait.</item>
+        <item>Wind Mystery\nIn your early years, you were caught in a powerful storm that ravaged the countryside, destroying everything in its path. Bolts of lightning struck your body and thunder deafened your ears, but when you came to the storm’s tranquil center, the tempest ceased. Since then you’ve had power over storms, though you still bear the mark of the great storm you endured. \nYou gain access to the <b>Storm-Touched</b> magic trait.</item>
+    </string-array>
+    <string-array name="trainingPaladin">
+        <item><u>Training: Paladin</u>\n<i>Champions of virtue and the rule of law, many paladins are called to their path at a young age. Some hear the whispers of celestial beings in their minds, while other are drawn down the path of the paladin by tragedy and a sincere desire to strike a blow to the evil that stalks the world. Paladins sometimes take on younger charges such as orphans or runaways during their journeys, and the seeds of goodness can be sowed into these impressionable youths to grow another knight on the quest for righteousness.\nWhat makes you worthy to lead the crusade against evil?</i>\n</item>
+        <item>Divine Calling\nAn otherworldly agent of law and good—such as an angel, empyreal lord, or perhaps some other celestial envoy of the gods—tasked you to be a divine champion. You accepted the calling (maybe grudgingly) because ultimately you realize that the laws of destiny and one’s divine calling cannot be denied. In return, that celestial agent watches over you and makes sure you can fully realize your destiny and meet the course that has been set for you by a higher power. \nYou gain access to the <b>Blessed</b> faith trait.</item>
+        <item>Dread Penance\nYou, or perhaps your family, owe a debt for some past wrongdoing or vice. Maybe you made deals with some unscrupulous loan sharks during a gambling binge or your not-so-distant ancestors were responsible for the persecution of a marginalized group of people. Whatever the offense, your past action hangs over your head and fills you with guilt. You’ve taken a solemn oath to make good on this past misdeed. Only then will you feel like your life is truly worthwhile. \nYou gain access to the <b>Oathbound</b> faith trait.</item>
+        <item>Holy Epiphany\nYour faith and purpose came in a brilliant flash of insight. Maybe you suddenly realized that evil can be stopped only with vigilance and deliberate action, or maybe an epiphany showed you that the innocent need protection from corrupt forces for good to flourish in the world. Whatever the nature of your epiphany, it guides your actions and gives you insights others lack. \nYou gain access to the <b>Inspired</b> faith trait.</item>
+        <item>Zealous Devotion\nMaybe your faith was not popular among those around you during your youth. Maybe you have strange or controversial views regarding your religion, and the other members of your congregation find your practices bizarre or insulting. Whatever the case, your faith is constantly being questioned regardless of your obviously pious nature, and such persecution only serves to embolden your zeal. \nYou gain access to the <b>Indomitable Faith</b> faith trait.</item>
+        <item>Moral Debt\nThe world and all things material are intrinsically corrupt. All creatures are born with a moral debt, and only by fighting evil, upholding law, and championing the common good can one be truly free of that corruption. You work every day to pay off this debt and move those around you to do the same. \nYou gain access to the <b>Principled</b> faith trait and the <b>Fearless Zeal</b> story feat.</item>
+        <item>Mark of Faith\nYou were born with the mark of your faith. Maybe at some point you rebelled against such branding, or it could be you’ve always accepted the mark as an indicator of your destiny. In either case, it was a harbinger of the paladin path. \nYou gain access to the <b>Birthmark</b> faith trait.</item>
+        <item>Righteous Mentor\nA paladin of note and great honor took you under her wing and taught you many things. She taught you how to adhere to your oath with grace and dignity, and how the simple act of doing so was enough to earn the respect and devotions of others. \nYou gain access to the <b>Natural-Born Leader</b> social trait.</item>
+        <item>Warrior of Truth\nEarly in your life, you learned that the philosophies of law and good not only create the best society but also reveal truths that would otherwise remain obscured. You are rarely clouded by pure dogma; instead you’re unafraid to question and create your own path toward truth, justice, and righteousness. \nYou gain access to the <b>Skeptic</b> magic trait.</item>
+        <item>Knight-Errant\nYou know that evil stalks the world, and only one who is dedicated to the spread of good can stop these vile forces. To make sure fiends and wrongdoers do not go unpunished, you adopted the code of the paladin in order to travel the land and eradicate the wicked. Your goal is the relentless pursuit to seek out evil and put it down. \nYou gain access to the <b>Seeker</b> social trait.</item>
+        <item>Terrible Secret\nYou know a terrible secret about an ancient evil that threatens your homeland or perhaps even the entire world. You have sworn to keep this secret quiet lest it gain power in the retelling, but you also must work to thwart the evil whenever possible. This at times contradictory path has led you many places in your travels, and the knowledge you have gleaned from your adventures continues to serve you well in your fight against the wicked. \nYou gain access to the <b>Scholar of the Great Beyond</b> faith trait.</item>
+    </string-array>
+    <string-array name="trainingRanger">
+        <item><u>Training: Ranger</u>\n<i>Ranger are the hunters of legend. Although known for their ability to master varying environments and their dangers, rangers often achieve this expertise through the dedicated pursuit of their quarry. Though such a target could be a lost or kidnapped friend or a forgotten ruin, more often a ranger’s target is a hated enemy, and no feature of the class lends itself better to the establishment of character than his favored enemy. While a professional headhunter might hone his skills to track down humans or other civilized folk, a ranger whose family was murdered by ravenous orcs likely has a different set of priorities while on the hunt.\nScout, tracker or bounty hunter: what prey drives you to hunt?</i>\n</item>
+        <item>An Eye for an Eye\nThe choice of your favored enemy was nothing more than simple vengeance. Perhaps you lost a loved one, family, or even a whole community to the vicious rampaging of a ferocious beast, or saw your entire homeland swallowed up by monstrous hordes. No matter the reason, your drive to hunt down and destroy creatures of their kind won’t be sated so long as even one lives. \nYou gain access to the <b>Tireless Avenger</b> faith trait and the <b>Foeslayer</b> story feat.</item>
+        <item>Ancient Hatred\nThe history of your people is a saga of struggle against another race. Though common among elves and orcs or dwarves and giants, many different races can have such longstanding animosity. Your choice of a favored enemy was a simple outgrowth of this racial antipathy. \nYou gain access to the <b>Knowing the Enemy</b> social trait.</item>
+        <item>Big Game Hunter\nWhether you sought out the thrill of hunting large prey or merely grew up in the shadows of creatures large enough to crush an entire village with a careless step, you have learned how to be quick and to size up weaknesses in those behemoths who seem to have none. \nYou gain access to the <b>Evasive Sting</b> combat trait.</item>
+        <item>Blood Cleansing\nEither you have forsaken your kinsfolk or they have forsaken you. Maybe you grew up among a wicked or corrupt people who you needed to escape, or maybe they exiled you for being different. Whatever the case, your own kind are now your favored enemy, much to your continued chagrin or morbid amusement. \nYou gain access to the <b>Scarred Descendant</b> combat trait.</item>
+        <item>Bounty Hunter\nYou have always been good at finding and extracting people from their hidey-holes. Most likely you hunt humanoids of either your own subtype or of one common to your region. \nYou gain access to the <b>Easy Way or the Hard Way</b> combat trait and the <b>Town Tamer</b> story feat.</item>
+        <item>Detached Observer\nYou set yourself apart with a pall of cold logic that allows you to see weaknesses in members of your own race that you strive not to succumb to yourself. Most likely, you pick your own race as your dominant favored enemy, and you excel as a spy or assassin paid to capture enemies of your organization. \nYou gain access to the <b>Cold and Calculating</b> combat trait.</item>
+        <item>Divine Purpose\nNot all those who hear the voices of the gods can distill that echo into magical power like clerics or oracles. These whispers of belief encouraged you to track and hunt those creatures who pose the greatest threat to your faith. Perhaps you’re a good ranger who hunts the undead or devotes effort to slaying fiends, or you could choose to target good fey and celestials, emboldened by divine invective. \nYou gain access to the <b>Faith’s Hunter</b> combat trait.</item>
+        <item>Nightmare Slayer\nFrom an early age, you stood up against some of the most terrifying creatures imaginable, facing off against creatures most mortals only dream of in their wildest nightmares. Possibly hailing from lands besieged by dragons or plagued by the living dead, you are not only resistant to the fear such creatures normally engender, but you live to show your enemies the face of the unafraid. \nYou gain access to the <b>Fearless Defiance</b> faith trait.</item>
+        <item>Opportunist\nYou are an expert in creatures both common and exotic, particularly in terms of what valuable items you can harvest from their remains. The natural world exists for the benefit of those who know what to take, and you have learned how to scavenge pelts, toxins, and even rare spell componentsfrom your defeated foes. You might pick animals, magical beasts, or dragons as your dominant favored enemy—or humanoids if you’re a particularly grisly trophy collector. \nYou gain access to the <b>Harvester</b> social trait.</item>
+        <item>Survivalist\nYou were orphaned at a young age and left to fend for yourself in the wilds, or simply lived a life at the edge of society that required a constant scrabble for basic existence. You probably have animals or magical beasts (the edible ones) as your dominant favored enemy, and are adept at lying in wait and springing into action. \nYou gain access to the <b>Hunter’s Knack</b> combat trait.</item>
+    </string-array>
+    <string-array name="trainingRogue">
+        <item><u>Training: Rogue</u>\n<i>The rogue’s path is one of cunning, quickness, skill, and stealth. One of the broadest character archetypes, the rogue is found among all walks of life—from highborn spies infiltrating the courts of kings to common criminals making their livings preying on passersby in the alleys and streets. Ever just one step ahead of danger, rogues bank on their cunning, skill, and charm to bend fate to their favor.\nWhether skulking in the shadows or trying to find a better life, did you find the profession, or did it find you?</i>\n</item>
+        <item>Gang War\nGrowing up in the backstreets of an urban jungle, you were forced to choose between surviving as a predator or suffering as prey. You affiliated with a guild, gang, or group of thieves and thugs, carrying out illicit missions to further their interests and sabotage those of rival gangs. \nYou gain access to the <b>Dirty Fighter</b> combat trait.</item>
+        <item>Greed\nNo matter how much or little you had growing up, it was never enough. You discovered a talent for lifting items and coin purses from others’ belts. The world always provided for you, and when you saw something you wanted, you learned to take it. \nYou gain access to the <b>Ambitious</b> social trait and the <b>Thief of Legend</b> story feat.</item>
+        <item>Poverty\nIn your youth, you rarely had enough food to keep from starving. Poverty and hunger forced you to steal to survive, or to help your loved ones survive. \nYou gain access to the <b>Poverty-Stricken</b> social trait.</item>
+        <item>Spy\nYou’ve always had an innocent expression and a silver tongue, so naturally you were recruited as a spy during your childhood. You could have come from any social class; you might have gathered information as an urchin on the streets or acted as servant to one lord while you reported to another. \nYou gain access to the <b>Fast Talker</b> social trait.</item>
+        <item>The Kill\nYou killed someone when you were relatively young. You might have done it in self-defense, in anger, or as part of an initiation ritual, and it was easier than you suspected. Afterward, some individuals or groups started paying you to kill for them, and you made a lucrative career of assassination. \nYou gain access to the <b>Killer</b> combat trait and the <b>Innocent Blood</b> story feat.</item>
+        <item>The Trained\nYour early talent for feats of agility and acrobatics garnered you an experienced mentor. Impressed by your natural ability, this mentor taught you how to fight, dodge, and throw. He may have been a master thief, circus performer, fencing master, or swashbuckling pirate. \nYou gain access to the <b>Mentored</b> social trait.</item>
+        <item>Outlawed\nFor reasons just or unjust, you became a fugitive at an early age. You have lived outside the light of society for some time, risking capture or punishment whenever you need to break the law again. \nYou gain access to the <b>Criminal</b> social trait. See the Crime and Punishment sidebar.</item>
+        <item>Thrill Seeker\nAs an adolescent, you and your friends took turns daring one another to take risks, each new challenge inspiring greater excitement. Since then, you’ve become an adrenaline junkie, performing dangerous tasks in order to chase that high. \nYou gain access to the <b>Acrobat</b> social trait.</item>
+        <item>Henchman\nYou’ve always worked for someone else. You do what you are told and in return you are appreciated by the boss, rewarded, and paid. \nYou gain access to either the Oathbound faith trait or the Child of the Streets social trait.</item>
+        <item>Scout\nYour natural ability turned into employment in an elite squad of stealthy infiltrators. You penetrate enemy lines, gather information, deliver coded messages, and sabotage enemy supplies. You likely work for a private individual or military order. \nYou gain access to the <b>Canter</b> social trait.</item>
+    </string-array>
+    <string-array name="trainingSorcerer">
+        <item><u>Training: Sorcerer</u>\n<i>Wielders of power on a seemingly impossible scale, sorcerers are conduits of the arcane energies inside them. These powers stem universally from the sorcerers‘ distinctive bloodlines. Either linked to powerful scions of mystical power like angels, devils, or dragons or touched by the forces of destiny themselves, sorcerers prove that sometimes when magic is involved, either you have it or you don’t.\nHow did you become aware of the forces at work within your own very blood, yearning to be unleashed?</i>\n</item>
+        <item>Awakened Moment\nAt some point, the dormant power within you awakened with a fright. It might have been the first time you came close to a dragon, celestial, or genie. Or the moment could have come at the grave of a great ancestor or in a lush and verdant glen. What slumbered in your blood has never quieted, and you frequently draw upon the inspiration of your awakening. \nYou gain access to the <b>Ascendant Recollection</b> magic trait.</item>
+        <item>Dreams of Something Different\nThe first hints of your exceptional nature came to you as fragments of remembered dreams or split-second visions. As these episodes increased in both frequency and clarity, they unlocked a power in your blood you didn’t know you had. \nYou gain access to the <b>Strength Foretold</b> magic trait.</item>
+        <item>Failed Wizard\nAlthough your arcane aptitude was evident at an early age, you were pushed toward wizardry as the conduit for your magic. While you never mastered magic in this fashion, your time spent studying arcane tomes gave you obscure but often pertinent knowledge. \nYou gain access to the <b>Reluctant Apprentice</b> magic trait.</item>
+        <item>One of a Kind\nYou know that sorcerous power comes from the blood, but as far as you know, none of your ancestors possessed your gift. You keep searching for the reason for your magical powers, which has led you to greater proficiency with divinations and a keen interest in the workings of your bloodline. \nYou gain access to the <b>Knowledgeable Caster</b> magic trait.</item>
+        <item>Outcast\nDriven away by your family and people, your arcane gifts have always inspired both fear and revulsion. You’ve become adept at spotting hostility in others who would despise you for your power. \nYou gain access to the <b>Outcast’s Intuition</b> magic trait.</item>
+        <item>Proud Heritage\nYou hail from a long line of prominent sorcerers with even more prominent ancestral features. Your acceptance of your bloodline brings with it a pride and imposing mien that becomes amplified among others. \nYou gain access to the <b>Imposing Scion</b> social trait.</item>
+        <item>Shameful Heritage\nThe obvious hints of your heritage were a source of shame to your family. No matter the manifestation of your differences, being a pariah taught you to practice your arts in secret. \nYou gain access to the <b>Unseen But Not Undone</b> magic trait.</item>
+        <item>Too Lucky\nYou’ve always had a knack for getting out of trouble. This sense of preternatural good fortune led to your inquiries into magic and the discovery of your own sorcerous powers. \nYou gain access to the <b>Fate’s Favored</b> faith trait.</item>
+        <item>Unharmed\nAt some point in your early life, you were exposed to something dangerous like a fall into stormy waters or a spell cast your way. But instead of dying, you survived entirely unscathed. This experience either first hinted at or confirmed that you were different, marking the first step on your path to sorcery. \nYou gain access to the <b>Unscathed</b> magic trait.</item>
+        <item>Wild Talent\nThe magic in your blood was always as uncontrollable as it has powerful. You were forced to learn control at an early age, either out of fear that your powers might hurt someone or out of remorse once they had. This relentless vigilance and self-control gave you tremendous focus and arm you with strategic methods to redirect those wild energies coursing through you. \nYou gain access to the <b>Volatile Conduit</b> magic trait.</item>
+    </string-array>
+    <string-array name="trainingSummoner">
+        <item><u>Training: Summoner</u>\n<i>Most, if not all, spellcasters can call to otherworldly creatures for aid, but although many learn to call increasingly powerful minions to assist them, none boast the same connection to these outsiders as summoners do. A summoner is defined by the bond formed with the single creature that acts as his eidolon. Protectors, steeds, and links to other worlds, eidolons are lifelong companions for their mortal masters. The choice to tie oneself to an eidolon and the circumstances leading to that choice form the foundation of any summoner‘s character.\nWhat caused you to forge your otherworldly bond with your trusted companion through time and space?</i>\n</item>
+        <item>Abandoned\nAt some point early on, you were abandoned. This sense of loss always made you feel as though something were missing. The discovery of your eidolon and your subsequent mutual bond fostered in you the sense of companionship you’ve always longed for. \nYou gain access to the <b>Greater Link</b> magic trait.</item>
+        <item>Caretaker\nYou met your eidolon or another outsider in a moment of danger. Wounded or lost, the creature crashed between worlds and ended up at your feet. In helping this panicked, otherworldly creature, you felt a link to it. You can still draw on the inspiration from that moment when dealing with others, outsider or not. \nYou gain access to the <b>Destined Diplomat</b> social trait.</item>
+        <item>Forced to Confront Your Own Limits\nThe bond with your eidolon first manifested when you saw someone in danger and were unable to help. Your feeling of desperation and frustration at the limits of your own form attracted your eidolon—whether or not it was able to help you in that moment. This need to exceed your own limitations continues to manifest in the evolution of your eidolon. \nYou gain access to the <b>Desperate Speed</b> magic trait.</item>
+        <item>Imaginary Friends\nAs a child, you created imaginary playmates that you felt truly spoke to and heard you. These whispers were actually the wandering thoughts of outsiders trying to make contact, knowing that someday you would have an affinity with their kind. By the time you learned to summon your eidolon and other outsiders, these whispered fragments had turned themselves into an understanding of the language of outsiders. \nYou gain access to the <b>Unintentional Linguist</b> social trait.</item>
+        <item>Monophobic\nYou were always terrified of being alone when you were younger, so you surrounded yourself with others. But it was establishing this link to your eidolon that ultimately allowed you to overcome this debilitating fear. Now, even when your eidolon is not with you, you know it’s never far away; conversely, when you have your true friend and companion with you, you are far better for it. \nYou gain access to the <b>Perpetual Companion</b> faith trait.</item>
+        <item>Outsider’s Lineage\nYou have the blood of outsiders in your veins. This lineage either laid dormant until your powers manifested or was a storied part of your family heritage. Regardless, your connection to the planes has always been potent. No matter what other subjects you studied, your understanding of planar matters has always seemed instinctive or innate rather than the product of memorization and study. \nYou gain access to the <b>Planar Savant</b> faith trait.</item>
+        <item>Pick On Someone Your Own Size\nWhen you were young, you or others you cared for were bullied by agents of an oppressive power. At some point, you stood up against one or many of the tyrants, feeling that somehow you were bigger, stronger and more resilient than you actually were. You later realized that this support was the first trace of your eidolon trying to make contact with you. You can still draw on that power today, making your aura strong and your presence powerful. \nYou gain access to the <b>Twinned Presence</b> magic trait.</item>
+        <item>Raising Gone Wrong\nYou lost someone important to you. Through means, luck, or simple pity, you had the chance to raise that person from the dead, but something went wrong with the spell and the raising did not occur… at least not as planned. Your lost friend or kin’s soul bonded with a powerful outsider on the other side of the veil and returned to you as your eidolon. Possessed of some of the memories and experiences of the life you spent together, your companion feels a stronger devotion than even most others of its kind. \nYou gain access to the <b>Loyalty across Lifetimes</b> faith trait.</item>
+        <item>Saved by Another\nSomeone or something saved you from great danger. It might have been a family member who saved you from a precipitous fall or adventurers who saved you from a marauding monster. Your sense of gratitude fostered a strong sense of protectiveness, particularly when defending your allies or your eidolon. \nYou gain access to the <b>Dedicated Defender</b> combat trait.</item>
+        <item>Stranger in Your Own Skin\nYou have felt awkward and uncomfortable your entire life, as if you were born into a body that wasn’t truly yours. Your quest to become what you’ve always felt you should be led you to your eidolon, in which you found what you see as your own idealized form. The link that you and your eidolonshare allows you to escape some of the inherent limits of your form from time to time. \nYou gain access to the <b>Linked Surge</b> magic trait.</item>
+    </string-array>
+    <string-array name="trainingWitch">
+        <item><u>Training: Witch</u>\n<i>Some witches make pacts for their power by choice. Many more discover it by accident or circumstance. Generally feared and misunderstood, they commune with an otherworldly power using their familiar as a conduit to the unknown.\nWhat events shaped your early life and sent you down the witch‘s path, full of toil and trouble, cackles and hexes?</i>\n</item>
+        <item>Apprenticed\nYour development was guided by a mortal or magical creature, such as a wisewoman, hag, dryad, elf, or pixie, who instructed you in the arts of spellcasting, potions, charms, and hexes. \nYou gain access to the <b>Hedge Magician</b> magic trait.</item>
+        <item>Desperate Accident\nYou lived an ordinary life until one day catastrophe struck and you called out desperately to any power that would come to your aid. The entity that gave you this power might be benevolent or sinister in nature, but ever since you called it, the being remains close to you. \nYou gain access to the <b>Reckless</b> combat trait.</item>
+        <item>Forbidden Lore\nIn your youth, there was something you fervently desired—perhaps love, wealth, or revenge. But no matter how hard you tried, you couldn’t obtain that which you coveted. Only when you turned your eye to ancient tomes and ruins and experimented with strange powers beyond your comprehension were you able to get what you wanted. \nYou gain access to the <b>Dangerously Curious</b> magic trait.</item>
+        <item>Found Familiar\nWhen you were young, you happened upon a strange animalwith whom you forged an instant bond. It instructed you in casting spells and became your closest, most trusted companion. \nYou gain access to the <b>Animal Friend</b> gnome race trait (which you may take regardless of your race).</item>
+        <item>Gifted\nYou received your magical ability as a gift from a supernatural being, such as an angel, devil, god, ancient dragon, or powerful fey. This creature expects you to act on its behalf in exchange for the power it loaned you. \nYou gain access to the <b>Magical Knack</b> magic trait.</item>
+        <item>Inborn Power\nMany fey creatures are born with the innate ability to cast spells, and either because of having fey blood in your lineage or being born near fey lands you too were gifted this talent. \nYou gain access to the <b>Magical Lineage</b> magic trait.</item>
+        <item>Initiated\nWhen you came of age, a coven of witches initiated you into their circle because you showed great promise. After your initiation ritual, you changed on a fundamental level. \nYou gain access to the <b>Mentored</b> social trait.</item>
+        <item>Invocation\nWhen you reached adolescence, you wanted power and you wanted it immediately. You didn’t have the patience or tolerance to endure endless years of boring theory and formal magical training, so you offered up your body and soul in an invocation to an entity that would grant your desire. \nYou gain access to the <b>Oathbound</b> faith trait.</item>
+        <item>Possessed\nFor reasons you may never understand, an otherworldly entity took possession of you in your formative years. Since then, your mortal body has been the vessel for this mysterious power. \nYou gain access to the <b>Possessed</b> magic trait.</item>
+        <item>Unknown\nThe circumstances by which you gained your powers are confusing, even to you. You may have received them when you stepped into a enchanted land or touched a strange artifact, or perhaps you simply awoke one day with them. You strive to find the meaning of your powers, as they drive your life in unforeseen directions. \nYou gain access to the <b>Seeker</b> social trait.</item>
+    </string-array>
+    <string-array name="trainingWizard">
+        <item><u>Training: Wizard</u>\n<i>Perhaps no other class exemplifies the acquisition of power through sheer focus and determination as well as the wizard. Neither touched by divine purpose nor blessed with magic in their blood, wizards must spend their entire lives studying the same texts, tomes, scrolls, and recitations to master the magical arts. Such a craft can be self-taught or instilled through instruction, learned in an academy or at the fringes of the world, but it can be mastered only through the most rigorous and regimented of study.\nHow did you come to study wizardry, and how has arcane knowledge shaped you since?</i>\n</item>
+        <item>Brains over Brawn\nYou were bullied or excluded throughout your life because you lacked physical power and fighting prowess. To compensate, you turned to transmutation magic. Your practice and perseverance has granted you skill with spells of that school. \nYou gain access to the <b>Tenacious Shifting</b> magic trait.</item>
+        <item>Dangerous Intellect\nAt a young age, those around you, whether family or friends, realized that your intellect was more than mere precociousness. As your sense of curiosity became dangerous, those responsible for you pushed you into studying magic in the hopes that you would find infinite puzzles to solve. \nYou gain access to the <b>Tireless Logic</b> social trait.</item>
+        <item>Fitting In\nYou hail from a long line of sorcerers or from a community known for its natural affinity for magic. Your manifestation of wizardly talent, as opposed to blood-based sorcery, caused you to hide those talents at a young age, and then to disguise them as sorcery to the best of your ability later. You still retain some tricks from this early misdirection. \nYou gain access to the <b>Shrouded Casting</b> magic trait.</item>
+        <item>Gifted Pride\nYour affinity for magic has made you somewhat crass and arrogant, though some find your blunt disposition charming or worthy of respect. The air of superiority surrounding you is palpable and allows you to use you intellect to cow others at times when lesser individuals might barely get a word in. \nYou gain access to the <b>Bruising Intellect</b> social trait.</item>
+        <item>Mortality’s Mirror\nYour childhood innocence ended the moment you realized that someday you would die. This revelation may have come to you at the deathbed of a beloved relative, during a bloody siege against your homeland, or via some other eye-opening event. You have spent the rest of your life trying to master magic in order to change this most universal fate from stealing your last breaths away. You now have a keen eye for the magic of death and for discerning answers to ancient riddles. \nYou gain access to the <b>Greater Purpose</b> magic trait.</item>
+        <item>Righting a Wrong\nIn your youth, you witnessed an event that changed the fate of many or of a tragic few, such as a natural disaster (like a flood, hurricane, or fire) or simply a friend’s unfortunate accident during a childish game. You were burdened by the knowledge that magic—perhaps even a spell as simple as feather fall—could have changed the course of lives. You’ve dedicated yourself to magic in an effort to make sure that you are never subject to the capricious whims of fate again. \nYou gain access to the <b>Desperate Resolve</b> magic trait.</item>
+        <item>Storied Lineage\nYour family name is synonymous with wizardry of the highest caliber. Magic was your destined path before you were even born, and both your family and those who know of your lineage have supported this notion your entire life, granting you an unwavering confidence in your talents. While the pursuit of arcane mastery is never easy, you are driven to live up to the expectations set forth for you. \nYou gain access to the <b>Resilient Caster</b> magic trait.</item>
+        <item>The Way Things Work\nMagic came alive the first time you held a magic item. The notion of extraordinary magic resting within something as seemingly ordinary as a ring, amulet, or stoppered vial changed the way you viewed the world, and ever since you’ve possessed a sense of curiosity and awe for all magic items. \nYou gain access to the <b>Magic Crafter</b> magic trait and the <b>Eldritch Researcher</b> story feat.</item>
+        <item>Unpaid Debt\nSomeone saved your life at great cost. Whether through healing magic or basic heroism, your savior gave her life that you might live. Striving to repay this debt has led you to study magic, the only thing capable of making enough of a difference in the world to make you feel that you have earned the gift given to you. This sense of purpose has engendered an unshakable resolve in you. \nYou gain access to the <b>Principled</b> faith trait.</item>
+        <item>Unquenchable Hunger for Knowledge\nFor most wizards, magic is an end to which all studies strive, but not for you. For you, magic is a means to an end—and that end is knowledge. Your desire to know all of the secrets of the world requires the ability to cross continents in a blink, ride the winds, breathe water like a fish, and survive any kind of trap. Your unquenching quest for knowledge has made you ever ready for danger. \nYou gain access to the <b>Eldritch Delver</b> magic trait.</item>
+    </string-array>
+
+    <!-- Influential Associates Table -->
+    <string-array name="associates">
+        <item><u>Influential Associates</u>\n<i>Influential associates are people who had (or continue to have) a strong influence upon your development. They are archetypes and templates for NPCs that you can customize to fit your background. You may wish to use this generator again to help flesh out their story and generate ideas for how they influenced your life.</i>\n</item>
+        <item>The Hunter\nThis person was a lone wolf who nonetheless cautiously allowed you to become a member of her solitary pack. She taught you how to thrive on your own in spite of the many perils and natural dangers of your native environment.\nYou gain access to the <b>Child of Nature</b> religion trait.</item>
+        <item>The Pariah\nYou met a disgraced exile, and found in his words and attitudes something that spoke to you. What once seemed true in your religion, society, or family began to appear false the more time you spent with this person, and you quickly learned not to trust everyone you meet—especially among those who would claim to be most deserving of it.\nYou gain access to the <b>Suspicious</b> social trait.</item>
+        <item>The Confidante\nThere was a person in your life to whom you could tell anything. She knows your deepest secrets and your emotional weaknesses and vulnerabilities just as you know hers. This person could be a valuable friend and a frightening enemy, so you make sure to never divulge her secrets or give her a reason to do so with yours.\nYou gain access to the <b>Trustworthy</b> social trait.</item>
+        <item>The Mentor\nYou had a mentor who taught you everything worth knowing about life. This could have been the person who taught you the heroic abilities you possess, or simply a kindred spirit who helped form your worldview.\nYou gain access to the <b>Mentored</b> social trait.</item>
+        <item>The Mercenary\nWith this person, there was always a cost. No deed was done making a trade for something of equal or greater value. Whether this individual’s actions tended toward good, evil, or pure balance, he was always fair in his dealings. You respected this trait and it influenced your own philosophy.\nYou gain access to the <b>Mercenary</b> social trait.</item>
+        <item>The Lover\nYou had a romantic connection in your adolescent years, and this person deeply influenced your personality. Perhaps this was a first love, a casual partner you grew close to, or the one who got away. The experience bolstered your confidence in romantic interactions even though you often find your thoughts still straying toward that special someone from so long ago.\nYou gain access to the <b>Charming</b> social trait and the <b>True Love</b> story feat.</item>
+        <item>The Fool\nOne of your close associates was a clown who mocked propriety and custom, instead engaging in wild and somewhat random actions from time to time. After a while, you learned that there was simple wisdom to this foolery—a careless worldview that taught you how to cast off concern.\nYou gain access to the <b>Unpredictable</b> social trait.</item>
+        <item>The Liege Lord\nYou became close with someone you were bound to serve, be it a minor lord or lady, master (in the case of a slave), prince or princess, king or queen. Though this person held power over you, she held you closer than a subject or servant. As a result, you’re used to dealing with and being close to power, and your name is known among the ranks of the privileged.\nYou gain access to the <b>Influence</b> social trait.</item>
+        <item>The Relative\nThere is a relative you were especially close to. To you, this person was the meaning of family. He helped shepherd you into adulthood, teaching you everything you know about the world. You are bound to this person or his memory, and you strive to keep a promise, vow, or oath that you made to him.\nYou gain access to the <b>Oathbound</b> faith trait.</item>
+        <item>The Boss\nYou once gained employment under an organized and powerful individual with far-reaching influence. When the boss was present, everyone listened. This could have been a military commander, tribal chieftain, guild leader, or gang leader. From the boss, you learned how to make people listen, make them see reason, and keep them in line.\nYou gain access to the <b>Natural-Born Leader</b> social trait.</item>
+        <item>The Academic\nOne of your associates had such a lust for knowledge that she could never be satisfied with simple answers or obvious solutions. This desire for knowledge frequently exceeded her need for companionship, but you were the single exception. Through this association you developed a keen appreciation for numbers, geometry, logic, hard study, and problem solving.\nYou gain access to the <b>Mathematical Prodigy</b> magic trait.</item>
+        <item>The Criminal\nOne of your associates committed crimes regularly. He regaled you with many stories of daring robberies and break-ins—and perhaps even murders. You learned most of what you know of the criminal element from him, and he trusted you as a friend.\nYou gain access to the <b>Canter</b> social trait.</item>
+        <item>The Seer\nYou were close to a person who claimed to see the future—perhaps an oracle, seer, prophet, or merely some festival charlatan. Whether they’re true or a trick, you’ve seen visions of distant places and of times that may come to pass. The seer’s influence either made you into an optimist with a drive to change the future or a fatalist resigned to accept it.\nYou gain access to the <b>Scholar of the Great Beyond</b> faith trait.</item>
+        <item>The Mystic\nYou were especially close to a holy person in your community who fundamentally changed your life by opening your eyes to the incredible powers that exist beyond the natural world. Regardless of whether you follow a faith, certain religious artifacts, rituals, and texts played a large part in making you the person you are.\nYou gain access to the <b>Child of the Temple</b> faith trait.</item>
+        <item>The Dead One\nOne of your greatest influences was a sentient undeadcreature, such as a ghost, lich, grave knight, wraith, or vampire. You encountered it on several occasions and survived…mostly unscathed. Through this strange relationship you learned of its mortal life, giving you perspective on your own life.\nYou gain access to the Deathtouched bloodline race trait and the <b>Glimpse Beyond</b> story feat.</item>
+        <item>The Fiend\nIn your adolescent years, you dealt with or were possessed by a fiend who lent you raw power at a time of great need. This experience tainted your body and mind and changed your life. Some part of the demon remains inside you like an old friend, influencing you toward destructive ends.\nYou gain access to the <b>Possessed</b> magic trait and the <b>Damned</b> story feat.</item>
+        <item>The Wanderer\nYou knew someone who traveled from place to place with the changing of the wind, such as a minstrel, convict, merchant, outcast, soldier, or sailor. This person brought you wondrous mementos and told you of all the places he had traveled and the people who lived there, inspiring a wanderlust within you.\nYou gain access to the <b>Worldly</b> social trait.</item>
+        <item>The Champion\nYou were close to someone who excelled at athletic endeavors and tests of strength or skill. Through your friendship or rivalry, you developed the competitive spirit that continues to drive you in everything you do.\nYou gain access to the <b>Ambitious</b> social trait.</item>
+        <item>The Craftsperson\nOne of your major influences cherished perfection in every form of art. This person might have followed any path in life, from craftsperson to artist to assassin. From this person you developed a disciplined mind, a solitary focus, and the ability to create something useful and beautiful.\nYou gain access to the <b>Artisan</b> social trait.</item>
+        <item>Well-Connected Friend\nIn your circle of disparate associates, there was someone everyone knew. This person collected friends like trophies, and she had contacts in every social or professional circle. Through this connection, you continue to meet and associate with a wide variety of people in every walk of life.\nYou gain access to the <b>Well-Informed</b> halfling race trait (which you may take regardless of your race).</item>
+    </string-array>
+
+    <!-- Conflicts Table: d20 if any alignment, d12 if non-evil, d6 if good -->
+    <string-array name="conflicts">
+        <item><u>Conflict Caused</u>\n<i>There are 20 possible conflicts, ranging from minor indiscretions to grievous sins. If your campaign has limited alignments, certain more extreme conflicts will be disabled.</i>\n</item>
+        <item>Minor Failure\nYou failed a friend, family member, or loved one who depended on you to fulfill an important task.</item>
+        <item>Petty Crime\nYou committed a minor crime, like vandalism, trespassing, or mischief.</item>
+        <item>Told a Lie\nYou deliberately made someone believe something that was not true to further your own goals.</item>
+        <item>Broke a Promise\nYou swore an oath or vow that was important to someone else, but you did not keep your promise.</item>
+        <item>Humiliation\nYou publicly humiliated or scandalized someone with either true or slanderous information.</item>
+        <item>Negligence\nYou caused someone else to suffer by your own inaction, disregard, or excessive recklessness.</item>
+        <item>Minor Theft\nYou stole several small or inexpensive items that belonged to someone else.</item>
+        <item>Seducer\nYou tempted or manipulated someone to act in accordance with your whim, careless of whether it was in their own best interests.</item>
+        <item>Cheater\nYou broke a rule, law, contract, or agreement for your own gain.</item>
+        <item>Betrayal\nYou betrayed someone who trusted you.</item>
+        <item>Malign Associates\nYou allied with a destructive creature, organization, or individual.</item>
+        <item>Destroyed a Reputation\nYou deliberately ruined the honor, reputation, or fortunes of another individual or group.</item>
+        <item>Major Theft\nYou stole expensive items.</item>
+        <item>Corrupted an Innocent\nYou counseled an otherwise innocent person who trusted you, toward adverse choices.</item>
+        <item>Blackmailed\nYou used sensitive knowledge or threats to force someone’s cooperation.</item>
+        <item>Destruction\nYou destroyed someone else’s property.</item>
+        <item>Armed Robbery\nYou robbed someone with the threat of violence.</item>
+        <item>Violent Crime\nYou beat, assaulted, or mutilated someone.</item>
+        <item>Murder\nYou killed someone.</item>
+        <item>Mass Murder\nYou killed several sentient beings.</item>
+    </string-array>
+
+    <!-- Conflict Subject Table -->
+    <string-array name="conflictSubject">
+        <item><u>Conflict Subject</u>\n<i>The key person (or people) involved in your conflict. Some subjects may affect your alignment.</i>\n</item>
+        <item>Commoner</item>
+        <item>Merchant</item>
+        <item>Tradesperson</item>
+        <item>Artisan</item>
+        <item>Civic or military official</item>
+        <item>Noble</item>
+        <item>Leader</item>
+        <item>Clergy</item>
+        <item>Soldier or warrior</item>
+        <item>Spellcaster</item>
+        <item>Scoundrel</item>
+        <item>Child or young person</item> <!-- Increase CP by 1 -->
+        <item>Family member</item>
+        <item>Close friend</item>
+        <item>Love or former lover</item> <!-- Roll a d12 instead of a d20 on the Romantic Relationships table -->
+        <item>Enemy or rival</item>
+        <item>Gangster or underworld figure</item>
+        <item>Adventurer</item>
+        <item>Humanoid monster</item>
+        <item>Non-humanoid monster</item>
+    </string-array>
+
+    <!-- Conflict Motivation Table: d10 if any alignment, d8 if non-evil, d4 if good -->
+    <string-array name="conflictMotivation">
+        <item><u>Conflict Motivation</u>\n<i>What compelled this conflict to occur? If your campaign has limited alignments, certain more extreme motivators will be disabled.</i>\n</item>
+        <item>Justice</item>
+        <item>Love</item>
+        <item>Pressured or manipulated</item>
+        <item>Religion</item>
+        <item>Family</item>
+        <item>Money</item>
+        <item>Jealousy</item>
+        <item>Hatred or malice</item>
+        <item>Pleasure</item>
+        <item>Amusement or entertainment</item>
+    </string-array>
+
+    <!-- Conflict Resolution Table: normally decided by player, d7 if any alignment, d6 if non-evil, d4 if good -->
+    <string-array name="conflictResolution">
+        <item><u>Conflict Resolution</u>\n<i>How you dealt with the end results of your conflict and how you feel about it.</i>\n</item>
+        <item>Regret and Penance\nNot only do you regret your action, but you have publicly admitted to it and did your best to make amends for the wrongdoing. Most know of the conflict’s details and those who don’t can easily find them out if they know where to look or whom to ask.</item>
+        <item>Sincere Regret\nThough you feel sincere regret for the event and its memory affects your behavior, it’s still a secret. Only your trusted companions know of the conflict, and they have promised a degree of discretion.</item>
+        <item>Secret Regret\nYou regret the conflict, but go to great lengths to keep it secret and try desperately to forget it ever happened. Only you and maybe a select few people know of your involvement in the conflict.</item>
+        <item>Mixed Feelings\nSometimes you regret the conflict, but other times you feel as if you didn’t have a choice in the matter or that you made the right decision. Most of the time, you just avoid thinking about the conflict. Only you and maybe a select few people know of your involvement.</item>
+        <item>Denial\nYou feel little if any regret, and deny the event mostly so others won’t judge you. Few if any know of your part in the conflict, and your constant denials are meant to keep it that way.</item>
+        <item>No Guilt\nEither guilt is for the weak, or you know you made the right decision. You might not openly brag about your part in the conflict, but you don’t deny it when confronted either.</item>
+        <item>You Enjoyed It\nThose who cling to petty morals have no understanding of what true freedom and power is. The fact is, you enjoyed your part in the conflict and would do it all over again if the opportunity presented itself. Many people know of your misdeed, and they also realize your complete lack of remorse.</item>
+    </string-array>
+
+    <!-- Alignment Determination -->
+    <string-array name="alignmentGenerator">
+        <item><u>Alignment</u>\n<i>Based on the conflict points gathered from your background, a list of possible alignments have been chosen. This has been adjusted based on campaign or class restrictions. Select one of the alignments below that you feel best fits you, all you have done and the reasoning behind your actions.\nThis is who you are in the dark. But alignment is not set in stone, and your future experiences may change you, for better or for worse...</i>\n</item>
+        <item>Lawful Good\nA lawful good character acts as a good person is expected or required to act. They combine a commitment to oppose evil with the discipline to fight relentlessly. They tells the truth, keep their word, help those in need, and speak out against injustice. A lawful good character hates to see the guilty go unpunished.\nLawful good combines honor with compassion.</item>
+        <item>Neutral Good\nA neutral good character does the best that a good person can do. They are devoted to helping others. They work with kings and magistrates but do not feel beholden to authority figures. They excel at seeing both sides of a situation, and use this ability to inform their actions, doing what they believe will produce the most good.\nNeutral good means doing what is good and right without bias for or against order.</item>
+        <item>Chaotic Good\nA chaotic good character acts as their conscience directs them with little regard for what others expect of them. They makes their own way, but are kind and benevolent. They believes in goodness and right but has little use for laws and regulations. They follow their own moral compass, which, although good, may not agree with that of society.\nChaotic good combines a good heart with a free spirit.</item>
+        <item>Lawful Neutral\nA lawful neutral character acts as law, tradition, or a personal code directs them. Order and organization are paramount. They may believe in personal order and live by a code or standard, or they may believe in order for all and favor a strong, organized government.\nLawful neutral means you are reliable and honorable without being a zealot.</item>
+        <item>True Neutral\nA neutral character does what seems to be a good idea. They take no sides in the ideological conflict of good vs evil or law vs chaos. Most neutral characters exhibit a lack of conviction or bias rather than a commitment to neutrality. Such a character probably thinks of good as better than evil - after all, they would rather have good neighbors and rulers than evil ones. Still, they\'re not personally committed to upholding good in any abstract or universal way.\nSome neutral characters, on the other hand, commit themselves philosophically to neutrality. They see good, evil, law, and chaos as prejudices and dangerous extremes. They advocate the middle way of neutrality as the best, most balanced road in the long run.\nNeutral means you act naturally in any situation, without prejudice or compulsion.</item>
+        <item>Chaotic Neutral\nA chaotic neutral character follows their whims, an individualist first and last. They value their own liberty but do not strive to protect the freedom of others. They avoid authority, resent restrictions, and challenge traditions. A chaotic neutral character does not intentionally disrupt organizations as part of a campaign of anarchy. To do so, he would have to be motivated either by good (and a desire to liberate others) or evil (and a desire to make those others suffer). Although unpredictable, they do not act randomly and are not as likely to jump off a bridge as they is to cross it.\nChaotic neutral represents freedom from both society’s restrictions and a do-gooder’s zeal.</item>
+        <item>Lawful Evil\nA lawful evil villain methodically takes what they want within the limits of their code of conduct, but without regard for whom it hurts. They care about tradition, loyalty, and order, but not about freedom, dignity, or life. They play by the rules without mercy or compassion, are comfortable in a hierarchy and would like to rule - but are willing to serve. They condemn others not according to their actions but according to race, religion, homeland, or social rank. Yet they are loath to break laws or promises.\nLawful evil represents methodical, intentional, and organized evil.</item>
+        <item>Neutral Evil\nA neutral evil villain does whatever they can get away with, always out for themselves, pure and simple. They shed no tears for those they kill, whether for profit, sport, or convenience. They have no love of order and hold no illusions that following laws, traditions, or codes would make them any better or more noble. On the other hand, they lack the restless nature or love of conflict that a chaotic evil villain has.\nNeutral evil represents pure evil without honor and without variation.</item>
+        <item>Chaotic Evil\nA chaotic evil character does what their greed, hatred, and lust for destruction drive them to do. They are vicious, arbitrarily violent, and unpredictable. If theu are simply out for whatever they can get, they are ruthless and brutal. If committed to the spread of evil and chaos however, they are even worse. Typically, chaotic evil people can be made to work together only by force, and their leader lasts only as long as they can thwart attempts to topple or assassinate them.\nChaotic evil represents the destruction not only of beauty and life, but also of the order on which beauty and life depend.</item>
+    </string-array>
+
+    <!-- Deity and Religious Philosophy Information -->
+    <string-array name="deityAndReligionInfo">
+        <item><u>Deity and Religious Philosophy</u></item>
+        <item><i>Once you have your alignment, choose a deity or religious philosophy. Association with a specific deity gives you access to a related religion trait.\nEven if you are not interested in your character being associated with a deity, you can choose “No Deity” or “Undecided” granting you access to abilities outside the realm of faith.</i></item>
+        <item>No Deity\nEven in a world filled with the powers of the divine, you have decided to follow reason, put your faith in the potential of mortals, or otherwise invest in the ways of the material world instead of embracing the teachings of deities.\nYou gain access to the <b>Tireless Logic</b> social trait.</item>
+        <item>Undecided\nYou have remained undecided when it comes to your faith, but are accepting of others’ faiths and are at least somewhat open to the idea of joining an organized faith should you find one that strikes your fancy.\nYou gain access to the <b>Ease of Faith</b> faith trait.</item>
+    </string-array>
+
+    <!-- Romantic Relationships Table - may need to use a d12 instead of a d20 for certain backgrounds -->
+    <string-array name="romanticRelationships">
+        <item><u>Romantic Relationships</u>\n<i>You may have had romantic relationships in the past, ranging from true love to flings to a complete lack of experience.\nSome background elements above may influence this roll one way or another depending on if you have an established history with romance or not.</i>\n</item>
+        <item>One Significant Relationship\nYou had a true love once, but that time has passed.</item>
+        <item>A Few Significant Relationships\nYou’ve tried to make deep connections with individuals on several occasions, but it’s never worked out.</item>
+        <item>Several Significant Relationships\nYou’ve engaged in a number of partnerships, but for some reason or another your relationships always fail.</item>
+        <item>Current Lover\nYou are currently involved in a romantic relationship.\nYou gain access to the <b>True Love</b> story feat.</item>
+        <item>Several Inconsequential Relationships\nYou have had many lovers but no long-lasting, meaningful relationships.</item>
+        <item>Experience But No Substantial Relationships\nYou’ve had a fling or two, but have so far shied away from any ties or commitments.</item>
+        <item>No Experience\nYou have never experienced any kind of romantic connection whatsoever.</item>
+    </string-array>
+
+    <!-- Adventurer Bonds/Relationship with Fellow Adventurers Table -->
+    <string-array name="adventurerBonds">
+        <item><u>Relationship with fellow adventurers</u>\n<i>While optional, having something to tie your characters together can often make for a more engaging experience. You may want to go around the group, using your result below to tie you to one character, who then uses their result to tie them to a different character and so on until everyone has a bond or tie.\nFeel free to discard unfitting bonds or make up your own for your campaign.</i>\n</item>
+        <item>Family or close as family—close friends, close/distant relatives, relatives by marriage/adoption</item>
+        <item>Friend of a friend</item>
+        <item>Tavern buddies</item>
+        <item>Hunting companions</item>
+        <item>Business associates, current or former</item>
+        <item>Contractor and employer</item>
+        <item>Former allies</item>
+        <item>Former enemies</item>
+        <item>Friendly competitors</item>
+        <item>Romantic competitors, current or former</item>
+        <item>Know each other by reputation only</item>
+        <item>Former inmates (prison, asylum, or captivity) or former inmate and captor</item>
+        <item>Criminal connections</item>
+        <item>Servants or apprentices to the same master</item>
+        <item>Met on a pilgrimage, caravan, or journey</item>
+        <item>Veterans of a skirmish or war</item>
+        <item>Follow (or followed) the same faith or cult</item>
+        <item>Best friends</item>
+        <item>Gaming or gambling associates</item>
+        <item>From the same hometown or region</item>
+    </string-array>
+
+    <!-- Character Drawback Table -->
+    <string-array name="characterDrawback">
+        <item><u>Character Drawback</u>\n<i>Character drawbacks are emotional weak points—chinks your armor. a drawback gives you a small mechanical penalty and a roleplaying hook. Drawbacks also serve as loopholes in the alignment system. When roleplaying your drawback, you might act well outside the bounds of your alignment within certain situations. If you take a drawback option, you may take three traits you have access to instead of two.\nDiscuss with the GM the details of this drawback, such as what the attachment is or who the person involved might be.</i>\n</item>
+        <item>Attachment (Object)\nYou are attached to a precious possession with immense sentimental value and significance. Without it, you are no longer yourself and are prone to suffer from depression, moodiness, or aggressive behavior.\nYou gain access to the <b>Attached</b> drawback.</item>
+        <item>Attachment (Person)\nYou are attached to a particular person—a friend, family member, or loved one—who means more than anything or anyone in the world. Your thoughts always return to this person.\nYou gain access to the <b>Attached</b> drawback.</item>
+        <item>Family\nYour family means everything to you, and there is nothing you wouldn’t do for them. Maybe your ties extend to your entire clan or bloodline, or perhaps there is one specific member of your family you hold closer than any other.\nYou gain access to the <b>Family Ties</b> drawback.</item>
+        <item>Justice\nUnfairness and injustice are intolerable. Whenever you witness them, you feel compelled to act or speak out. When you’re personally wronged, you require appeasement—or revenge if you don’t receive it.\nYou gain access to the <b>Headstrong</b> drawback.</item>
+        <item>Love\nYour love for someone motivates you. When this person is in danger, you’re prone to feel weak, powerless, or angry.\nYou gain access to the <b>Lovesick</b> drawback.</item>
+        <item>Loyalty\nYou value loyalty over all things. You treasure the friends, associates, and lovers you have earned throughout the years, and when someone breaks your trust or betrays you in some way, you become utterly unhinged.\nYou gain access to the <b>Pride</b> drawback.</item>
+        <item>Material Wealth\nYou have a weakness for material things—money, fine jewelry, exquisite foods, expensive or rare items, and so on. When such riches are within your reach, you’re driven to possess them, and you claim them either as an honest collector or a cunning thief.\nYou gain access to the <b>Avarice</b> drawback.</item>
+        <item>Pleasure\nYou crave luxury, entertainment, and pleasure. You might indulge in every passing fancy or hold strong against a temptation that constantly eats at you.\nYou gain access to the <b>Hedonistic</b> drawback.</item>
+        <item>Power\nYou long for the ability to influence the world around you, whether that’s as small as a village or as large as a plane of reality.\nYou gain access to the <b>Power-Hungry</b> drawback.</item>
+        <item>Pride\nYou present an image to the world that can’t be tarnished. When someone questions your motives, criticizes your actions, or insults your honor or pride, you question his friendship or count him among your enemies until he makes amends.\nYou gain access to the <b>Pride</b> drawback.</item>
+        <item>Race\nYou are truly comfortable only around others of your race, and you have a hard time putting faith or trust in those of races different from your own.\nYou gain access to the <b>Xenophobic</b> drawback.</item>
+        <item>Religion\nYour beliefs are of paramount importance in your life, whether you belong to a temple, follow a cult, or practice a religious philosophy independently. When others question or attack the beliefs, principles, relics, or structures of your faith, you respond with fury.\nYou gain access to the <b>Zealous</b> drawback.</item>
+        <item>Reputation or Fame\nYou’ve worked hard to establish your identity and reputation, and someone who slanders or insults you must answer for it. You strive to promote your identity to the point where everyone knows your reputation.\nYou gain access to the <b>Vain</b> drawback.</item>
+        <item>Safety or Security\nYou are cautious and guarded—wary of others who might harm you, steal from you, or betray your trust. As such, you sleep lightly, always suspecting someone or something to sneak in upon you in the dark. Even when in relationships with people who trust you, there’s always the fear that they harbor hidden agendas or will change and turn against you.\nYou gain access to the <b>Paranoid</b> drawback.</item>
+        <item>Self-Doubt\nNo matter what you do, it’s never good enough. You cannot help but see in your victories many little defeats and failures. If you were stronger, smarter, faster, or more powerful, maybe you could be better. However, stuck in the body and mind you have, you feel you’re destined to fail.\nYou gain access to the <b>Doubt</b> drawback.</item>
+        <item>Social Acceptance\nYou want others to accept you, to believe you’re special and worthy of merit. You are self-conscious about your social flaws and breaches of etiquette. Rejection is among your greatest fears. You might go to extraordinary lengths to be accepted by or seek favor from your peers.\nYou gain access to the <b>Dependent</b> drawback.</item>
+        <item>The Future\nYour concerns lie not with the present, but with preparation for the future. You may be an avid and organized planner, or perhaps you see the signs of a coming dark age or troubled time. You behave cautiously, conservatively, and methodically as you plan for events that might one day occur.\nYou gain access to the <b>Meticulous</b> drawback.</item>
+        <item>The Past\nYou long for the world to return to a past age. You’ve adopted the manners and style of this age, and are fascinated by its customs, relics, and artifacts, and by the historical figures of that time. Perhaps you live so much in this past age that your connection to the present is tenuous. Or your pretentiousness annoys others.\nYou gain access to the <b>Sentimental</b> drawback.</item>
+        <item>Worldview\nIn your eyes, your moral philosophy—your alignment—is the only correct and true way of the world. Perhaps you gently pity, argue with, or brawl with those misguided souls who don’t see the world your way or by your light of reason.\nYou gain access to the <b>Provincial</b> drawback.</item>
+        <item>Youth\nYou reflect upon your youth as a golden time, one ever present in your mind and that refuses to fade into the background. Every day, you feel yourself growing older and closer to your inevitable end. You seek ways to make yourself look and feel young in attempt to rekindle that fire of your adolescence, but despite your attempts, you realize that your time still draws ever nearer.\nYou gain access to the <b>Vain</b> drawback.</item>
+    </string-array>
+
+
+
+    <!-- Legal Information menu item, displays Open Game License stuff -->
+    <string name="legalText"><u>"Introduction"</u>
+        \nThis software uses freely available text and rules licensed under the Open Game License, the bulk of which can be found here:
+        \nhttp://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/backgroundGenerator.html
+        \n
+        \nThis software is not developed or endorsed by Paizo Publishing, LLC.
+        \nPlease consider supporting the official releases of the Pathfinder Roleplaying Game.
+        \n
+        \n<u>Pathfinder Compatibility</u>
+        \nCompatibility with the Pathfinder Roleplaying Game requires the Pathfinder Roleplaying Game from Paizo Publishing, LLC. See http://paizo.com/pathfinderRPG for more information on the Pathfinder Roleplaying Game. Paizo Publishing, LLC does not guarantee compatibility, and does not endorse this product.
+        \n
+        \nPathfinder is a registered trademark of Paizo Publishing, LLC, and the Pathfinder Roleplaying Game and the Pathfinder Roleplaying Game Compatibility Logo are trademarks of Paizo Publishing, LLC, and are used under the Pathfinder Roleplaying Game Compatibility License. See http://paizo.com/pathfinderRPG/compatibility for more information on the compatibility license.
+        \n
+        \nPathfinder and associated marks and logos are trademarks of Paizo Publishing, LLC, and are used under license. See paizo.com/pathfinderRPG for more information on the Pathfinder Roleplaying Game.
+        \n
+        \n<b>Declaration of Open Game Content:</b> All text content of this application is declared Open Game Content as described in Section 1(d) of the Open Game License Version 1.0a.
+        \n
+        \n
+        \n<u>Open Game License Version 1.0a</u>
+        \nThe following text is the property of Wizards of the Coast, Inc. and is Copyright 2000 Wizards of the Coast, Inc (\"Wizards\"). All Rights Reserved.
+        \n
+        \n<b>1. Definitions:</b>
+        \n
+        \na) \"Contributors\" means the copyright and/or trademark owners who have contributed Open Game Content;
+        \n
+        \nb) \"Derivative Material\" means copyrighted material including derivative works and translations (including into other computer languages), potation, modification, correction, addition, extension, upgrade, improvement, compilation, abridgment or other form in which an existing work may be recast, transformed or adapted;
+        \n
+        \nc) \"Distribute\" means to reproduce, license, rent, lease, sell, broadcast, publicly display, transmit or otherwise distribute;
+        \n
+        \nd) \"Open Game Content\" means the game mechanic and includes the methods, procedures, processes and routines to the extent such content does not embody the Product Identity and is an enhancement over the prior art and any additional content clearly identified as Open Game Content by the Contributor, and means any work covered by this License, including translations and derivative works under copyright law, but specifically excludes Product Identity.
+        \n
+        \ne) \"Product Identity\" means product and product line names, logos and identifying marks including trade dress; artifacts, creatures, characters, stories, storylines, plots, thematic elements, dialogue, incidents, language, artwork, symbols, designs, depictions, likenesses, formats, poses, concepts, themes and graphic, photographic and other visual or audio representations; names and descriptions of characters, spells, enchantments, personalities, teams, personas, likenesses and special abilities; places, locations, environments, creatures, equipment, magical or supernatural abilities or effects, logos, symbols, or graphic designs; and any other trademark or registered trademark clearly identified as Product identity by the owner of the Product Identity, and which specifically excludes the Open Game Content;
+        \n
+        \nf) \"Trademark\" means the logos, names, mark, sign, motto, designs that are used by a Contributor to identify itself or its products or the associated products contributed to the Open Game License by the Contributor
+        \n
+        \ng) \"Use\", \"Used\" or \"Using\" means to use, Distribute, copy, edit, format, modify, translate and otherwise create Derivative Material of Open Game Content.
+        \n
+        \nh) \"You\" or \"Your\" means the licensee in terms of this agreement.
+        \n
+        \n<b>2. The License:</b> This License applies to any Open Game Content that contains a notice indicating that the Open Game Content may only be Used under and in terms of this License. You must affix such a notice to any Open Game Content that you Use. No terms may be added to or subtracted from this License except as described by the License itself. No other terms or conditions may be applied to any Open Game Content distributed using this License.
+        \n
+        \n<b>3. Offer and Acceptance:</b> By Using the Open Game Content You indicate Your acceptance of the terms of this License.
+        \n
+        \n<b>4. Grant and Consideration:</b> In consideration for agreeing to use this License, the Contributors grant You a perpetual, worldwide, royalty-free, non-exclusive license with the exact terms of this License to Use, the Open Game Content.
+        \n
+        \n<b>5. Representation of Authority to Contribute:</b> If You are contributing original material as Open Game Content, You represent that Your Contributions are Your original creation and/or You have sufficient rights to grant the rights conveyed by this License.
+        \n
+        \n<b>6. Notice of License Copyright:</b> You must update the COPYRIGHT NOTICE portion of this License to include the exact text of the COPYRIGHT NOTICE of any Open Game Content You are copying, modifying or distributing, and You must add the title, the copyright date, and the copyright holder’s name to the COPYRIGHT NOTICE of any original Open Game Content you Distribute.
+        \n
+        \n<b>7. Use of Product Identity:</b> You agree not to Use any Product Identity, including as an indication as to compatibility, except as expressly licensed in another, independent Agreement with the owner of each element of that Product Identity. You agree not to indicate compatibility or co-adaptability with any Trademark or Registered Trademark in conjunction with a work containing Open Game Content except as expressly licensed in another, independent Agreement with the owner of such Trademark or Registered Trademark. The use of any Product Identity in Open Game Content does not constitute a challenge to the ownership of that Product Identity. The owner of any Product Identity used in Open Game Content shall retain all rights, title and interest in and to that Product Identity.
+        \n
+        \n<b>8. Identification:</b> If you distribute Open Game Content You must clearly indicate which portions of the work that you are distributing are Open Game Content.
+        \n
+        \n<b>9. Updating the License:</b> Wizards or its designated Agents may publish updated versions of this License. You may use any authorized version of this License to copy, modify and distribute any Open Game Content originally distributed under any version of this License.
+        \n
+        \n<b>10. Copy of this License:</b> You MUST include a copy of this License with every copy of the Open Game Content You distribute.
+        \n
+        \n<b>11. Use of Contributor Credits:</b> You may not market or advertise the Open Game Content using the name of any Contributor unless You have written permission from the Contributor to do so.
+        \n
+        \n<b>12. Inability to Comply:</b> If it is impossible for You to comply with any of the terms of this License with respect to some or all of the Open Game Content due to statute, judicial order, or governmental regulation then You may not Use any Open Game Material so affected.
+        \n
+        \n<b>13. Termination:</b> This License will terminate automatically if You fail to comply with all terms herein and fail to cure such breach within 30 days of becoming aware of the breach. All sublicenses shall survive the termination of this License.
+        \n
+        \n<b>14. Reformation:</b> If any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable.
+        \n
+        \n<b>15. Copyright Notice:</b>
+        \n
+        \n<i>Pathfinder Roleplaying Game: Ultimate Campaign</i> © 2013, Paizo Publishing, LLC;
+        \nAuthors: Jesse Benner, Benjamin Bruck, Jason Bulmahn, Ryan Costello, Adam Daigle, Matt Goetz, Tim Hitchcock, James Jacobs, Ryan Macklin, Colin McComb, Jason Nelson, Richard Pett, Stephen Radney-MacFarland, Patrick Renie, Sean K Reynolds, F. Wesley Schneider, James L. Sutter, Russ Taylor, and Stephen Townshend.
+    </string>
+
+</resources>

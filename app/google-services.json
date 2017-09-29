@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "857457253532",
+    "firebase_url": "https://pathfinderbackgroundgenerator.firebaseio.com",
+    "project_id": "pathfinderbackgroundgenerator",
+    "storage_bucket": "pathfinderbackgroundgenerator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857457253532:android:15fcdc607ec774b6",
+        "android_client_info": {
+          "package_name": "com.hokaze.pathfinderbackgroundgenerator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857457253532-op5g4magvogtmuo9k8tu7uubvm1hm64d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hokaze.pathfinderbackgroundgenerator",
+            "certificate_hash": "997f164e2feb6cc5b8020df9bf1e99faf86f832a"
+          }
+        },
+        {
+          "client_id": "857457253532-h9h3vot33j2cac5fi78odaof4b5b99da.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hokaze.pathfinderbackgroundgenerator",
+            "certificate_hash": "f6a2b8ddb13555953178802e1c8172b1a7f84785"
+          }
+        },
+        {
+          "client_id": "857457253532-ehjcurfbnpg1p88s045guh1ggq448m1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPF5uzxLlGqMfuYYRp75Oj0PNE-W6-Q14"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857457253532-ehjcurfbnpg1p88s045guh1ggq448m1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
