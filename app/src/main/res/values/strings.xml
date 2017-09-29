@@ -61,6 +61,14 @@
         \n"When you gain access to a story feat, it means you've met the prerequisite for the feat and can take it at any time, not just at character creation."
     </string>
 
+    <!-- Physical Description Strings: used for sex, age, height, weight, etc -->
+    <string-array name="physicalDescription">
+        <item><big><u>Physical Appearance</u></big></item>
+        <item>You appear to be %1$s, and are %2$d years old.</item>
+        <item>You stand at %1$d feet and %2$d inches tall.</item>
+        <item>You weigh %1$d pounds.</item>
+    </string-array>
+
     <!-- Section headers -->
     <string-array name="sectionHeaders">
         <item><big><u>Homeland, Family, and Childhood</u></big></item>

@@ -1,12 +1,9 @@
 package com.hokaze.pathfinderbackgroundgenerator;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvResults;
     private Spinner spinRace, spinClass, spinAlignment;
 
-    private String playerRace, playerClass, allowedAlignments;
+    private String playerRace, playerClass, allowedAlignments, apparentSex;
     private int d100, d20, arrayIndex, bioSiblings, adoptSiblings, halfSiblings, conflictPoints;
+    int classAge, characterAge, heightFt, heightIn, weightLb;
     private Random ran;
     private Boolean lowerClass, noble, adopted, adoptedOutsideRace, criminal, forLove, alignNonLawful, alignNeutral, alignLawful, alignGood, noValidAlignments;
     private Boolean finalAlignments[] = new Boolean[9];
@@ -67,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
 
         // Obtain the FirebaseAnalytics instance.
@@ -126,6 +123,16 @@ public class MainActivity extends AppCompatActivity {
                 // BEGIN THE RANDOM TABLES
                 ran = new Random();
                 tvResults.setText("");
+
+
+                //-----------------------------//
+                // STEP 0: Physical Appearance //
+                //-----------------------------//
+                physicalSex();
+                classAgeCategory();
+                racialAgeWeightHeight();
+                displayPhysicalAttributes();
+
 
                 //----------------------------------------//
                 // Step 1: Homeland, Family and Childhood //
@@ -276,9 +283,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //-----------------------------------------//
-    // Helper functions for random table rolls //
-    //-----------------------------------------//
+    //-----------------------------------------------------//
+    // Helper functions for generator's random table rolls //
+    //-----------------------------------------------------//
 
     // Homeland, Family and Childhood Tables
 
@@ -2034,7 +2041,107 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
 
-    // Show information dialog from menu
+
+    //------------------------------------------------------------------------------------------//
+    // Helper functions for table rolling not found in the original Ultimate Campaign generator //
+    //------------------------------------------------------------------------------------------//
+
+    // Random physical attributes - sourced from Core Rulebook, Advanced Race Guide and original content
+    private void physicalSex() {
+        // May eventually do something fancier with a sex/gender split and support for non-binary folks, but for now...simplicity
+        int randomSex = 0;
+        randomSex = ran.nextInt(2)+1;
+        if (randomSex == 1) {
+            apparentSex = "Male";
+        }
+        else {
+            apparentSex = "Female";
+        }
+    }
+    private void classAgeCategory() {
+        // Intuitive Classes - youngest
+        if ("Barbarian".equals(playerClass)||"Oracle".equals(playerClass)||"Rogue".equals(playerClass)||"Sorcerer".equals(playerClass)) {
+            classAge = 1;
+        }
+        // Trained Classes - oldest
+        else if ("Alchemists".equals(playerClass)||"Cleric".equals(playerClass)||"Druid".equals(playerClass)||"Inquisitor".equals(playerClass)||"Magus".equals(playerClass)||"Monk".equals(playerClass)||"Wizard".equals(playerClass)) {
+            classAge = 3;
+        }
+        // Self-Taught Classes - largest group, so left until last to reduce needless string comparisons
+        else {
+            classAge = 2;
+        }
+
+    }
+    private void racialAgeWeightHeight() {
+        // Determines Age, Weight and Height for races, using the ARG Random Tables
+        int numberOfDice, sizeOfDize; // no and type of dice to roll for age, weight, height
+        int heightMod = 0, weightMult;
+
+        if ("Dwarf".equals(playerRace)) {
+            // Age
+            characterAge = 40; // Adulthood is our starting age by default
+            if (classAge == 1) {
+                numberOfDice = 3; sizeOfDize = 6; // 3d6
+            }
+            else if (classAge == 2) {
+                numberOfDice = 5; sizeOfDize = 6; // 5d6
+            }
+            else {
+                numberOfDice = 7; sizeOfDize = 6; // 7d6
+            }
+            for (int i = 0; i < numberOfDice; i++) { // Rolls assigned no of n sided dice
+                characterAge += ran.nextInt(sizeOfDize)+1;
+            }
+
+            // Height and Weight
+            if (apparentSex == "Male") { // MALE
+                heightFt = 3; heightIn = 9; weightLb = 150;
+                numberOfDice = 2; sizeOfDize = 4; // 2d4
+                weightMult = 7;
+            }
+            else { // FEMALE
+                heightFt = 3; heightIn = 7; weightLb = 120;
+                numberOfDice = 2; sizeOfDize = 4; // 2d4
+                weightMult = 7;
+            }
+            for (int i = 0; i < numberOfDice; i++) {
+                heightMod += ran.nextInt(sizeOfDize)+1;
+            }
+            heightIn += heightMod;
+            weightLb += (heightMod * weightMult);
+            while (heightIn > 12) { // 12 inches to a foot, so need to start converting to ft
+                heightFt += 1;
+                heightIn -= 12;
+            }
+        }
+
+        // TODO: Other races
+
+    }
+    private void displayPhysicalAttributes() {
+        String sexStr, heightStr, weightStr; // helper vars for string manipulation
+        tvResults.append(getResources().getTextArray(R.array.physicalDescription)[0]+"\n"); // Print header
+
+        // Gender & Age
+        sexStr = getResources().getTextArray(R.array.physicalDescription)[1].toString(); // Need to insert variables into string resource to replace "%1$d" and other variable placeholder tokens
+        tvResults.append(String.format(sexStr, apparentSex, characterAge)+"\n");
+        // Height
+        heightStr = getResources().getTextArray(R.array.physicalDescription)[2].toString();
+        tvResults.append(String.format(heightStr, heightFt, heightIn)+"\n");
+        // Weight
+        weightStr = getResources().getTextArray(R.array.physicalDescription)[3].toString();
+        tvResults.append(String.format(weightStr, weightLb)+"\n");
+        tvResults.append("\n\n");
+
+    }
+
+
+    //-------------//
+    // GUI Helpers //
+    //-------------//
+
+    // Dialogs from actionbar menu in top-right
     private void showHelpDialog() {
         final Dialog dialog = new Dialog(MainActivity.this);
 
