@@ -2095,12 +2095,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
             // Height and Weight
-            if (apparentSex == "Male") { // MALE
+            if (apparentSex == "Male") {
                 heightFt = 3; heightIn = 9; weightLb = 150;
                 numberOfDice = 2; sizeOfDize = 4; // 2d4
                 weightMult = 7;
             }
-            else { // FEMALE
+            else {
                 heightFt = 3; heightIn = 7; weightLb = 120;
                 numberOfDice = 2; sizeOfDize = 4; // 2d4
                 weightMult = 7;
@@ -2116,23 +2116,251 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        // TODO: Other races
+        else if ("Elf".equals(playerRace)) {
+            // Age
+            characterAge = 110; // Adulthood is our starting age by default
+            if (classAge == 1) {
+                numberOfDice = 4; sizeOfDize = 6; // 4d6
+            }
+            else if (classAge == 2) {
+                numberOfDice = 6; sizeOfDize = 6; // 6d6
+            }
+            else {
+                numberOfDice = 10; sizeOfDize = 6; // 10d6
+            }
+            for (int i = 0; i < numberOfDice; i++) { // Rolls assigned no of n sided dice
+                characterAge += ran.nextInt(sizeOfDize)+1;
+            }
 
+            // Height and Weight
+            if (apparentSex == "Male") {
+                heightFt = 5; heightIn = 4; weightLb = 100;
+                numberOfDice = 2; sizeOfDize = 8; // 2d8
+                weightMult = 3;
+            }
+            else {
+                heightFt = 5; heightIn = 4; weightLb = 90;
+                numberOfDice = 2; sizeOfDize = 6; // 2d6
+                weightMult = 3;
+            }
+            for (int i = 0; i < numberOfDice; i++) {
+                heightMod += ran.nextInt(sizeOfDize)+1;
+            }
+            heightIn += heightMod;
+            weightLb += (heightMod * weightMult);
+            while (heightIn > 12) { // 12 inches to a foot, so need to start converting to ft
+                heightFt += 1;
+                heightIn -= 12;
+            }
+        }
+
+        else if ("Gnome".equals(playerRace)) {
+            // Age
+            characterAge = 40; // Adulthood is our starting age by default
+            if (classAge == 1) {
+                numberOfDice = 4; sizeOfDize = 6; // 4d6
+            }
+            else if (classAge == 2) {
+                numberOfDice = 6; sizeOfDize = 6; // 6d6
+            }
+            else {
+                numberOfDice = 9; sizeOfDize = 6; // 9d6
+            }
+            for (int i = 0; i < numberOfDice; i++) { // Rolls assigned no of n sided dice
+                characterAge += ran.nextInt(sizeOfDize)+1;
+            }
+
+            // Height and Weight
+            if (apparentSex == "Male") {
+                heightFt = 3; heightIn = 0; weightLb = 35;
+                numberOfDice = 2; sizeOfDize = 4; // 2d4
+                weightMult = 1;
+            }
+            else {
+                heightFt = 2; heightIn = 10; weightLb = 30;
+                numberOfDice = 2; sizeOfDize = 4; // 2d4
+                weightMult = 1;
+            }
+            for (int i = 0; i < numberOfDice; i++) {
+                heightMod += ran.nextInt(sizeOfDize)+1;
+            }
+            heightIn += heightMod;
+            weightLb += (heightMod * weightMult);
+            while (heightIn > 12) { // 12 inches to a foot, so need to start converting to ft
+                heightFt += 1;
+                heightIn -= 12;
+            }
+        }
+
+        else if ("Half-Elf".equals(playerRace)) {
+            // Age
+            characterAge = 20; // Adulthood is our starting age by default
+            if (classAge == 1) {
+                numberOfDice = 1; sizeOfDize = 6; // 1d6
+            }
+            else if (classAge == 2) {
+                numberOfDice = 2; sizeOfDize = 6; // 2d6
+            }
+            else {
+                numberOfDice = 3; sizeOfDize = 6; // 3d6
+            }
+            for (int i = 0; i < numberOfDice; i++) { // Rolls assigned no of n sided dice
+                characterAge += ran.nextInt(sizeOfDize)+1;
+            }
+
+            // Height and Weight
+            if (apparentSex == "Male") {
+                heightFt = 5; heightIn = 2; weightLb = 110;
+                numberOfDice = 2; sizeOfDize = 8; // 2d8
+                weightMult = 5;
+            }
+            else {
+                heightFt = 5; heightIn = 0; weightLb = 90;
+                numberOfDice = 2; sizeOfDize = 8; // 2d8
+                weightMult = 5;
+            }
+            for (int i = 0; i < numberOfDice; i++) {
+                heightMod += ran.nextInt(sizeOfDize)+1;
+            }
+            heightIn += heightMod;
+            weightLb += (heightMod * weightMult);
+            while (heightIn > 12) { // 12 inches to a foot, so need to start converting to ft
+                heightFt += 1;
+                heightIn -= 12;
+            }
+        }
+
+        else if ("Half-Orc".equals(playerRace)) {
+            // Age
+            characterAge = 14; // Adulthood is our starting age by default
+            if (classAge == 1) {
+                numberOfDice = 1; sizeOfDize = 4; // 1d4
+            }
+            else if (classAge == 2) {
+                numberOfDice = 1; sizeOfDize = 6; // 1d6
+            }
+            else {
+                numberOfDice = 2; sizeOfDize = 6; // 2d6
+            }
+            for (int i = 0; i < numberOfDice; i++) { // Rolls assigned no of n sided dice
+                characterAge += ran.nextInt(sizeOfDize)+1;
+            }
+
+            // Height and Weight
+            if (apparentSex == "Male") {
+                heightFt = 4; heightIn = 10; weightLb = 150;
+                numberOfDice = 2; sizeOfDize = 12; // 2d12
+                weightMult = 7;
+            }
+            else {
+                heightFt = 4; heightIn = 5; weightLb = 110;
+                numberOfDice = 2; sizeOfDize = 12; // 2d12
+                weightMult = 7;
+            }
+            for (int i = 0; i < numberOfDice; i++) {
+                heightMod += ran.nextInt(sizeOfDize)+1;
+            }
+            heightIn += heightMod;
+            weightLb += (heightMod * weightMult);
+            while (heightIn > 12) { // 12 inches to a foot, so need to start converting to ft
+                heightFt += 1;
+                heightIn -= 12;
+            }
+        }
+
+        else if ("Halfling".equals(playerRace)) {
+            // Age
+            characterAge = 20; // Adulthood is our starting age by default
+            if (classAge == 1) {
+                numberOfDice = 2; sizeOfDize = 4; // 2d4
+            }
+            else if (classAge == 2) {
+                numberOfDice = 3; sizeOfDize = 6; // 3d6
+            }
+            else {
+                numberOfDice = 4; sizeOfDize = 6; // 4d6
+            }
+            for (int i = 0; i < numberOfDice; i++) { // Rolls assigned no of n sided dice
+                characterAge += ran.nextInt(sizeOfDize)+1;
+            }
+
+            // Height and Weight
+            if (apparentSex == "Male") {
+                heightFt = 2; heightIn = 8; weightLb = 30;
+                numberOfDice = 2; sizeOfDize = 4; // 2d4
+                weightMult = 1;
+            }
+            else {
+                heightFt = 2; heightIn = 6; weightLb = 25;
+                numberOfDice = 2; sizeOfDize = 4; // 2d4
+                weightMult = 1;
+            }
+            for (int i = 0; i < numberOfDice; i++) {
+                heightMod += ran.nextInt(sizeOfDize)+1;
+            }
+            heightIn += heightMod;
+            weightLb += (heightMod * weightMult);
+            while (heightIn > 12) { // 12 inches to a foot, so need to start converting to ft
+                heightFt += 1;
+                heightIn -= 12;
+            }
+        }
+
+        else if ("Human".equals(playerRace)) {
+            // Age
+            characterAge = 15; // Adulthood is our starting age by default
+            if (classAge == 1) {
+                numberOfDice = 1; sizeOfDize = 4; // 1d4
+            }
+            else if (classAge == 2) {
+                numberOfDice = 1; sizeOfDize = 6; // 1d6
+            }
+            else {
+                numberOfDice = 2; sizeOfDize = 6; // 2d6
+            }
+            for (int i = 0; i < numberOfDice; i++) { // Rolls assigned no of n sided dice
+                characterAge += ran.nextInt(sizeOfDize)+1;
+            }
+
+            // Height and Weight
+            if (apparentSex == "Male") {
+                heightFt = 4; heightIn = 10; weightLb = 120;
+                numberOfDice = 2; sizeOfDize = 10; // 2d10
+                weightMult = 5;
+            }
+            else {
+                heightFt = 4; heightIn = 5; weightLb = 85;
+                numberOfDice = 2; sizeOfDize = 10; // 2d10
+                weightMult = 5;
+            }
+            for (int i = 0; i < numberOfDice; i++) {
+                heightMod += ran.nextInt(sizeOfDize)+1;
+            }
+            heightIn += heightMod;
+            weightLb += (heightMod * weightMult);
+            while (heightIn > 12) { // 12 inches to a foot, so need to start converting to ft
+                heightFt += 1;
+                heightIn -= 12;
+            }
+        }
     }
     private void displayPhysicalAttributes() {
         String sexStr, heightStr, weightStr; // helper vars for string manipulation
-        tvResults.append(getResources().getTextArray(R.array.physicalDescription)[0]+"\n"); // Print header
+        tvResults.append(getResources().getTextArray(R.array.physicalDescription)[0]); // Print header
+        tvResults.append("\n");
 
         // Sex & Age
         sexStr = getResources().getTextArray(R.array.physicalDescription)[1].toString(); // Need to insert variables into string resource to replace "%1$d" and other variable placeholder tokens
-        tvResults.append(String.format(sexStr, apparentSex, characterAge)+"\n");
+        tvResults.append(String.format(sexStr, apparentSex, characterAge));
+        tvResults.append("\n"); // Add a newline seperately, as including it with a formatted append (italics, bold, etc) may strip formatting
         // Height
         heightStr = getResources().getTextArray(R.array.physicalDescription)[2].toString();
-        tvResults.append(String.format(heightStr, heightFt, heightIn)+"\n");
+        tvResults.append(String.format(heightStr, heightFt, heightIn));
+        tvResults.append("\n");
         // Weight
         weightStr = getResources().getTextArray(R.array.physicalDescription)[3].toString();
-        tvResults.append(String.format(weightStr, weightLb)+"\n");
-        tvResults.append("\n\n");
+        tvResults.append(String.format(weightStr, weightLb));
+        tvResults.append("\n\n\n");
 
     }
 
