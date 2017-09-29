@@ -67,6 +67,247 @@
         <item>You appear to be %1$s, and are %2$d years old.</item>
         <item>You stand at %1$d feet and %2$d inches tall.</item>
         <item>You weigh %1$d pounds.</item>
+        <item>Your hair is %1$s.\nYour eyes are %2$s.</item>
+    </string-array>
+
+    <!-- Colours of hair and eyes, seperated by race. Standard is used by most races -->
+    <string-array name="dwarfHair">
+        <item>pitch black</item>
+        <item>leather black</item>
+        <item>dark brown</item>
+        <item>caramel brown</item>
+        <item>medium auburn</item>
+        <item>light auburn</item>
+        <item>light ash brown</item>
+        <item>golden brown</item>
+        <item>a shocking red</item>
+        <item>as grey as iron</item>
+    </string-array>
+    <string-array name="elfHair">
+        <item>light ash brown</item>
+        <item>light auburn</item>
+        <item>caramel blonde</item>
+        <item>a golden blonde</item>
+        <item>dirty blonde</item>
+        <item>as yellow as the sun</item>
+        <item>platinum</item>
+        <item>pure snow white</item>
+    </string-array>
+    <string-array name="gnomeHair">
+        <item>pitch black</item>
+        <item>leather black</item>
+        <item>dark brown</item>
+        <item>caramel brown</item>
+        <item>medium auburn</item>
+        <item>light auburn</item>
+        <item>light ash brown</item>
+        <item>golden brown</item>
+        <item>light auburn</item>
+        <item>caramel blonde</item>
+        <item>a golden blonde</item>
+        <item>dirty blonde</item>
+        <item>platinum</item>
+        <item>a shocking red</item>
+        <item>as grey as iron</item>
+        <item>ginger</item>
+        <item>pure snow white</item>
+        <item>bubblegum pink</item>
+        <item>plum purple</item>
+        <item>electric blue</item>
+        <item>a startling violet</item>
+        <item>cyan</item>
+        <item>as deep and blue as the ocean</item>
+        <item>bright green</item>
+        <item>olive green</item>
+        <item>a luminous lime</item>
+        <item>salmon-coloured</item>
+        <item>an outrageously loud shade of orange</item>
+        <item>a mixture of sheer darkness and crimson</item>
+        <item>maroon</item>
+        <item>apple green</item>
+        <item>shimmering silver</item>
+        <item>insanely enough, indigo</item>
+        <item>a lovely shade of lilac</item>
+        <item>golden, spiky and defying gravity</item>
+        <item>a complete mess, with a dizzying variety of colours</item>
+        <item>a different colour every time you look at it</item>
+        <item>streaked with all the colours of the rainbow</item>
+    </string-array>
+    <string-array name="halfElfHair">
+        <item>pitch black</item>
+        <item>leather black</item>
+        <item>dark brown</item>
+        <item>caramel brown</item>
+        <item>medium auburn</item>
+        <item>light auburn</item>
+        <item>light ash brown</item>
+        <item>golden brown</item>
+        <item>light auburn</item>
+        <item>caramel blonde</item>
+        <item>a golden blonde</item>
+        <item>dirty blonde</item>
+        <item>platinum</item>
+        <item>pure snow white</item>
+        <item>as grey as iron</item>
+    </string-array>
+    <string-array name="halfOrcHair">
+        <item>pitch black</item>
+        <item>leather black</item>
+        <item>medium auburn</item>
+        <item>dark brown</item>
+        <item>a mixture of sheer darkness and crimson</item>
+        <item>as grey as iron</item>
+        <item>a shocking red</item>
+    </string-array>
+    <string-array name="halflingHair">
+        <item>dark brown</item>
+        <item>caramel brown</item>
+        <item>medium auburn</item>
+        <item>light auburn</item>
+        <item>light ash brown</item>
+        <item>golden brown</item>
+        <item>light auburn</item>
+        <item>caramel blonde</item>
+        <item>a golden blonde</item>
+        <item>dirty blonde</item>
+        <item>ginger</item>
+    </string-array>
+    <string-array name="humanHair">
+        <item>pitch black</item>
+        <item>leather black</item>
+        <item>dark brown</item>
+        <item>caramel brown</item>
+        <item>medium auburn</item>
+        <item>light auburn</item>
+        <item>light ash brown</item>
+        <item>golden brown</item>
+        <item>light auburn</item>
+        <item>caramel blonde</item>
+        <item>a golden blonde</item>
+        <item>dirty blonde</item>
+        <item>platinum</item>
+        <item>a shocking red</item>
+        <item>as grey as iron</item>
+        <item>ginger</item>
+    </string-array>
+    <string-array name="dwarfEyes">
+        <item>a beady black</item>
+        <item>dark brown, almost black</item>
+        <item>a light brown</item>
+        <item>brown and bold</item>
+        <item>an unreadably flat brown</item>
+        <item>electric blue</item>
+        <item>cold-steel grey</item>
+    </string-array>
+    <string-array name="elfEyes">
+        <item>black as midnight</item>
+        <item>dark brown, almost black</item>
+        <item>as deep and blue as the ocean</item>
+        <item>carry the dark blue depths of the sea</item>
+        <item>bright green</item>
+        <item>sparkling with an emerald green</item>
+        <item>as green as the rolling hills</item>
+        <item>an ever-shifting hazel</item>
+    </string-array>
+    <string-array name="gnomeEyes">
+        <item>a beady black</item>
+        <item>solid white</item>
+        <item>bubblegum pink</item>
+        <item>plum purple</item>
+        <item>electric blue</item>
+        <item>a startling violet</item>
+        <item>cyan</item>
+        <item>olive green</item>
+        <item>a luminous lime</item>
+        <item>salmon-coloured</item>
+        <item>an outrageously loud shade of orange</item>
+        <item>maroon</item>
+        <item>apple green</item>
+        <item>shimmering silver</item>
+        <item>a vivid indigo</item>
+        <item>lilac with speckles of lavender</item>
+        <item>a startling violet</item>
+        <item>amber with a copperish tint</item>
+        <item>a bright golden amber</item>
+        <item>shining, all sunny and yellow</item>
+        <item>as deep and blue as the ocean</item>
+        <item>carry the dark blue depths of the sea</item>
+        <item>electric blue</item>
+        <item>dark brown, almost black</item>
+        <item>a light brown</item>
+        <item>brown and bold</item>
+        <item>an unreadably flat brown</item>
+        <item>a soft blue-grey</item>
+        <item>cold-steel grey</item>
+        <item>bright green</item>
+        <item>sparkling with an emerald green</item>
+        <item>as green as the rolling hills</item>
+        <item>an ever-shifting hazel</item>
+        <item>hazel speckled with gold</item>
+        <item>small, with a hint of blue shining from the darkness</item>
+        <item>an angry, constantly blazing red</item>
+        <item>a different colour every time you look at them</item>
+    </string-array>
+    <string-array name="halfElfEyes">
+        <item>a startling violet</item>
+        <item>amber with a copperish tint</item>
+        <item>a bright golden amber</item>
+        <item>shining, all sunny and yellow</item>
+        <item>as deep and blue as the ocean</item>
+        <item>carry the dark blue depths of the sea</item>
+        <item>electric blue</item>
+        <item>dark brown, almost black</item>
+        <item>a light brown</item>
+        <item>brown and bold</item>
+        <item>an unreadably flat brown</item>
+        <item>a soft blue-grey</item>
+        <item>cold-steel grey</item>
+        <item>bright green</item>
+        <item>sparkling with an emerald green</item>
+        <item>as green as the rolling hills</item>
+        <item>an ever-shifting hazel</item>
+        <item>hazel speckled with gold</item>
+        <item>unblinking, crimson, wary</item>
+    </string-array>
+    <string-array name="halfOrcEyes">
+        <item>a beady black</item>
+        <item>black as midnight</item>
+        <item>dark brown, almost black</item>
+        <item>brown and bold</item>
+        <item>an unreadably flat brown</item>
+        <item>small, with a hint of blue shining from the darkness</item>
+        <item>an angry, constantly blazing red</item>
+        <item>nothing but squinted pinpricks of red</item>
+        <item>unblinking, crimson, wary</item>
+    </string-array>
+    <string-array name="halflingEyes">
+        <item>a bright golden amber</item>
+        <item>shining, all sunny and yellow</item>
+        <item>as deep and blue as the ocean</item>
+        <item>carry the dark blue depths of the sea</item>
+        <item>electric blue</item>
+        <item>a light brown</item>
+        <item>a soft blue-grey</item>
+        <item>cold-steel grey</item>
+        <item>bright green</item>
+        <item>as green as the rolling hills</item>
+        <item>sparkling with an emerald green</item>
+        <item>an ever-shifting hazel</item>
+    </string-array>
+    <string-array name="humanEyes">
+        <item>amber with a copperish tint</item>
+        <item>a bright golden amber</item>
+        <item>as deep and blue as the ocean</item>
+        <item>carry the dark blue depths of the sea</item>
+        <item>electric blue</item>
+        <item>dark brown, almost black</item>
+        <item>a light brown</item>
+        <item>brown and bold</item>
+        <item>an unreadably flat brown</item>
+        <item>cold-steel grey</item>
+        <item>bright green</item>
+        <item>an ever-shifting hazel</item>
+        <item>hazel speckled with gold</item>
     </string-array>
 
     <!-- Section headers -->

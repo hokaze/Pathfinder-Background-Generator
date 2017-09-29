@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
@@ -128,11 +127,14 @@ public class MainActivity extends AppCompatActivity {
                 //-----------------------------//
                 // STEP 0: Physical Appearance //
                 //-----------------------------//
+                // Generates data from ARG tables
                 physicalSex();
                 classAgeCategory();
                 racialAgeWeightHeight();
-                displayPhysicalAttributes();
-
+                // Formats and prints
+                physicalAttributes();
+                // Eye/Hair colour, adjusted by race
+                eyesAndHair();
 
                 //----------------------------------------//
                 // Step 1: Homeland, Family and Childhood //
@@ -2344,7 +2346,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    private void displayPhysicalAttributes() {
+    private void physicalAttributes() {
         String sexStr, heightStr, weightStr; // helper vars for string manipulation
         tvResults.append(getResources().getTextArray(R.array.physicalDescription)[0]); // Print header
         tvResults.append("\n");
@@ -2360,10 +2362,49 @@ public class MainActivity extends AppCompatActivity {
         // Weight
         weightStr = getResources().getTextArray(R.array.physicalDescription)[3].toString();
         tvResults.append(String.format(weightStr, weightLb));
-        tvResults.append("\n\n\n");
-
+        tvResults.append("\n");
     }
+    private void eyesAndHair() {
+        // Each race has an array of strings for their eye and hair colours to draw from
+        String[] hairArray, eyeArray;
 
+        if ("Dwarf".equals(playerRace)) {
+            hairArray = getResources().getStringArray(R.array.dwarfHair);
+            eyeArray = getResources().getStringArray(R.array.dwarfEyes);
+        }
+        else if ("Elf".equals(playerRace)) {
+            hairArray = getResources().getStringArray(R.array.elfHair);
+            eyeArray = getResources().getStringArray(R.array.elfEyes);
+        }
+        else if ("Gnome".equals(playerRace)) {
+            hairArray = getResources().getStringArray(R.array.gnomeHair);
+            eyeArray = getResources().getStringArray(R.array.gnomeEyes);
+        }
+        else if ("Half-Elf".equals(playerRace)) {
+            hairArray = getResources().getStringArray(R.array.halfElfHair);
+            eyeArray = getResources().getStringArray(R.array.halfElfEyes);
+        }
+        else if ("Half-Orc".equals(playerRace)) {
+            hairArray = getResources().getStringArray(R.array.halfOrcHair);
+            eyeArray = getResources().getStringArray(R.array.halfOrcEyes);
+        }
+        else if ("Halfling".equals(playerRace)) {
+            hairArray = getResources().getStringArray(R.array.halflingHair);
+            eyeArray = getResources().getStringArray(R.array.halflingEyes);
+        }
+        else {
+            hairArray = getResources().getStringArray(R.array.humanHair);
+            eyeArray = getResources().getStringArray(R.array.humanEyes);
+        }
+
+        // Randomly select from the arrays - currently doesn't bias the probabilities towards "normal" results
+        String hairColour = hairArray[ran.nextInt(hairArray.length)];
+        String eyeColour = eyeArray[ran.nextInt(eyeArray.length)];
+
+        String appearanceStr = getResources().getTextArray(R.array.physicalDescription)[4].toString();
+        tvResults.append(String.format(appearanceStr, hairColour, eyeColour));
+        tvResults.append("\n\n\n");
+    }
 
     //-------------//
     // GUI Helpers //
