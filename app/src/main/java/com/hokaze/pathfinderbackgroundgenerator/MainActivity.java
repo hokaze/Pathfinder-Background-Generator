@@ -1031,7 +1031,7 @@ public class MainActivity extends AppCompatActivity {
             // Races beyond this point only inhibit single values instead of ranges
             // e.g Ifrit = 82 = arrayIndex18, Kitsune = 83 = arrayIndex19, ..., Wayang = 100 = arrayIndex36
             else {
-                arrayIndex = d100 - 64;
+                arrayIndex = d100 - 65; // BUGFIX: use -65, NOT -64, due to index starting at 0, not 1, idiot!
                 // Ifrit, Orc, Oread, Undine all use "an" instead of "a"
                 if (d100 == 82 || d100 == 87 || d100 == 88 || d100 == 97) {
                     useAn = true;
