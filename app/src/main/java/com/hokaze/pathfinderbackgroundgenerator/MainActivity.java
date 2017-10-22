@@ -1,6 +1,8 @@
 package com.hokaze.pathfinderbackgroundgenerator;
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
@@ -12,18 +14,15 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AdView mAdView;
     private FirebaseAnalytics mFirebaseAnalytics;
 
-    private Button bGenerate;
+    private Button bGenerate, bBuyDrink;
     private TextView tvResults;
     private Spinner spinRace, spinClass, spinAlignment;
 
@@ -69,16 +68,6 @@ public class MainActivity extends AppCompatActivity {
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        // Load ad banner
-        mAdView = (AdView)findViewById(R.id.adView);
-        // Deploy test ads to emulator and test physical device, other devices will get real ads
-        // (Don't want to accidentally click my own ads and get suspended!)
-        AdRequest adRequest = new AdRequest.Builder()
-                //.addTestDevice(AdRequest.DEVICE_ID_EMULATOR) // All emulators
-                .addTestDevice("9E352341EE24936E89C7621696793500")  // My Phone as test device
-                .build();
-        mAdView.loadAd(adRequest);
-
         // Allow us to access our widgets from the code
         bGenerate = (Button)findViewById(R.id.generateButton);
         tvResults = (TextView)findViewById(R.id.bgTextView);
@@ -86,6 +75,16 @@ public class MainActivity extends AppCompatActivity {
         spinRace = (Spinner)findViewById(R.id.raceSpinner);
         spinClass = (Spinner)findViewById(R.id.classSpinner);
         spinAlignment = (Spinner)findViewById(R.id.alignmentSpinner);
+
+        // Instead of ads, people can now donate to me by "buying me a drink"
+        bBuyDrink=(Button)findViewById(R.id.buyDrinkButton);
+        bBuyDrink.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent donateLink = new Intent(android.content.Intent.ACTION_VIEW);
+                donateLink.setData(Uri.parse(getString(R.string.buydrink_link)));
+                startActivity(donateLink);
+            }
+        });
 
         // When button is hit we need to get info from spinners then run through the random tables
         bGenerate.setOnClickListener(new View.OnClickListener() {

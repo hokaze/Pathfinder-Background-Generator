@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Pathfinder Background Generator</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3891762784020205/8368849977</string>
+    <string name="buydrink">Now ad free: buy the developer a drink?</string>
+    <string name="buydrink_link">https://www.paypal.me/hokaze/2GBP</string>
     <string name="generate_background">Generate Background</string>
 
     <!-- Prompt text for drop down menu spinners -->
