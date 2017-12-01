@@ -324,7 +324,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void dwarfHomeTable() {
         // Note: random.nextInt rolls between 0 and n-1, so nextInt(100) produces range 00-99. For d100 we need 01-100.
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 41) {
             arrayIndex = 1;
@@ -352,7 +352,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void dwarfParentTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 61) {
             arrayIndex = 1;
@@ -373,7 +373,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void dwarfSiblingTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
         bioSiblings = 0;
         adoptSiblings = 0;
 
@@ -422,7 +422,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void elfHomeTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
         boolean unusual = false;
 
         tvResults.append(getResources().getTextArray(R.array.elfHomeland)[0]);
@@ -468,7 +468,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void elfParentTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 80) {
             arrayIndex = 1;
@@ -489,7 +489,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void elfSiblingTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
         bioSiblings = 0;
         adoptSiblings = 0;
         halfSiblings = 0;
@@ -538,7 +538,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void gnomeHomeTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 31) {
             arrayIndex = 1;
@@ -563,7 +563,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void gnomeParentTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 91) {
             arrayIndex = 1;
@@ -584,7 +584,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void gnomeSiblingTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
         bioSiblings = 0;
         adoptSiblings = 0;
 
@@ -622,7 +622,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void halfElfHomeTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 26) {
             arrayIndex = 1;
@@ -654,7 +654,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void halfElfParentTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 21) {
             arrayIndex = 1;
@@ -675,7 +675,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void halfElfSiblingTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
         bioSiblings = 0;
 
         tvResults.append(getResources().getTextArray(R.array.halfElfSiblings)[0]);
@@ -708,7 +708,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void halfOrcHomeTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
         if (d100 < 26) {
             arrayIndex = 1;
         }
@@ -738,7 +738,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void halfOrcParentTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 11) {
             arrayIndex = 1;
@@ -759,7 +759,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void halfOrcSiblingTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
         bioSiblings = 0;
 
         tvResults.append(getResources().getTextArray(R.array.halfOrcSiblings)[0]);
@@ -797,7 +797,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void halflingHomeTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 51) {
             arrayIndex = 1;
@@ -822,7 +822,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void halflingParentTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 71) {
             arrayIndex = 1;
@@ -843,7 +843,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void halflingSiblingTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
         bioSiblings = 0;
 
         tvResults.append(getResources().getTextArray(R.array.halflingSiblings)[0]);
@@ -876,7 +876,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void humanHomeTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
         boolean unusual = false;
 
         tvResults.append(getResources().getTextArray(R.array.humanHomeland)[0]);
@@ -914,7 +914,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void humanParentTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 51) {
             arrayIndex = 1;
@@ -935,7 +935,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void humanSiblingTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
         bioSiblings = 0;
 
         tvResults.append(getResources().getTextArray(R.array.humanSiblings)[0]);
@@ -974,7 +974,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (halfSiblings > 0) {
             for (int i=0; i < halfSiblings; ++i) {
-                d100 = ran.nextInt(100)+1;
+                d100 = ran.nextInt(99)+1;
                 if (d100 < 51) {
                     tvResults.append("One of your half-siblings is a Half-Elf.");
                 }
@@ -988,7 +988,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void siblingAgeTable(int siblings) {
         for (int i=0; i < siblings; ++i) {
-            d100 = ran.nextInt(100)+1;
+            d100 = ran.nextInt(99)+1;
 
             if (d100 < 49) {
                 arrayIndex = 0;
@@ -1006,7 +1006,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void siblingRaceTable(int siblings) {
         for (int i=0; i < siblings; ++i) {
-            d100 = ran.nextInt(100)+1;
+            d100 = ran.nextInt(99)+1;
             boolean useAn = false;
 
             if (d100 < 2) {
@@ -1081,7 +1081,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void unusualHomeTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 11) {
             arrayIndex = 1;
@@ -1124,7 +1124,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void birthCircumstanceTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         // Reset variables generated by this table
         lowerClass = false;
@@ -1213,7 +1213,7 @@ public class MainActivity extends AppCompatActivity {
             d100 = ran.nextInt(20)+1 + ran.nextInt(20)+1;
         }
         else {
-            d100 = ran.nextInt(100)+1;
+            d100 = ran.nextInt(99)+1;
         }
 
         if (d100 < 6) {
@@ -1254,7 +1254,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void adoptiveParentsTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 6) {
             arrayIndex = 1;
@@ -1287,7 +1287,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void nobilityTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 61) {
             arrayIndex = 1;
@@ -1317,7 +1317,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void majorChildhoodEventTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
         criminal = false;
 
         if (d100 < 6) {
@@ -1391,7 +1391,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void crimeAndPunishmentTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 11) {
             arrayIndex = 1;
@@ -1429,7 +1429,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("Your crime: ");
         tvResults.append(getResources().getTextArray(R.array.crimes)[arrayIndex]);
 
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 11) {
             arrayIndex = 1;
@@ -1470,7 +1470,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Adolescence and Training Tables
     private void classTrainingTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 11) {
             arrayIndex = 1;
@@ -1639,7 +1639,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void associatesTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 6) {
             arrayIndex = 1;
@@ -1723,7 +1723,7 @@ public class MainActivity extends AppCompatActivity {
             d20 = ran.nextInt(12)+1;
         }
         else {
-            d20 = ran.nextInt(20)+1;
+            d20 = ran.nextInt(19)+1;
         }
 
         // No need for big if-else tables as results are 1:1 to the roll
@@ -1764,7 +1764,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void conflictSubjectTable() {
-        d20 = ran.nextInt(20)+1;
+        d20 = ran.nextInt(19)+1;
 
         arrayIndex = d20;
 
@@ -2023,7 +2023,7 @@ public class MainActivity extends AppCompatActivity {
             d20 = ran.nextInt(12)+1;
         }
         else {
-            d20 = ran.nextInt(20)+1;
+            d20 = ran.nextInt(19)+1;
         }
 
         if (d20 < 3) {
@@ -2056,7 +2056,7 @@ public class MainActivity extends AppCompatActivity {
     private void adventurerBondsTable() {
         // Original table is 1d100, but has 20 entries of equal probablility so let's just use a d20...
         arrayIndex = d20;
-        d20 = ran.nextInt(20)+1;
+        d20 = ran.nextInt(19)+1;
 
         tvResults.append(getResources().getTextArray(R.array.adventurerBonds)[0]);
         tvResults.append("\n");
@@ -2066,7 +2066,7 @@ public class MainActivity extends AppCompatActivity {
     private void drawbackTable() {
         // Original table is 1d100, but has 20 entries of equal probablility so let's just use a d20...
         arrayIndex = d20;
-        d20 = ran.nextInt(20)+1;
+        d20 = ran.nextInt(19)+1;
 
         tvResults.append(getResources().getTextArray(R.array.characterDrawback)[0]);
         tvResults.append("\n");
@@ -2076,90 +2076,9 @@ public class MainActivity extends AppCompatActivity {
 
     // Random Tables for Inner Sea Region from Quests and Campaigns
     private void ethnicityTable() {
-        d100 = ran.nextInt(100)+1;
-
-        if (d100 < 10) {
-            arrayIndex = 1;
-        }
-        else if (d100 < 20) {
-            arrayIndex = 2;
-        }
-        else if (d100 < 28) {
-            arrayIndex = 3;
-        }
-        else if (d100 < 36) {
-            arrayIndex = 4;
-        }
-        else if (d100 < 38) {
-            arrayIndex = 5;
-        }
-        else if (d100 < 41) {
-            arrayIndex = 6;
-        }
-        else if (d100 < 43) {
-            arrayIndex = 7;
-        }
-        else if (d100 < 46) {
-            arrayIndex = 8;
-        }
-        else if (d100 < 47) {
-            arrayIndex = 9;
-        }
-        else if (d100 < 48) {
-            arrayIndex = 10;
-        }
-        else if (d100 < 49) {
-            arrayIndex = 11;
-        }
-        else if (d100 < 50) {
-            arrayIndex = 12;
-        }
-        else if (d100 < 51) {
-            arrayIndex = 13;
-        }
-        else if (d100 < 52) {
-            arrayIndex = 14;
-        }
-        else if (d100 < 53) {
-            arrayIndex = 15;
-        }
-        else if (d100 < 65) {
-            arrayIndex = 16;
-        }
-        else if (d100 < 66) {
-            arrayIndex = 17;
-        }
-        else if (d100 < 67) {
-            arrayIndex = 18;
-        }
-        else if (d100 < 68) {
-            arrayIndex = 19;
-        }
-        else if (d100 < 70) {
-            arrayIndex = 20;
-        }
-        else if (d100 < 71) {
-            arrayIndex = 21;
-        }
-        else if (d100 < 79) {
-            arrayIndex = 22;
-        }
-        else if (d100 < 87) {
-            arrayIndex = 23;
-        }
-        else if (d100 < 94) {
-            arrayIndex = 24;
-        }
-        else if (d100 < 99) {
-            // Mixed - roll again twice
-            // TODO
-            arrayIndex = 25;
-        }
-        else {
-            // Mixed - Azlanti blood and one other (roll again)
-            // TODO
-            arrayIndex = 26;
-        }
+        int rollsLeft = 1;
+        Boolean azlanti = false;
+        Boolean mixed = false;
 
         if ("Human".equals(playerRace)) {
             tvResults.append("Ethnicity: ");
@@ -2168,13 +2087,116 @@ public class MainActivity extends AppCompatActivity {
             tvResults.append("Human parent ethnicity: ");
         }
 
-        tvResults.append(getResources().getTextArray(R.array.humanEthnicity)[arrayIndex]);
+        while (rollsLeft > 0) {
+            // If rerolling, avoid mixed blood and azlanti blood options
+            if (azlanti == true || mixed == true) {
+                d100 = ran.nextInt(97)+1;
+            }
+            else {
+                d100 = ran.nextInt(99)+1;
+            }
+
+            if (d100 < 10) {
+                arrayIndex = 1;
+            }
+            else if (d100 < 20) {
+                arrayIndex = 2;
+            }
+            else if (d100 < 28) {
+                arrayIndex = 3;
+            }
+            else if (d100 < 36) {
+                arrayIndex = 4;
+            }
+            else if (d100 < 38) {
+                arrayIndex = 5;
+            }
+            else if (d100 < 41) {
+                arrayIndex = 6;
+            }
+            else if (d100 < 43) {
+                arrayIndex = 7;
+            }
+            else if (d100 < 46) {
+                arrayIndex = 8;
+            }
+            else if (d100 < 47) {
+                arrayIndex = 9;
+            }
+            else if (d100 < 48) {
+                arrayIndex = 10;
+            }
+            else if (d100 < 49) {
+                arrayIndex = 11;
+            }
+            else if (d100 < 50) {
+                arrayIndex = 12;
+            }
+            else if (d100 < 51) {
+                arrayIndex = 13;
+            }
+            else if (d100 < 52) {
+                arrayIndex = 14;
+            }
+            else if (d100 < 53) {
+                arrayIndex = 15;
+            }
+            else if (d100 < 65) {
+                arrayIndex = 16;
+            }
+            else if (d100 < 66) {
+                arrayIndex = 17;
+            }
+            else if (d100 < 67) {
+                arrayIndex = 18;
+            }
+            else if (d100 < 68) {
+                arrayIndex = 19;
+            }
+            else if (d100 < 70) {
+                arrayIndex = 20;
+            }
+            else if (d100 < 71) {
+                arrayIndex = 21;
+            }
+            else if (d100 < 79) {
+                arrayIndex = 22;
+            }
+            else if (d100 < 87) {
+                arrayIndex = 23;
+            }
+            else if (d100 < 94) {
+                arrayIndex = 24;
+            }
+            else if (d100 < 99) {
+                // Mixed - roll again twice
+                rollsLeft = 3;
+                mixed = true;
+                arrayIndex = 25;
+            }
+            else {
+                // Mixed - Azlanti blood and one other (roll again)
+                rollsLeft = 2;
+                azlanti = true;
+                arrayIndex = 26;
+            }
+
+            tvResults.append(getResources().getTextArray(R.array.humanEthnicity)[arrayIndex]);
+
+            // Formatting for mixed
+            if (mixed == true && rollsLeft == 2) {
+                tvResults.append(" and ");
+            }
+
+            rollsLeft--;
+        }
+
         tvResults.append("\n");
     }
     private void nationalityTable() {
         tvResults.append("Nationality: ");
 
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 4) {
             arrayIndex = 1;
@@ -2313,7 +2335,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append("\n\n\n");
     }
     private void otherNationTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 13) {
             arrayIndex = 1;
@@ -2346,7 +2368,7 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append(getResources().getTextArray(R.array.nationOther)[arrayIndex]);
     }
     private void factionTable() {
-        d100 = ran.nextInt(100)+1;
+        d100 = ran.nextInt(99)+1;
 
         if (d100 < 6) {
             arrayIndex = 1;

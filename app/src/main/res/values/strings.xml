@@ -1215,8 +1215,8 @@
         <item>Ulfen</item>
         <item>Varisian</item>
         <item>Vudrani</item>
-        <item>Mixture of the following two:</item>
-        <item>Mixture of Azlanti and:</item>
+        <item>"Mixture of "</item>
+        <item>"Mixture of ancient Azlanti blood and "</item>
     </string-array>
     
     <!-- Nationality: Inner Sea Region -->
