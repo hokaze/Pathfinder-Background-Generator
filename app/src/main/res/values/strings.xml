@@ -1182,6 +1182,119 @@
         <item>Youth\nYou reflect upon your youth as a golden time, one ever present in your mind and that refuses to fade into the background. Every day, you feel yourself growing older and closer to your inevitable end. You seek ways to make yourself look and feel young in attempt to rekindle that fire of your adolescence, but despite your attempts, you realize that your time still draws ever nearer.\nYou gain access to the <b>Vain</b> drawback.</item>
     </string-array>
 
+    
+    <!-- Optional Content from Quests and Campaigns, aimed at campaigns in the Inner Sea Region -->
+    
+    <!-- Human Ethnicity: used for humans, or the human parent of half-orcs and half-elves -->
+    <string-array name="humanEthnicity">
+        <item><u>Ethnicity</u></item>
+        <item>Chelaxian</item>
+        <item>Garundi</item>
+        <item>Keleshite</item>
+        <item>Kellid</item>
+        <item>Mwangi, Bekyar</item>
+        <item>Mwangi, Bonuwat</item>
+        <item>Mwangi, Mauxi</item>
+        <item>Mwangi, Zenj</item>
+        <item>Shoanti, Lyrune-Quah</item>
+        <item>Shoanti, Shadde-Quah</item>
+        <item>Shoanti, Shriikirri-Quah</item>
+        <item>Shoanti, Shundar-Quah</item>
+        <item>Shoanti, Sklar-Quah</item>
+        <item>Shoanti, Skoan-Quah</item>
+        <item>Shoanti, Tamiir-Quah</item>
+        <item>Taldan</item>
+        <item>Tian-Dan</item>
+        <item>Tian-La</item>
+        <item>Tian-Min</item>
+        <item>Tian-Shu</item>
+        <item>Tian-Sing</item>
+        <item>Ulfen</item>
+        <item>Varisian</item>
+        <item>Vudrani</item>
+    </string-array>
+    
+    <!-- Nationality: Inner Sea Region -->
+    <string-array name="nationInnerSea">
+        <item><u>Nationality</u></item>
+        <item>Absalom</item>
+        <item>Andoran</item>
+        <item>Hold of Belkzen</item>
+        <item>Brevoy</item>
+        <item>Cheliax</item>
+        <item>The Darklands</item>
+        <item>Druma</item>
+        <item>Five Kings Mountains</item>
+        <item>Galt</item>
+        <item>Geb</item>
+        <item>lrrisen</item>
+        <item>lsger</item>
+        <item>Jalmeray</item>
+        <item>Katapesh</item>
+        <item>Kyonin</item>
+        <item>Lastwall</item>
+        <item>Lands of the Linnorm Kings </item>
+        <item>Realm of the Mammoth Lords</item>
+        <item>Mana Wastes</item>
+        <item>Mediogalti Island</item>
+        <item>Mendev</item>
+        <item>Molthune</item>
+        <item>Mwangi Expanse</item>
+        <item>Nex</item>
+        <item>Nidal</item>
+        <item>Nirmathas</item>
+        <item>Numeria</item>
+        <item>Osirion</item>
+        <item>Qadira</item>
+        <item>Rahadoum</item>
+        <item>Razmiran</item>
+        <item>River Kingdoms </item>
+        <item>Sargava</item>
+        <item>The Shackles</item>
+        <item>The Sodden Lands</item>
+        <item>The Steaming Sea </item>
+        <item>Taldor</item>
+        <item>Thuvia</item>
+        <item>Ustalav</item>
+        <item>Varisia</item>
+        <item>The Worldwound</item>
+    </string-array>
+    
+    <!-- Nationality: Other Nations -->
+    <string-array name="nationOther">
+        <item><u>Other Regions</u></item>
+        <item>Arcadia</item>
+        <item>Azlant</item>
+        <item>Casmaron</item>
+        <item>Crown of the World</item>
+        <item>Garund</item>
+        <item>Sarusan</item>
+        <item>Tian Xia</item>
+        <item>Other world</item>
+        <item>Other plane or dimension</item>
+    </string-array>
+
+    <!-- Faction -->
+    <string-array name="faction">
+        <item><u>Faction</u></item>
+        <item>Aspis Consortium</item>
+        <item>Bellflower Network</item>
+        <item>Church of your deity</item>
+        <item>Eagle Knights</item>
+        <item>Esoteric Order of the Palatine Eye</item>
+        <item>Free Captains</item>
+        <item>Hellknights</item>
+        <item>Lantern Bearers</item>
+        <item>Lion Blades</item>
+        <item>Mendevian Crusaders</item>
+        <item>Ninth Battalion</item>
+        <item>Pathfinder Society</item>
+        <item>Red Mantis Assassins</item>
+        <item>Riftwardens</item>
+        <item>Varisian Wanderers</item>
+        <item>Other racial group</item>
+        <item>Other national group</item>
+    </string-array>
 
 
     <!-- Legal Information menu item, displays Open Game License stuff -->
