@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.menuCopy:
                 // User chose the "Copy to Clipboard action", copy textview contents to clipboard
+                // NOTE: even if we don't convert with toString, we don't seem to preserve italic, underlined or bold text,
+                // presumably as Android's default clipboard converts everything to plain text regardless
                 ClipData clip = ClipData.newPlainText("Pathfinder Background", tvResults.getText().toString());
                 clipboard.setPrimaryClip(clip);
                 return true;
