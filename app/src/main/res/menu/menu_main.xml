@@ -11,4 +11,9 @@
         app:showAsAction="never"
         android:title="@string/menuLegal">
     </item>
+    <item
+        android:id="@+id/menuCopy"
+        app:showAsAction="never"
+        android:title="@string/menuCopy">
+    </item>
 </menu>

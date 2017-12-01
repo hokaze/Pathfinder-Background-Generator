@@ -43,6 +43,16 @@
         android:prompt="@string/selectAlignment"
         android:spinnerMode="dialog" />
 
+    <CheckBox
+        android:id="@+id/checkEnableInnerSea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/alignmentSpinner"
+        android:layout_alignStart="@+id/alignmentSpinner"
+        android:layout_below="@+id/alignmentSpinner"
+        android:checked="false"
+        android:text="@string/enable_inner_sea" />
+
     <Button
         style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/generateButton"
@@ -53,7 +63,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/alignmentSpinner"
+        android:layout_below="@+id/checkEnableInnerSea"
         android:text="@string/generate_background" />
 
     <TextView

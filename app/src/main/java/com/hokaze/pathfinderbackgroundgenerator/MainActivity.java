@@ -1,6 +1,8 @@
 package com.hokaze.pathfinderbackgroundgenerator;
 
 import android.app.Dialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private Button bGenerate, bBuyDrink;
     private TextView tvResults;
     private Spinner spinRace, spinClass, spinAlignment;
+    private CheckBox checkInnerSea;
+    private ClipboardManager clipboard;
 
     private String playerRace, playerClass, allowedAlignments, apparentSex;
     private int d100, d20, arrayIndex, bioSiblings, adoptSiblings, halfSiblings, conflictPoints;
@@ -53,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
                 showLegalDialog();
                 return true;
 
+            case R.id.menuCopy:
+                // User chose the "Copy to Clipboard action", copy textview contents to clipboard
+                ClipData clip = ClipData.newPlainText("Pathfinder Background", tvResults.getText().toString());
+                clipboard.setPrimaryClip(clip);
+                return true;
+
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
@@ -75,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
         spinRace = (Spinner)findViewById(R.id.raceSpinner);
         spinClass = (Spinner)findViewById(R.id.classSpinner);
         spinAlignment = (Spinner)findViewById(R.id.alignmentSpinner);
+        checkInnerSea = (CheckBox)findViewById(R.id.checkEnableInnerSea);
+
+        // Setup clipboard manager so we can copy/paste
+        clipboard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
 
         // Instead of ads, people can now donate to me by "buying me a drink"
         bBuyDrink=(Button)findViewById(R.id.buyDrinkButton);
@@ -140,6 +155,16 @@ public class MainActivity extends AppCompatActivity {
                 //----------------------------------------//
                 tvResults.append(getResources().getTextArray(R.array.sectionHeaders)[0]);
                 tvResults.append("\n\n");
+
+                // Ethnicity and Nationality
+                if (checkInnerSea.isChecked() == true) {
+                    tvResults.append(getResources().getTextArray(R.array.nationInnerSea)[0]);
+                    tvResults.append("\n");
+                    if (playerRace.equals("Human") || playerRace.equals("Half-Orc") || playerRace.equals("Half-Elf")) {
+                        ethnicityTable();
+                    }
+                    nationalityTable();
+                }
 
                 // Dwarven Homeland and Family
                 if ("Dwarf".equals(playerRace)) {
@@ -254,6 +279,11 @@ public class MainActivity extends AppCompatActivity {
 
                 // Roll table(s) for player class training
                 classTrainingTable();
+
+                // Faction
+                if (checkInnerSea.isChecked() == true) {
+                    factionTable();
+                }
 
                 // Influential Associates
                 associatesTable();
@@ -386,7 +416,7 @@ public class MainActivity extends AppCompatActivity {
         if (adoptSiblings > 0) {
             siblingRaceTable(adoptSiblings);
         }
-        tvResults.append("\n");
+        tvResults.append("\n\n");
     }
 
     private void elfHomeTable() {
@@ -502,7 +532,7 @@ public class MainActivity extends AppCompatActivity {
         if (adoptSiblings > 0) {
             siblingRaceTable(adoptSiblings);
         }
-        tvResults.append("\n");
+        tvResults.append("\n\n");
     }
 
     private void gnomeHomeTable() {
@@ -586,7 +616,7 @@ public class MainActivity extends AppCompatActivity {
         if (adoptSiblings > 0) {
             siblingRaceTable(adoptSiblings);
         }
-        tvResults.append("\n");
+        tvResults.append("\n\n");
     }
 
     private void halfElfHomeTable() {
@@ -672,7 +702,7 @@ public class MainActivity extends AppCompatActivity {
         if (bioSiblings > 0) {
             siblingAgeTable(bioSiblings);
         }
-        tvResults.append("\n");
+        tvResults.append("\n\n");
     }
 
     private void halfOrcHomeTable() {
@@ -761,7 +791,7 @@ public class MainActivity extends AppCompatActivity {
         if (bioSiblings > 0) {
             siblingAgeTable(bioSiblings);
         }
-        tvResults.append("\n");
+        tvResults.append("\n\n");
     }
 
     private void halflingHomeTable() {
@@ -840,7 +870,7 @@ public class MainActivity extends AppCompatActivity {
         if (bioSiblings > 0) {
             siblingAgeTable(bioSiblings);
         }
-        tvResults.append("\n");
+        tvResults.append("\n\n");
     }
 
     private void humanHomeTable() {
@@ -951,7 +981,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        tvResults.append("\n");
+        tvResults.append("\n\n");
     }
 
     private void siblingAgeTable(int siblings) {
@@ -1045,7 +1075,7 @@ public class MainActivity extends AppCompatActivity {
                 tvResults.append("One of your adopted siblings is a: ");
             }
             tvResults.append(getResources().getTextArray(R.array.siblingRaces)[arrayIndex]);
-            tvResults.append("\n");
+            tvResults.append("\n\n");
         }
     }
     private void unusualHomeTable() {
@@ -2039,6 +2069,338 @@ public class MainActivity extends AppCompatActivity {
         tvResults.append(getResources().getTextArray(R.array.characterDrawback)[0]);
         tvResults.append("\n");
         tvResults.append(getResources().getTextArray(R.array.characterDrawback)[arrayIndex]);
+        tvResults.append("\n\n\n");
+    }
+
+    // Random Tables for Inner Sea Region from Quests and Campaigns
+    private void ethnicityTable() {
+        d100 = ran.nextInt(100)+1;
+
+        if (d100 < 10) {
+            arrayIndex = 1;
+        }
+        else if (d100 < 20) {
+            arrayIndex = 2;
+        }
+        else if (d100 < 28) {
+            arrayIndex = 3;
+        }
+        else if (d100 < 36) {
+            arrayIndex = 4;
+        }
+        else if (d100 < 38) {
+            arrayIndex = 5;
+        }
+        else if (d100 < 41) {
+            arrayIndex = 6;
+        }
+        else if (d100 < 43) {
+            arrayIndex = 7;
+        }
+        else if (d100 < 46) {
+            arrayIndex = 8;
+        }
+        else if (d100 < 47) {
+            arrayIndex = 9;
+        }
+        else if (d100 < 48) {
+            arrayIndex = 10;
+        }
+        else if (d100 < 49) {
+            arrayIndex = 11;
+        }
+        else if (d100 < 50) {
+            arrayIndex = 12;
+        }
+        else if (d100 < 51) {
+            arrayIndex = 13;
+        }
+        else if (d100 < 52) {
+            arrayIndex = 14;
+        }
+        else if (d100 < 53) {
+            arrayIndex = 15;
+        }
+        else if (d100 < 65) {
+            arrayIndex = 16;
+        }
+        else if (d100 < 66) {
+            arrayIndex = 17;
+        }
+        else if (d100 < 67) {
+            arrayIndex = 18;
+        }
+        else if (d100 < 68) {
+            arrayIndex = 19;
+        }
+        else if (d100 < 70) {
+            arrayIndex = 20;
+        }
+        else if (d100 < 71) {
+            arrayIndex = 21;
+        }
+        else if (d100 < 79) {
+            arrayIndex = 22;
+        }
+        else if (d100 < 87) {
+            arrayIndex = 23;
+        }
+        else if (d100 < 94) {
+            arrayIndex = 24;
+        }
+        else if (d100 < 99) {
+            // Mixed - roll again twice
+            // TODO
+            arrayIndex = 25;
+        }
+        else {
+            // Mixed - Azlanti blood and one other (roll again)
+            // TODO
+            arrayIndex = 26;
+        }
+
+        if ("Human".equals(playerRace)) {
+            tvResults.append("Ethnicity: ");
+        }
+        else {
+            tvResults.append("Human parent ethnicity: ");
+        }
+
+        tvResults.append(getResources().getTextArray(R.array.humanEthnicity)[arrayIndex]);
+        tvResults.append("\n");
+    }
+    private void nationalityTable() {
+        tvResults.append("Nationality: ");
+
+        d100 = ran.nextInt(100)+1;
+
+        if (d100 < 4) {
+            arrayIndex = 1;
+        }
+        else if (d100 < 7) {
+            arrayIndex = 2;
+        }
+        else if (d100 < 9) {
+            arrayIndex = 3;
+        }
+        else if (d100 < 12) {
+            arrayIndex = 4;
+        }
+        else if (d100 < 15) {
+            arrayIndex = 5; // Cheliax
+        }
+        else if (d100 < 17) {
+            arrayIndex = 6;
+        }
+        else if (d100 < 19) {
+            arrayIndex = 7;
+        }
+        else if (d100 < 21) {
+            arrayIndex = 8;
+        }
+        else if (d100 < 23) {
+            arrayIndex = 9;
+        }
+        else if (d100 < 25) {
+            arrayIndex = 10;
+        }
+        else if (d100 < 27) {
+            arrayIndex = 11;
+        }
+        else if (d100 < 30) {
+            arrayIndex = 12;
+        }
+        else if (d100 < 32) {
+            arrayIndex = 13;
+        }
+        else if (d100 < 35) {
+            arrayIndex = 14;
+        }
+        else if (d100 < 37) {
+            arrayIndex = 15;
+        }
+        else if (d100 < 40) {
+            arrayIndex = 16; // Lastwall
+        }
+        else if (d100 < 43) {
+            arrayIndex = 17;
+        }
+        else if (d100 < 45) {
+            arrayIndex = 18;
+        }
+        else if (d100 < 47) {
+            arrayIndex = 19;
+        }
+        else if (d100 < 49) {
+            arrayIndex = 20;
+        }
+        else if (d100 < 51) {
+            arrayIndex = 21;
+        }
+        else if (d100 < 54) {
+            arrayIndex = 22;
+        }
+        else if (d100 < 57) {
+            arrayIndex = 23;
+        }
+        else if (d100 < 59) {
+            arrayIndex = 24; // Nex
+        }
+        else if (d100 < 61) {
+            arrayIndex = 25;
+        }
+        else if (d100 < 64) {
+            arrayIndex = 26;
+        }
+        else if (d100 < 66) {
+            arrayIndex = 27;
+        }
+        else if (d100 < 69) {
+            arrayIndex = 28;
+        }
+        else if (d100 < 72) {
+            arrayIndex = 29;
+        }
+        else if (d100 < 74) {
+            arrayIndex = 30;
+        }
+        else if (d100 < 76) {
+            arrayIndex = 31; // Razmiran
+        }
+        else if (d100 < 79) {
+            arrayIndex = 32;
+        }
+        else if (d100 < 82) {
+            arrayIndex = 33;
+        }
+        else if (d100 < 84) {
+            arrayIndex = 34;
+        }
+        else if (d100 < 86) {
+            arrayIndex = 35;
+        }
+        else if (d100 < 87) {
+            arrayIndex = 36;
+        }
+        else if (d100 < 90) {
+            arrayIndex = 37; // Taldor
+        }
+        else if (d100 < 92) {
+            arrayIndex = 38;
+        }
+        else if (d100 < 94) {
+            arrayIndex = 39;
+        }
+        else if (d100 < 97) {
+            arrayIndex = 40;
+        }
+        else if (d100 < 99) {
+            arrayIndex = 41; // The Worldwound
+        }
+        else {
+            // Roll Other Region
+            arrayIndex = 42;
+            otherNationTable();
+        }
+
+        // Normal place of origin, skip if from other region, as otherNationTable prints those results
+        if (arrayIndex < 42) {
+            tvResults.append(getResources().getTextArray(R.array.nationInnerSea)[arrayIndex]);
+        }
+
+        tvResults.append("\n\n\n");
+    }
+    private void otherNationTable() {
+        d100 = ran.nextInt(100)+1;
+
+        if (d100 < 13) {
+            arrayIndex = 1;
+        }
+        else if (d100 < 20) {
+            arrayIndex = 2;
+        }
+        else if (d100 < 32) {
+            arrayIndex = 3;
+        }
+        else if (d100 < 40) {
+            arrayIndex = 4;
+        }
+        else if (d100 < 53) {
+            arrayIndex = 5;
+        }
+        else if (d100 < 62) {
+            arrayIndex = 6;
+        }
+        else if (d100 < 81) {
+            arrayIndex = 7;
+        }
+        else if (d100 < 93) {
+            arrayIndex = 8; // Other world
+        }
+        else {
+            arrayIndex = 9; // Other plane or dimension
+        }
+
+        tvResults.append(getResources().getTextArray(R.array.nationOther)[arrayIndex]);
+    }
+    private void factionTable() {
+        d100 = ran.nextInt(100)+1;
+
+        if (d100 < 6) {
+            arrayIndex = 1;
+        }
+        else if (d100 < 11) {
+            arrayIndex = 2;
+        }
+        else if (d100 < 19) {
+            arrayIndex = 3; // Church of deity
+        }
+        else if (d100 < 26) {
+            arrayIndex = 4;
+        }
+        else if (d100 < 30) {
+            arrayIndex = 5;
+        }
+        else if (d100 < 36) {
+            arrayIndex = 6;
+        }
+        else if (d100 < 43) {
+            arrayIndex = 7;
+        }
+        else if (d100 < 48) {
+            arrayIndex = 8;
+        }
+        else if (d100 < 52) {
+            arrayIndex = 9;
+        }
+        else if (d100 < 61) {
+            arrayIndex = 10;
+        }
+        else if (d100 < 71) {
+            arrayIndex = 11;
+        }
+        else if (d100 < 80) {
+            arrayIndex = 12;
+        }
+        else if (d100 < 85) {
+            arrayIndex = 13;
+        }
+        else if (d100 < 90) {
+            arrayIndex = 14;
+        }
+        else if (d100 < 97) {
+            arrayIndex = 15;
+        }
+        else if (d100 < 99) {
+            arrayIndex = 16; // Other racial group
+        }
+        else {
+            arrayIndex = 17; // Other national group
+        }
+
+        tvResults.append(getResources().getTextArray(R.array.faction)[0]);
+        tvResults.append("\n");
+        tvResults.append(getResources().getTextArray(R.array.faction)[arrayIndex]);
         tvResults.append("\n\n\n");
     }
 

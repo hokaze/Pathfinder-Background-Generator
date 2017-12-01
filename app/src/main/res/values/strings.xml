@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Pathfinder Background Generator</string>
+    <string name="enable_inner_sea">Use Inner Sea Region options</string>
+    <string name="generate_background">Generate Background</string>
+    <string name="copy_background">Copy Background to Clipboard</string>
     <string name="buydrink">Now ad free: buy the developer a drink?</string>
     <string name="buydrink_link">https://www.paypal.me/hokaze/2GBP</string>
-    <string name="generate_background">Generate Background</string>
 
     <!-- Prompt text for drop down menu spinners -->
     <string name="selectRace">Select a Race</string>
@@ -47,13 +49,14 @@
     <!-- UI Elements used by menu/dialogs-->
     <string name="menuHelp">Help</string>
     <string name="menuLegal">Legal Information</string>
+    <string name="menuCopy">Copy Background to Clipboard</string>
     <string name="closeDialog">Close</string>
 
     <!-- The text shown by default in the text view, explaining the background generation rules -->
     <!-- It's also used with the menu item "Help", as this text is removed upon generating a background -->
     <string name="helpText"><u>"Introduction"</u>
         \n"The background generator is intended to remove the creative pressure that can sometimes frustrate players as they try to flesh out the murky details of their characters’ backgrounds."
-        \n"This app automates the Open Game License rules and random tables found in the Pathfinder Reference Document and Pathfinder Ultimate Campaign for creating backstories."
+        \n"This app automates the Open Game License rules and random tables found in the Pathfinder Reference Document and Pathfinder Ultimate Campaign for creating backstories, with optional content for games set in Golarion's Inner Sea Region from Quests and Campaigns."
         \n
         \n<u>"Rules"</u>
         \n"Depending on your rolls on the generator's tables you are sometimes granted access to a trait, story feat, or drawback. These are typically marked in "<b>"bold"</b>"."
@@ -1184,7 +1187,7 @@
 
     
     <!-- Optional Content from Quests and Campaigns, aimed at campaigns in the Inner Sea Region -->
-    
+
     <!-- Human Ethnicity: used for humans, or the human parent of half-orcs and half-elves -->
     <string-array name="humanEthnicity">
         <item><u>Ethnicity</u></item>
@@ -1212,6 +1215,8 @@
         <item>Ulfen</item>
         <item>Varisian</item>
         <item>Vudrani</item>
+        <item>Mixture of the following two:</item>
+        <item>Mixture of Azlanti and:</item>
     </string-array>
     
     <!-- Nationality: Inner Sea Region -->
@@ -1258,6 +1263,7 @@
         <item>Ustalav</item>
         <item>Varisia</item>
         <item>The Worldwound</item>
+        <item>Other Region</item>
     </string-array>
     
     <!-- Nationality: Other Nations -->
@@ -1277,23 +1283,23 @@
     <!-- Faction -->
     <string-array name="faction">
         <item><u>Faction</u></item>
-        <item>Aspis Consortium</item>
-        <item>Bellflower Network</item>
-        <item>Church of your deity</item>
-        <item>Eagle Knights</item>
-        <item>Esoteric Order of the Palatine Eye</item>
-        <item>Free Captains</item>
-        <item>Hellknights</item>
-        <item>Lantern Bearers</item>
-        <item>Lion Blades</item>
-        <item>Mendevian Crusaders</item>
-        <item>Ninth Battalion</item>
-        <item>Pathfinder Society</item>
-        <item>Red Mantis Assassins</item>
-        <item>Riftwardens</item>
-        <item>Varisian Wanderers</item>
-        <item>Other racial group</item>
-        <item>Other national group</item>
+        <item>Aspis Consortium\nAn unscrupulous multinational trade organization based in Ostenso, Cheliax, but with interests in many parts of Avistan and Garund.</item>
+        <item>Bellflower Network\nA well-established, secret society dedicated to freeing halfling slaves, usually from Cheliax, a country in which halfling slaves are specially prized and numerous. The Network maintains its own coded language and uses a blue bellflower as its symbol.</item>
+        <item>Church of your deity\nTemples, shrines and churches can be found all across Golarion, futhering the ends of faiths of all alignments. Even lesser-venerated deities may wield considerable might in mortal affairs through their followers.</item>
+        <item>Eagle Knights\nA state-funded military organization sworn to protect their homeland, and to destroy slavery and those who profit from it. Often working as moles inside slaving organizations, the Eagle Knights, while well intentioned, are as insidious as many of the more evil organizations in Golarion.</item>
+        <item>Esoteric Order of the Palatine Eye\nA very secretive organization thought to be based in Ustalav. The organization works against the Whispering Way and recently aided those responsible for defeating Kazavon, a blue dragon, who was styled the Lord of Scarwall.</item>
+        <item>Free Captains\nThe leaders among the Shackles Pirates. Anyone can declare themselves a Free Captain so long as they possess a ship[1] and some control the various ports of the Shackles and have a number of other Free Captains serving under them, but the most powerful of all comprise the Shackles' ruling body: the Pirate Council.</item>
+        <item>Hellknights\nA collection of knightly orders with a unique focus on the promulgation of law. They are interested less in the social goodness and charity typical of paladins, but rather in the foundation and stringent maintenance of order at all costs. In their iron-handed exaction of law, Hellknights emulate the organized and effective armies of Hell.</item>
+        <item>Lantern Bearers\nAn elven organization that describes its aim as "to be a light against the coming darkness".[2][3] Their chief concerns are redeeming the drow and opposing demonic forces.</item>
+        <item>Lion Blades\nA secret organization committed to protecting the interests of Taldor and its ruler, the Grand Prince. They oppose the enemies of the empire through infiltration, assassination, and espionage.</item>
+        <item>Mendevian Crusaders\nA less-organised knightly order united primarily by their desire to eliminate the expansion of demons from the Worldwound. Not all of its members are selfless and honourable, but many epitomize true courage.</item>
+        <item>Ninth Battalion\nAn inter-clan group of dwarf warriors dedicated to defend the remaining dwarven enclaves in Golarion. When enemies threaten a clan home, the Ninth Battalion will soon be there, answering the call for aid.</item>
+        <item>Pathfinder Society\nA globe-spanning organization based out of Absalom, the City at the Center of the World. Pathfinders travel throughout Golarion and explore, delve, and otherwise experience the lesser-seen parts of the world. They send journals documenting their travels back to their venture-captains, who also assigns them new missions and suggests new places to explore.</item>
+        <item>Red Mantis Assassins\nThis order of professional assassins can be distinguished by their trademark bright red and black, light armor, serrated blades (such as the sawtooth sabre), and frightful mantis masks which grant them both an enhanced sense of sight and a terrifying visage. The red dye is a reference to the colour of their god's carapace.</item>
+        <item>Riftwardens\nA loose collection of planar travelers from across the Great Beyond who guard the multiverse's integrity and stability. They aim to prevent evildoers from using planar gateways and punish any who they catch trying.</item>
+        <item>Varisian Wanderers\nA primarily nomadic human ethnic group known to favor the open road over permanent settlements. Sometimes called the people of the road, their traveling caravans can be encountered throughout Golarion, but Varisians also settle in permanent communities, most notably the country of Ustalav.</item>
+        <item>Other racial group\nOther groups exist that further the interests of their race, whether they work together to protect their homeland, break their kin out of slavery or unite against the darkness.</item>
+        <item>Other national group\nOther, lesser-known groups exist with the aim of furthering the goals of specific nations, or to hinder their less pleasant neighbours.</item>
     </string-array>
 
 
@@ -1369,6 +1375,9 @@
         \n
         \n<i>Pathfinder Roleplaying Game: Advanced Race Guide</i> © 2012, Paizo Publishing, LLC;
         \nAuthors: Dennis Baker, Jesse Benner, Benjamin Bruck, Jason Bulmahn, Adam Daigle, Jim Groves, Tim Hitchcock, Hal MacLean, Jason Nelson, Stephen Radney-MacFarland, Owen K.C. Stephens, Todd Stewart, and Russ Taylor.
+        \n
+        \n<i>Pathfinder Player Companion: Quests and Campaigns</i> © 2013, Paizo Publishing, LLC;
+        \nAuthors: Amanda Hamon and David N. Ross.
     </string>
 
 </resources>
